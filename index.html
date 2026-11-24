@@ -83,6 +83,13 @@
   footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
   footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   @media(max-width:760px){.links a:not(.btn){display:none}.case{grid-template-columns:1fr;padding:1.6rem}.hero{padding-top:3.5rem}section{padding:3.5rem 0}.cta .btn{flex:1 1 100%;text-align:center}}
+  .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem}
+  .person{display:flex;gap:1.1rem;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.5rem}
+  .avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.4rem;color:#0B1020;background:linear-gradient(135deg,var(--blue),#9db8ff)}
+  .avatar.sun{background:linear-gradient(135deg,var(--sun),#ffd79a)}
+  .person h3{font-size:1.2rem}
+  .role{color:var(--blue);font-weight:600;font-size:.9rem;margin:.15rem 0 .5rem}
+  .person p{color:var(--muted);margin:0}
 </style>
 </head>
 <body>
@@ -94,6 +101,7 @@
       <a href="#tjenester">Tjenester</a>
       <a href="#arbeid">Arbeid</a>
       <a href="#prosess">Slik jobber vi</a>
+      <a href="#om-oss">Om oss</a>
       <a class="btn" href="#kontakt">Kontakt</a>
     </div>
   </div>
@@ -177,6 +185,32 @@
       <div class="step"><h3>Vi lager et forslag</h3><p>Du får se en ekte demo av siden din før du bestemmer deg.</p></div>
       <div class="step"><h3>Vi finpusser</h3><p>Tekst, bilder og farger justeres til det sitter.</p></div>
       <div class="step"><h3>Siden går live</h3><p>Vi publiserer og hjelper deg med oppdateringer videre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="om-oss" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="eyebrow">Om oss</div>
+    <h2>Hvem er Skyline?</h2>
+    <p class="sub">Skyline er drevet av to studenter med teknologi i blodet. Vi vil gi lokale bedrifter en nettside de er stolte av – uten byråpriser.</p>
+    <div class="team">
+      <div class="person">
+        <div class="avatar" aria-hidden="true">OK</div>
+        <div>
+          <h3>Osman Khalid</h3>
+          <div class="role">Daglig leder (CEO)</div>
+          <p>Studerer dataingeniør ved NTNU. Har ansvar for design og utvikling av nettsidene.</p>
+        </div>
+      </div>
+      <div class="person">
+        <div class="avatar sun" aria-hidden="true">HS</div>
+        <div>
+          <h3>Hassan Shabbir</h3>
+          <div class="role">Assistent</div>
+          <p>Studerer IT og ledelse, første år. Hjelper til med kundekontakt og prosjekter.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
