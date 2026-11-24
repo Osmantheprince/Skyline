@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siden finnes ikke – Skyline</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0B1020">
+<link rel="icon" href="/Skyline/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0B1020;--panel:#141B33;--line:#232c4d;--text:#E8ECF8;--muted:#9aa5c7;--blue:#5B8CFF;--sun:#FFB547}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif}
+  header{padding:1.2rem 1.5rem}
+  .brand{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;color:inherit;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.2rem}
+  .brand img{width:32px;height:32px}
+  main{flex:1;display:grid;place-items:center;text-align:center;padding:2rem 1.5rem}
+  .code{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:clamp(5rem,20vw,9rem);line-height:1;letter-spacing:-.04em;background:linear-gradient(180deg,var(--text),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+  h1{font-family:"Space Grotesk",sans-serif;font-size:clamp(1.5rem,4vw,2.2rem);margin:.8rem 0 .6rem}
+  p{color:var(--muted);max-width:42ch;margin:0 auto 2rem;line-height:1.6}
+  .cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+  .btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.3rem;border-radius:999px}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+  .city{display:block;width:100%;height:120px}
+</style>
+</head>
+<body>
+<header><a class="brand" href="/Skyline/"><img src="/Skyline/logo.svg" alt="">Skyline</a></header>
+<main>
+  <div>
+    <div class="code">404</div>
+    <h1>Denne siden finnes ikke</h1>
+    <p>Lenken kan være feil, eller siden er flyttet. Prøv forsiden – eller se et av prosjektene våre.</p>
+    <div class="cta">
+      <a class="btn" href="/Skyline/">Til forsiden</a>
+      <a class="btn ghost" href="/Skyline/quick-bite/">Se Quick Bite →</a>
+    </div>
+  </div>
+</main>
+<svg class="city" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+  <circle cx="960" cy="34" r="20" fill="#FFB547" opacity=".35"/>
+  <g fill="#1d2747"><rect x="0" y="60" width="70" height="60"/><rect x="140" y="75" width="60" height="45"/><rect x="420" y="55" width="60" height="65"/><rect x="700" y="50" width="55" height="70"/><rect x="1010" y="60" width="70" height="60"/><rect x="1130" y="48" width="70" height="72"/></g>
+  <g fill="#5B8CFF" opacity=".55"><rect x="210" y="50" width="60" height="70"/><rect x="280" y="28" width="70" height="92"/><rect x="490" y="40" width="80" height="80"/><rect x="765" y="35" width="60" height="85"/><rect x="900" y="55" width="100" height="65"/></g>
+  <rect x="580" y="14" width="50" height="106" fill="#E8ECF8" opacity=".5"/>
+</svg>
+</body>
+</html>
