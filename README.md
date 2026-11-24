@@ -6,8 +6,8 @@ Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og and
 
 ## Se nettsidene
 
-- **Skysite (forside):** https://osmantheprince.github.io/Skysite/
-- **Quick Bite, Sandnes (demo):** https://osmantheprince.github.io/Skysite/quick-bite/
+- **Skysite (forside):** https://skysite.no/
+- **Quick Bite, Sandnes (demo):** https://skysite.no/quick-bite/
 
 ## Innhold
 
@@ -22,7 +22,7 @@ Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og and
 
 ## Publisering
 
-Sidene publiseres automatisk med GitHub Pages fra `main`-grenen. Endringer er ute etter et par minutter.
+Sidene publiseres automatisk med GitHub Pages fra `main`-grenen på domenet **skysite.no** (registrert hos Domeneshop). Endringer er ute etter et par minutter.
 
 ## Team
 
