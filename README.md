@@ -34,7 +34,7 @@ Sidene publiseres automatisk med GitHub Pages fra `main`-grenen på domenet **sk
 ## Neste steg
 
 - [ ] Slå på **Enforce HTTPS** når sertifikatet er klart.
-- [ ] Slett `index (1).html` (løs kopi av forsiden).
+- [x] Ny forside med kontaktskjema tatt i bruk (`index (1).html` → `index.html`).
 - [ ] Sjekk at https://skysite.no og https://skysite.no/quick-bite/ ser riktige ut på mobil.
 
 ## Team
