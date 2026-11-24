@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quick Bite – Kebab, rull og burger i Sandnes</title>
+<link rel="icon" href="../logo.svg" type="image/svg+xml">
 <meta name="description" content="Quick Bite i Sandnes: kebab, kyllingrull, falafel og burgere laget av ferske råvarer. Bestill levering på foodora.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -112,6 +113,18 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   .mbar .btn{flex:1;justify-content:center}
   body{padding-bottom:76px}
 }
+
+  /* Bilder */
+  .plate .hero-img{width:86%;aspect-ratio:1;object-fit:cover;border-radius:50%;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin-top:1.5rem}
+  .gallery figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .gallery img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s}
+  .gallery figure:hover img{transform:scale(1.04)}
+  .gallery figcaption{padding:.6rem .8rem;font-size:.9rem;color:var(--muted)}
+  .gallery .wide{grid-column:span 2}
+  @media(max-width:520px){.gallery .wide{grid-column:auto}}
+  .made-by{display:inline-flex;align-items:center;gap:.45rem}
+  .made-by img{width:22px;height:22px}
 </style>
 </head>
 <body>
@@ -123,6 +136,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
     <a href="#" class="logo">QUICK<span>BITE</span></a>
     <div class="links">
       <a href="#meny">Meny</a>
+      <a href="#bilder">Bilder</a>
       <a href="#info">Finn oss</a>
       <a class="btn small" href="https://www.foodora.no/restaurant/xkr0/quick-bite-xkr0" target="_blank" rel="noopener">Bestill</a>
     </div>
@@ -146,7 +160,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
       </div>
     </div>
     <div class="plate">
-      <span class="emoji">🥙</span>
+      <img class="hero-img" src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QcRiXvqYr6iugVIJmqwYYINOrN1vU7UpnYJr5vmqzqyi5pqIAZj18J0fmbc2TF-_o6AeNmEzz7bcHSToOP_M2m4-2iK1JJ7ygXddICiDFd6PNd7MI39RqQ38DlETNq6g_yn8u0LYOuyb7W=w800" alt="Kebabrull og pommes fra Quick Bite">
       <div class="sticker">MENY<br>fra 180,-<small>med brus &amp; fries</small></div>
     </div>
   </div>
@@ -232,6 +246,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </div>
 </section>
 
+<section id="bilder">
+  <div class="wrap">
+    <h2>Bilder</h2>
+    <p class="sub">Fra Gjesdalveien 30 – lokalet og maten.</p>
+    <div class="gallery">
+      <figure class="wide"><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9S5DlzqipZRu3T8cFx9NDOGpfsjG9apbO4udY9p_jZZiPeCCAkqC_7z1PKsQFCNTZ5CUJ9RlhRiojQDPJ22_x7LCTg7R9AMub7s3gLtEkMMd30lfBB7WpG2bXDdJSi0RlFE4-UYzJSzHwxf=w800" alt="Fasade" loading="lazy"><figcaption>Fasade</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9REHoL_w3gJ94kIwEGoIy6dn8YA6LKskSJZwBiZICQ257fhPLGpTWu1o2oq33ml7oTe6v8_gXDTBDt9vdpCQt3hzx8Q07Iqc3bb1NxP1oKKOpRYWbzRCBp_ufgN6wHS6rqBsmlpls5lEs3a=w800" alt="Interiør 1" loading="lazy"><figcaption>Interiør 1</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9Si_-m17_IYlWaod6Q8gQ5YAkFHL5I1K8606lFhDmJggeVuwegz9EPB_qbJi9HmDeXx7dzI71-8vvE9sbO5nbeiCCzBuZgKbylJWYQ7VShyxxVO0EUm4EPllBBM0mREpDB_uwPxcN2fCPcK=w800" alt="Interiør 2" loading="lazy"><figcaption>Interiør 2</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9SrHirXE-ZjA4o-jr-svEBLwrx5loLzEqIHkzGwdKstECH7ThsKef46U5qizt4cVDnb1Eh-kkU3F_Gh7n1zQbtto7-4c4HvxeIZNZvs58pR5uUFM0j4uYv9VYRFDT3FqvEOoLwviUSZ-RRc=w800" alt="Kebabrull, cola og pommes" loading="lazy"><figcaption>Kebabrull, cola og pommes</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9QfTnaHW1GbEdR3k4g6I6iHcAjPEpnNtxUQznmE096UOyFFeAZB9mz0aGr8IevUBwK0HZLpq52yQwpnN298dwiBSBUh1QG0sdiIE1mTws-_-ljQj3prKvw04gtlvfdGDleaY1PGM2w1CFS9=w800" alt="Pizza med kylling og ruccola" loading="lazy"><figcaption>Pizza med kylling og ruccola</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TpqtpCd-MeMqoATK_4qdNNtP7DQcLKA58FayiGkWdBje62nuc28xNe_trcB4YoH04MkGn4QPqnSiMK42B_NgQGx9_GVEd3qbS1HwQgHqB6jxMpqzzHHhAHq4tbqO2E94xZylTk9xJBqcR-=w800" alt="Kebabtallerken og cola" loading="lazy"><figcaption>Kebabtallerken og cola</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-cs-s/ANWiy9TQyzvVVg_LM8I91fnTPEkPLsUhZymfDwmSK1A_dVO-RjlKNCbYaNtpYf_iNxXfuETZXcrXT7aD9fwDs8k5AMVCg10oFMcF3JPzxTSmppeBTj24ZaeYC5ejPReqdUp3VG0ccWjgtm1v4uo=w800" alt="Rullboks og pommes" loading="lazy"><figcaption>Rullboks og pommes</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-proxy/ALd4DhHOskinyQqSfmy0WhZg-FrvvQfXKqu2U3kYNffaGOssd9gJae0jzyKW8kKiuG-u70_awG9FmLfIdDm2PClhvfUKNDR_7P4Se_2w_1AorjPC01TdechCJH598_iMEfEZfukUZjncFmkCepjOT6EVhf_iUa_dnsUpDzd7OoaXM-f4VGbnEYSD2L7K=w800" alt="Kyllingburger og cola" loading="lazy"><figcaption>Kyllingburger og cola</figcaption></figure>
+      <figure><img src="https://lh3.googleusercontent.com/gps-proxy/ALd4DhFMiFIchcWg7yPhIafvOjz6TowqJKO26231ORNHHEXWVuzs9EOJsMMg0V1JNLrCzv465W31KRB6ZA03GbnrOpALyOs1r2IpX9y3yNsY8rqA6ocnTwzzXwgj4zZN57aI1Nx_r17AVWNv7PJESgIgeMcuHXNOvhcZpeGA4Ph3dWRszSr_X9RxKcmhug=w800" alt="Kebabboks og cola" loading="lazy"><figcaption>Kebabboks og cola</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <section id="info">
   <div class="wrap">
     <h2>Finn oss</h2>
@@ -262,7 +294,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 <footer>
   <div class="wrap">
     <span>© Quick Bite, Sandnes</span>
-    <span>Demo laget av Skysite</span>
+    <span class="made-by"><img src="../logo.svg" alt="">Demo laget av Skyline</span>
   </div>
 </footer>
 
