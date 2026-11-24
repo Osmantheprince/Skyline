@@ -24,6 +24,19 @@ Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og and
 
 Sidene publiseres automatisk med GitHub Pages fra `main`-grenen på domenet **skysite.no** (registrert hos Domeneshop). Endringer er ute etter et par minutter.
 
+## Status (25.11.2026)
+
+- **Domene:** skysite.no er registrert hos Domeneshop og publisert hos Norid 25.11. DNS peker til GitHub Pages.
+- **GitHub Pages:** `CNAME`-fila med `skysite.no` er lagt inn. Noen DNS-tjenere kan bruke opptil to timer før de ser domenet.
+- **HTTPS:** GitHub lager sertifikatet automatisk når domenet er synlig. Når det er klart: Settings → Pages → huk av for **Enforce HTTPS**.
+- **E-post:** postkassen `post@skysite.no` finnes hos Domeneshop (IMAP/SMTP: `mail1.no1.essentialhosting.net`, port 993 / 465, brukernavn = hele e-postadressen). Passord deles ikke her.
+
+## Neste steg
+
+- [ ] Slå på **Enforce HTTPS** når sertifikatet er klart.
+- [ ] Slett `index (1).html` (løs kopi av forsiden).
+- [ ] Sjekk at https://skysite.no og https://skysite.no/quick-bite/ ser riktige ut på mobil.
+
 ## Team
 
 - [@Osmantheprince](https://github.com/Osmantheprince)
