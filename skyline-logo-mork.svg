@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 160" role="img" aria-label="Skyline">
+  <rect x="0" y="0" width="640" height="160" fill="#0B1020"/>
+  <g transform="translate(20 20)">
+    <rect x="0" y="0" width="120" height="120" rx="30" fill="#141B33"/>
+    <circle cx="88" cy="40" r="13" fill="#FFB547"/>
+    <rect x="18" y="64" width="14" height="36" rx="2" fill="#5B8CFF"/>
+    <rect x="34" y="46" width="16" height="54" rx="2" fill="#5B8CFF"/>
+    <rect x="52" y="56" width="12" height="44" rx="2" fill="#5B8CFF"/>
+    <rect x="66" y="30" width="14" height="70" rx="2" fill="#E8ECF8"/>
+    <rect x="72" y="20" width="2" height="12" rx="1" fill="#E8ECF8"/>
+    <rect x="82" y="60" width="20" height="40" rx="2" fill="#5B8CFF"/>
+    <rect x="38" y="54" width="3" height="4" fill="#FFB547"/>
+    <rect x="43" y="64" width="3" height="4" fill="#FFB547"/>
+    <rect x="70" y="40" width="3" height="4" fill="#0B1020"/>
+    <rect x="74" y="52" width="3" height="4" fill="#0B1020"/>
+    <rect x="70" y="64" width="3" height="4" fill="#0B1020"/>
+    <rect x="87" y="68" width="3" height="4" fill="#FFB547"/>
+    <rect x="94" y="78" width="3" height="4" fill="#FFB547"/>
+    <rect x="14" y="100" width="92" height="3" rx="1.5" fill="#E8ECF8"/>
+  </g>
+  <text x="168" y="104" font-family="'Space Grotesk', Arial, sans-serif" font-size="76" font-weight="700" letter-spacing="5" fill="#FFFFFF">SKY<tspan fill="#5B8CFF">LINE</tspan></text>
+  <rect x="170" y="118" width="440" height="4" rx="2" fill="#E8ECF8"/>
+</svg>
