@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skyline – Nettsider for lokale bedrifter</title>
+<meta name="description" content="Skyline lager moderne, raske nettsider for restauranter og lokale bedrifter.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0B1020;--panel:#141B33;--line:#232c4d;--text:#E8ECF8;--muted:#9aa5c7;--blue:#5B8CFF;--sun:#FFB547}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+  h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.15;margin:0}
+  nav{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.25rem}
+  .brand img{width:34px;height:34px}
+  .links{display:flex;gap:1.4rem;align-items:center}
+  .links a{text-decoration:none;color:var(--muted);font-weight:500}
+  .links a:hover{color:var(--text)}
+  .btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.3rem;border-radius:999px;transition:transform .15s,box-shadow .15s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(91,140,255,.35)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+  .links .btn{color:#fff;padding:.5rem 1rem}
+  .hero{position:relative;overflow:hidden;padding:6rem 0 0}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);max-width:14ch}
+  .hero h1 em{font-style:normal;color:var(--sun)}
+  .hero p{color:var(--muted);font-size:1.15rem;max-width:52ch;margin:1.2rem 0 2rem}
+  .cta{display:flex;gap:.8rem;flex-wrap:wrap}
+  .city{display:block;width:100%;height:auto;margin-top:3.5rem}
+  section{padding:5rem 0}
+  .eyebrow{color:var(--blue);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:.6rem}
+  h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+  .sub{color:var(--muted);max-width:56ch;margin:.8rem 0 0}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2.5rem}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.6rem}
+  .card .ico{font-size:1.8rem;margin-bottom:.8rem}
+  .card h3{font-size:1.2rem;margin-bottom:.4rem}
+  .card p{color:var(--muted);margin:0}
+  .case{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;background:linear-gradient(135deg,#1d140c,#141B33);border:1px solid var(--line);border-radius:24px;padding:2.5rem;margin-top:2.5rem}
+  .case .tag{display:inline-block;background:rgba(255,181,71,.15);color:var(--sun);font-weight:600;font-size:.8rem;padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem}
+  .case h3{font-size:1.8rem;margin-bottom:.6rem}
+  .case p{color:var(--muted);margin:0 0 1.5rem}
+  .case ul{margin:0 0 1.8rem;padding-left:1.1rem;color:var(--muted)}
+  .mock{background:#14100d;border:1px solid #3a2f25;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+  .mock .bar{display:flex;gap:6px;padding:.7rem .9rem;background:#1f1914}
+  .mock .bar i{width:10px;height:10px;border-radius:50%;background:#3a2f25}
+  .mock .body{padding:1.6rem}
+  .mock .logo{font-family:"Space Grotesk",sans-serif;font-weight:700;color:#f6efe6}
+  .mock .logo span{color:#f2a93b}
+  .mock .big{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.6rem;color:#f6efe6;margin:1rem 0 .4rem;line-height:1.1}
+  .mock .big em{font-style:normal;color:#f2a93b}
+  .mock .pill{display:inline-block;background:#e2552d;color:#fff;border-radius:999px;padding:.4rem .9rem;font-size:.8rem;font-weight:600;margin-top:.8rem}
+  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.5rem}
+  .step{border-top:2px solid var(--line);padding-top:1.2rem}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:"Space Grotesk",sans-serif;color:var(--blue);font-weight:700}
+  .step h3{font-size:1.15rem;margin:.4rem 0}
+  .step p{color:var(--muted);margin:0}
+  .contact{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:3.5rem 1.5rem}
+  .contact .sub{margin:.8rem auto 2rem}
+  footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
+  footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  @media(max-width:760px){.links a:not(.btn){display:none}.case{grid-template-columns:1fr;padding:1.6rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#"><img src="logo.svg" alt="">Skyline</a>
+    <div class="links">
+      <a href="#tjenester">Tjenester</a>
+      <a href="#arbeid">Arbeid</a>
+      <a href="#prosess">Slik jobber vi</a>
+      <a class="btn" href="#kontakt">Kontakt</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Nettsider for lokale bedrifter</div>
+    <h1>Vi får bedriften din til å <em>skille seg ut</em> på nett.</h1>
+    <p>Skyline lager moderne, raske og mobilvennlige nettsider for restauranter, butikker og andre lokale bedrifter – med meny, åpningstider og bestilling på plass fra dag én.</p>
+    <div class="cta">
+      <a class="btn" href="#kontakt">Få en nettside</a>
+      <a class="btn ghost" href="quick-bite/">Se et eksempel →</a>
+    </div>
+  </div>
+  <svg class="city" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <circle cx="960" cy="70" r="34" fill="#FFB547"/>
+    <g fill="#1d2747">
+      <rect x="0" y="120" width="70" height="100"/><rect x="80" y="90" width="50" height="130"/><rect x="140" y="140" width="60" height="80"/>
+      <rect x="420" y="110" width="60" height="110"/><rect x="700" y="100" width="55" height="120"/><rect x="1010" y="120" width="70" height="100"/><rect x="1130" y="95" width="70" height="125"/>
+    </g>
+    <g fill="#5B8CFF">
+      <rect x="210" y="100" width="60" height="120" rx="3"/><rect x="280" y="60" width="70" height="160" rx="3"/><rect x="360" y="120" width="50" height="100" rx="3"/>
+      <rect x="490" y="80" width="80" height="140" rx="3"/><rect x="640" y="130" width="50" height="90" rx="3"/><rect x="765" y="70" width="60" height="150" rx="3"/>
+      <rect x="900" y="110" width="100" height="110" rx="3"/><rect x="1090" y="140" width="35" height="80" rx="3"/>
+    </g>
+    <rect x="580" y="30" width="50" height="190" rx="3" fill="#E8ECF8"/><rect x="603" y="8" width="4" height="24" fill="#E8ECF8"/>
+    <rect x="835" y="90" width="55" height="130" rx="3" fill="#E8ECF8" opacity=".85"/>
+    <rect x="0" y="216" width="1200" height="4" fill="#E8ECF8" opacity=".6"/>
+  </svg>
+</header>
+
+<section id="tjenester">
+  <div class="wrap">
+    <div class="eyebrow">Tjenester</div>
+    <h2>Alt en lokal bedrift trenger på nett</h2>
+    <p class="sub">Vi tar oss av design, innhold og publisering, så du kan fokusere på kundene dine.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">🎨</div><h3>Design som passer deg</h3><p>Et unikt uttrykk bygget rundt merkevaren din – ikke en ferdig mal.</p></div>
+      <div class="card"><div class="ico">📱</div><h3>Mobil først</h3><p>De fleste kundene finner deg på mobilen. Siden er laget for det.</p></div>
+      <div class="card"><div class="ico">🍽️</div><h3>Meny og priser</h3><p>Oversiktlig meny, åpningstider og kart – lett å oppdatere.</p></div>
+      <div class="card"><div class="ico">🛵</div><h3>Bestilling og levering</h3><p>Knapper rett til Wolt, foodora eller ditt eget bestillingssystem.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="arbeid" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="eyebrow">Arbeid</div>
+    <h2>Utvalgt prosjekt</h2>
+    <div class="case">
+      <div>
+        <span class="tag">Restaurant · Sandnes</span>
+        <h3>Quick Bite</h3>
+        <p>Forslag til ny nettside for kebab- og burgerstedet i Gjesdalveien 30.</p>
+        <ul>
+          <li>Favoritter og full meny med priser</li>
+          <li>Bildegalleri av lokalet og maten</li>
+          <li>Åpningstider, kart og bestilling i ett klikk</li>
+        </ul>
+        <a class="btn" href="quick-bite/">Se nettsiden →</a>
+      </div>
+      <a class="mock" href="quick-bite/" style="text-decoration:none" aria-label="Åpne Quick Bite-nettsiden">
+        <div class="bar"><i></i><i></i><i></i></div>
+        <div class="body">
+          <div class="logo">QUICK<span>BITE</span></div>
+          <div class="big">Ferskt brød.<br>Ekte smak.<br><em>Raskt.</em></div>
+          <span class="pill">Bestill levering →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="prosess">
+  <div class="wrap">
+    <div class="eyebrow">Slik jobber vi</div>
+    <h2>Fra første prat til ferdig side</h2>
+    <div class="steps">
+      <div class="step"><h3>Vi blir kjent</h3><p>En kort prat om bedriften, kundene og hva siden skal gjøre.</p></div>
+      <div class="step"><h3>Vi lager et forslag</h3><p>Du får se en ekte demo av siden din før du bestemmer deg.</p></div>
+      <div class="step"><h3>Vi finpusser</h3><p>Tekst, bilder og farger justeres til det sitter.</p></div>
+      <div class="step"><h3>Siden går live</h3><p>Vi publiserer og hjelper deg med oppdateringer videre.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt" style="padding-top:1rem">
+  <div class="wrap">
+    <div class="contact">
+      <div class="eyebrow">Kontakt</div>
+      <h2>Klar for en ny nettside?</h2>
+      <p class="sub">Send oss en melding, så tar vi kontakt for en uforpliktende prat.</p>
+      <a class="btn" href="https://github.com/Osmantheprince/Skyline" target="_blank" rel="noopener">Ta kontakt</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Skyline</span>
+    <span>Nettsider for lokale bedrifter</span>
+  </div>
+</footer>
+
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
