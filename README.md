@@ -1,23 +1,24 @@
-# Skyline
+# Skysite
 
 Nettsider for lokale bedrifter.
 
-Skyline lager moderne, mobilvennlige nettsider for restauranter, butikker og andre lokale bedrifter.
+Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og andre lokale bedrifter.
 
 ## Se nettsidene
 
-- **Skyline (forside):** https://osmantheprince.github.io/Skyline/
-- **Quick Bite, Sandnes (demo):** https://osmantheprince.github.io/Skyline/quick-bite/
+- **Skysite (forside):** https://osmantheprince.github.io/Skysite/
+- **Quick Bite, Sandnes (demo):** https://osmantheprince.github.io/Skysite/quick-bite/
 
 ## Innhold
 
 | Fil / mappe | Hva |
 |---|---|
-| `index.html` | Forsiden til Skyline |
+| `index.html` | Forsiden til Skysite |
 | `quick-bite/index.html` | Nettsideforslag for Quick Bite |
 | `quick-bite-meny.md` | Menyen til Quick Bite med priser |
 | `Quick-bite-bilder.md` | Oversikt over bilder til Quick Bite |
-| `logo.svg`, `skyline-logo-mork.svg` | Skyline-logoer |
+| `logo.svg` | Skysite-logo |
+| `skyline-logo-mork.svg` | Gammel logo med Skyline-navnet |
 
 ## Publisering
 
