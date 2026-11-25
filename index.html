@@ -56,6 +56,7 @@
   .cta{display:flex;gap:.8rem;flex-wrap:wrap}
   .city{display:block;width:100%;height:auto;margin-top:3.5rem}
   section{padding:5rem 0;scroll-margin-top:64px}
+  section.tight{padding-top:1rem}
   a:focus-visible,button:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
   .btn:active{transform:translateY(0)}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
@@ -90,7 +91,7 @@
   .step p{color:var(--muted);margin:0}
   footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
   footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-  @media(max-width:760px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:.6rem;padding-bottom:.6rem;row-gap:.5rem}.nav-cta{order:2}.links{order:3;margin:0;width:100%;gap:1.3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap}.links::-webkit-scrollbar{display:none}.links a{font-size:.92rem}section{scroll-margin-top:108px}.case{grid-template-columns:1fr;padding:1.6rem}.hero{padding-top:3.5rem}section{padding:3.5rem 0}.cta .btn{flex:1 1 100%;text-align:center}}
+  @media(max-width:760px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:.6rem;padding-bottom:.6rem;row-gap:.5rem}.nav-cta{order:2}.links{order:3;margin:0;width:100%;gap:1.3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap}.links::-webkit-scrollbar{display:none}.links a{font-size:.92rem}section{scroll-margin-top:108px}.case{grid-template-columns:1fr;padding:1.6rem}.hero{padding-top:3.5rem}section{padding:3.5rem 0}section.tight{padding-top:1rem}.cta .btn{flex:1 1 100%;text-align:center}}
   .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem}
   .person{display:flex;gap:1.1rem;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.5rem}
   .avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.4rem;color:#0B1020;background:linear-gradient(135deg,var(--blue),#9db8ff)}
@@ -182,7 +183,7 @@
   </div>
 </section>
 
-<section id="arbeid" style="padding-top:1rem">
+<section id="arbeid" class="tight">
   <div class="wrap">
     <div class="eyebrow">Arbeid</div>
     <h2>Utvalgt prosjekt</h2>
@@ -223,7 +224,7 @@
   </div>
 </section>
 
-<section id="om-oss" style="padding-top:1rem">
+<section id="om-oss" class="tight">
   <div class="wrap">
     <div class="eyebrow">Om oss</div>
     <h2>Hvem er Skysite?</h2>
@@ -249,7 +250,7 @@
   </div>
 </section>
 
-<section id="kontakt" style="padding-top:1rem">
+<section id="kontakt" class="tight">
   <div class="wrap">
     <div class="contact">
       <div>
@@ -288,7 +289,7 @@
         </label>
         <label>Melding<textarea name="Melding" required placeholder="F.eks. hva bedriften gjør og hva siden skal hjelpe med"></textarea></label>
         <button class="btn" type="submit">Send forespørsel</button>
-        <p class="status" id="status" role="status" aria-live="polite"></p>
+        <p class="status" id="takk" role="status" aria-live="polite"></p>
         <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Formsubmit, og vi sletter henvendelsen når saken er ferdig.</p>
       </form>
     </div>
@@ -310,11 +311,15 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // Send skjemaet uten å forlate siden. Fungerer også uten JavaScript (vanlig POST).
 (function () {
   var form = document.getElementById("kontaktskjema");
-  var status = document.getElementById("status");
+  var status = document.getElementById("takk");
   var btn = form.querySelector("button");
   function show(type, msg) { status.className = "status " + type; status.textContent = msg; }
 
-  if (location.hash === "#takk") show("ok", "Takk! Meldingen er sendt – vi svarer innen én virkedag.");
+  // Etter vanlig POST (uten JavaScript) sender Formsubmit brukeren tilbake til #takk.
+  if (location.hash === "#takk") {
+    show("ok", "Takk! Meldingen er sendt – vi svarer innen én virkedag.");
+    status.scrollIntoView({ block: "center" });
+  }
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -326,7 +331,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
       body: new FormData(form)
     })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.success === "false") throw d; }); })
-      .then(function () { form.reset(); show("ok", "Takk! Meldingen er sendt – vi svarer innen én virkedag."); })
+      .then(function () { form.reset(); show("ok", "Takk! Meldingen er sendt – vi svarer innen én virkedag."); status.scrollIntoView({ block: "nearest" }); })
       .catch(function () { show("err", "Noe gikk galt. Prøv igjen, eller ring oss på 484 27 504."); })
       .finally(function () { btn.disabled = false; btn.textContent = "Send forespørsel"; });
   });
