@@ -216,3 +216,75 @@
     .quote{padding:3.5rem 0}
   }
   @media (prefers-reduced-motion:reduce){.top,.card{transition:none}.card:hover{transform:none}}
+
+  /* ===== Farger og liv (lagt til nov. 2026) ===== */
+  :root{
+    --sky1:#141B33; --sky2:#24306B; --sky3:#4B3B8F;
+    --coral:#FF6B5A; --mint:#2EC4A0; --skyblue:#3D8BFF; --violet:#8B5CF6; --pink:#F2559A;
+  }
+
+  /* Toppen: nattehimmel med sol */
+  .hero{position:relative;overflow:hidden;color:var(--paper);
+    background:
+      radial-gradient(520px 520px at 88% 8%,rgba(255,181,71,.55),rgba(255,181,71,0) 70%),
+      radial-gradient(600px 420px at 8% 110%,rgba(242,85,154,.35),rgba(242,85,154,0) 70%),
+      linear-gradient(135deg,var(--sky1) 0%,var(--sky2) 55%,var(--sky3) 100%)}
+  .hero::after{content:"";position:absolute;right:6%;top:9%;width:120px;height:120px;border-radius:50%;
+    background:radial-gradient(circle at 35% 35%,#FFE3A6,var(--sun) 55%,var(--amber));
+    box-shadow:0 0 80px 20px rgba(255,181,71,.45);animation:sol 6s ease-in-out infinite}
+  @keyframes sol{50%{transform:translateY(10px)}}
+  .hero .wrap{position:relative;z-index:1}
+  .hero .eyebrow{display:inline-block;color:var(--ink);background:var(--sun);padding:.35rem .8rem;border-radius:999px}
+  .hero h1{color:#fff}
+  .hero .lead{color:#D5DBF2}
+  .hero .btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun)}
+  .hero .btn-sun:hover{background:#FFA41F;border-color:#FFA41F}
+  .hero .btn-line{color:var(--paper);border-color:rgba(255,255,255,.8)}
+  .hero .btn-line:hover{background:var(--paper);color:var(--ink)}
+  .hero .points{border-top:0;color:#C9D0EC}
+  .hero .points li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:1.1rem 1.2rem;backdrop-filter:blur(4px)}
+  .hero .points b{color:var(--paper)}
+  .hero .points li::before{content:"";display:block;width:28px;height:4px;border-radius:4px;margin-bottom:.8rem;background:var(--sun)}
+  .hero .points li:nth-child(2)::before{background:var(--mint)}
+  .hero .points li:nth-child(3)::before{background:var(--coral)}
+  .hero :focus-visible{outline-color:var(--sun)}
+
+  /* Undersider: fargerik topp */
+  .page-head{background:
+      radial-gradient(420px 300px at 92% 0%,rgba(255,181,71,.35),transparent 70%),
+      radial-gradient(380px 280px at 0% 100%,rgba(61,139,255,.18),transparent 70%);
+    padding-bottom:2.5rem}
+  .page-head h1{background:linear-gradient(90deg,var(--ink),var(--sky3));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  /* Seksjoner */
+  .block h2::after{content:"";display:block;width:56px;height:5px;border-radius:5px;margin-top:.9rem;
+    background:linear-gradient(90deg,var(--sun),var(--coral),var(--pink))}
+  .block[aria-labelledby="eksempler-tittel"]{background:linear-gradient(180deg,#FFF6E8 0%,var(--bg) 100%);border-top:0}
+
+  /* Kort med hver sin farge */
+  .card{position:relative;overflow:hidden;border:0;box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgba(20,27,51,.35);transition:transform .2s,box-shadow .2s}
+  .card::before{content:"";position:absolute;left:0;top:0;right:0;height:6px;background:var(--c,var(--sun))}
+  .card h3::before{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:.55rem;background:var(--c,var(--sun));vertical-align:.05em}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(20,27,51,.45)}
+  .card .more{text-decoration-color:var(--c,var(--amber))}
+  .cards li:nth-child(1) .card{--c:var(--sun)}
+  .cards li:nth-child(2) .card{--c:var(--coral)}
+  .cards li:nth-child(3) .card{--c:var(--mint)}
+  .cards li:nth-child(4) .card{--c:var(--skyblue)}
+  .cards li:nth-child(5) .card{--c:var(--violet)}
+  .cards li:nth-child(6) .card{--c:var(--pink)}
+
+  /* Steg og telefoner */
+  .steps li{border-top:4px solid var(--sun)}
+  .steps li:nth-child(2){border-top-color:var(--coral)}
+  .steps li:nth-child(3){border-top-color:var(--mint)}
+  .steps li:nth-child(4){border-top-color:var(--skyblue)}
+  .phone{box-shadow:0 30px 60px -30px rgba(75,59,143,.6)}
+
+  /* Kontakt-stripen: samme himmel som toppen */
+  .contact{background:
+      radial-gradient(460px 360px at 95% 0%,rgba(255,181,71,.35),transparent 70%),
+      linear-gradient(135deg,var(--sky1),var(--sky2) 60%,var(--sky3))}
+
+  @media (max-width:640px){.hero::after{width:70px;height:70px;right:4%;top:4%}}
+  @media (prefers-reduced-motion:reduce){.hero::after{animation:none}.card:hover{transform:none}}
