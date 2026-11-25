@@ -1,4 +1,6 @@
-/* Skrifter lagret lokalt (latin), så besøkende ikke sendes til Google. Kilde: Google Fonts, SIL Open Font License. */
+/* Skrifter lagret lokalt (latin), så besøkende ikke sendes til Google. Alle er SIL Open Font License. */
+/* Schibsted Grotesk (forsiden): github.com/schibsted/schibsted-grotesk */
+@font-face{font-family:'Schibsted Grotesk';font-style:normal;font-weight:400 800;font-display:swap;src:url(schibsted-grotesk.woff2) format('woff2')}
+/* Inter og Archivo Black (Quick Bite): Google Fonts */
 @font-face{font-family:'Inter';font-style:normal;font-weight:400 700;font-display:swap;src:url(inter.woff2) format('woff2')}
-@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:500 700;font-display:swap;src:url(space-grotesk.woff2) format('woff2')}
 @font-face{font-family:'Archivo Black';font-style:normal;font-weight:400;font-display:swap;src:url(archivo-black.woff2) format('woff2')}
