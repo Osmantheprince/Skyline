@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skysite – Nettsider for lokale bedrifter</title>
-<meta name="description" content="Skysite lager moderne, raske nettsider for restauranter og lokale bedrifter.">
+<meta name="description" content="Skysite er Osman og Hasan. Vi lager enkle, raske nettsider for restauranter, butikker og andre lokale bedrifter.">
 <link rel="canonical" href="https://skysite.no/">
-<meta name="theme-color" content="#0B1020">
+<meta name="theme-color" content="#F3F5F9">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nb_NO">
 <meta property="og:site_name" content="Skysite">
 <meta property="og:title" content="Skysite – Nettsider for lokale bedrifter">
-<meta property="og:description" content="Skysite lager moderne, raske nettsider for restauranter og lokale bedrifter.">
+<meta property="og:description" content="Vi lager enkle, raske nettsider for restauranter, butikker og andre lokale bedrifter.">
 <meta property="og:url" content="https://skysite.no/">
 <meta property="og:image" content="https://skysite.no/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -25,299 +25,332 @@
   "url": "https://skysite.no/",
   "logo": "https://skysite.no/logo.svg",
   "image": "https://skysite.no/og-image.png",
-  "description": "Skysite lager moderne, raske nettsider for restauranter og lokale bedrifter.",
+  "description": "Skysite lager nettsider for restauranter, butikker og andre lokale bedrifter.",
   "telephone": "+47 484 27 504"
 }</script>
 <link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link href="fonts/fonts.css" rel="stylesheet">
 <style>
-  :root{--bg:#0B1020;--panel:#141B33;--line:#232c4d;--text:#E8ECF8;--muted:#9aa5c7;--blue:#5B8CFF;--sun:#FFB547}
+  :root{
+    --bg:#F3F5F9;      /* dagslys */
+    --paper:#FFFFFF;
+    --ink:#141B33;     /* marineblå fra logoen */
+    --muted:#50587A;
+    --line:#D6DBE8;
+    --sun:#FFB547;     /* sola fra logoen */
+    --blue:#2E5BDB;
+    --night-muted:#A9B2D0;
+  }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.6}
-  a{color:inherit}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 1.25rem}
-  h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.15;margin:0}
-  nav{position:sticky;top:0;z-index:10;background:rgba(11,16,32,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.25rem}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Schibsted Grotesk",system-ui,sans-serif;font-feature-settings:"kern"}
+  img,svg{display:block}
+  a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}
+  a:hover{text-decoration-thickness:2px}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+  h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.02em;font-weight:750}
+  p{margin:0}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
+  .skip{position:absolute;left:-9999px}
+  .skip:focus{left:1rem;top:1rem;z-index:20;background:var(--paper);padding:.5rem .8rem}
+
+  /* Meny */
+  .top{position:sticky;top:0;z-index:10;background:rgba(243,245,249,.92);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
+  .top.scrolled{border-bottom-color:var(--line)}
+  .top .wrap{display:flex;align-items:center;gap:2rem;height:68px}
+  .brand{display:flex;align-items:center;gap:.6rem;color:var(--ink);text-decoration:none;font-weight:750;font-size:1.2rem;letter-spacing:-.01em}
   .brand img{width:34px;height:34px}
-  .links{display:flex;gap:1.4rem;align-items:center;margin-left:auto;margin-right:1.4rem}
-  .links a{text-decoration:none;color:var(--muted);font-weight:500}
-  .links a:hover{color:var(--text)}
-  .btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.3rem;border-radius:999px;transition:transform .15s,box-shadow .15s}
-  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(91,140,255,.35)}
-  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
-  .nav-cta{padding:.5rem 1rem}
-  .hero{position:relative;overflow:hidden;padding:6rem 0 0}
-  .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);max-width:14ch}
-  .hero h1 em{font-style:normal;color:var(--sun)}
-  .hero p{color:var(--muted);font-size:1.15rem;max-width:52ch;margin:1.2rem 0 2rem}
-  .cta{display:flex;gap:.8rem;flex-wrap:wrap}
-  .city{display:block;width:100%;height:auto;margin-top:3.5rem}
-  section{padding:5rem 0;scroll-margin-top:64px}
-  section.tight{padding-top:1rem}
-  a:focus-visible,button:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
-  .btn:active{transform:translateY(0)}
-  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
-  .case .mock{text-decoration:none}
-  footer a{text-decoration:none}footer a:hover{color:var(--text)}
-  .eyebrow{color:var(--blue);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:.6rem}
-  h2{font-size:clamp(1.8rem,4vw,2.6rem)}
-  .sub{color:var(--muted);max-width:56ch;margin:.8rem 0 0}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;margin-top:2.5rem}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.6rem}
-  .card .ico{font-size:1.8rem;margin-bottom:.8rem}
-  .card h3{font-size:1.2rem;margin-bottom:.4rem}
-  .card p{color:var(--muted);margin:0}
-  .case{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:center;background:linear-gradient(135deg,#1d140c,#141B33);border:1px solid var(--line);border-radius:24px;padding:2.5rem;margin-top:2.5rem}
-  .case .tag{display:inline-block;background:rgba(255,181,71,.15);color:var(--sun);font-weight:600;font-size:.8rem;padding:.3rem .7rem;border-radius:999px;margin-bottom:1rem}
-  .case h3{font-size:1.8rem;margin-bottom:.6rem}
-  .case p{color:var(--muted);margin:0 0 1.5rem}
-  .case ul{margin:0 0 1.8rem;padding-left:1.1rem;color:var(--muted)}
-  .mock{background:#14100d;border:1px solid #3a2f25;border-radius:16px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.45)}
-  .mock .bar{display:flex;gap:6px;padding:.7rem .9rem;background:#1f1914}
-  .mock .bar i{width:10px;height:10px;border-radius:50%;background:#3a2f25}
-  .mock .body{padding:1.6rem}
-  .mock .logo{font-family:"Space Grotesk",sans-serif;font-weight:700;color:#f6efe6}
-  .mock .logo span{color:#f2a93b}
-  .mock .big{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.6rem;color:#f6efe6;margin:1rem 0 .4rem;line-height:1.1}
-  .mock .big em{font-style:normal;color:#f2a93b}
-  .mock .pill{display:inline-block;background:#e2552d;color:#fff;border-radius:999px;padding:.4rem .9rem;font-size:.8rem;font-weight:600;margin-top:.8rem}
-  .steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2.5rem}
-  .step{border-top:2px solid var(--line);padding-top:1.2rem}
-  .step::before{counter-increment:s;content:"0" counter(s);font-family:"Space Grotesk",sans-serif;color:var(--blue);font-weight:700}
-  .step h3{font-size:1.15rem;margin:.4rem 0}
-  .step p{color:var(--muted);margin:0}
-  footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
-  footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-  @media(max-width:760px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:.6rem;padding-bottom:.6rem;row-gap:.5rem}.nav-cta{order:2}.links{order:3;margin:0;width:100%;gap:1.3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap}.links::-webkit-scrollbar{display:none}.links a{font-size:.92rem}section{scroll-margin-top:108px}.case{grid-template-columns:1fr;padding:1.6rem}.hero{padding-top:3.5rem}section{padding:3.5rem 0}section.tight{padding-top:1rem}.cta .btn{flex:1 1 100%;text-align:center}}
-  .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem}
-  .person{display:flex;gap:1.1rem;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.5rem}
-  .avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.4rem;color:#0B1020;background:linear-gradient(135deg,var(--blue),#9db8ff)}
-  .avatar.sun{background:linear-gradient(135deg,var(--sun),#ffd79a)}
-  .person h3{font-size:1.2rem}
-  .role{color:var(--blue);font-weight:600;font-size:.9rem;margin:.15rem 0 .5rem}
-  .person p{color:var(--muted);margin:0}
-  .contact{display:grid;grid-template-columns:1fr 1.15fr;gap:2.5rem;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:3rem}
-  .contact .sub{margin:.8rem 0 1.8rem}
-  .facts{list-style:none;padding:0;margin:0 0 1.8rem;display:grid;gap:.9rem}
-  .facts li{display:flex;gap:.8rem;align-items:flex-start;color:var(--muted)}
-  .facts b{display:block;color:var(--text);font-weight:600}
-  .facts .i{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(91,140,255,.12)}
-  .facts a{text-decoration:none}
-  .facts a:hover b{color:var(--blue)}
-  form{display:grid;gap:.9rem;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:1.6rem}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-  label{display:block;font-size:.9rem;font-weight:500}
-  label input,label textarea,label select{margin-top:.35rem}
-  label span.opt{color:var(--muted);font-weight:400}
-  input,textarea,select{font:inherit;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem;width:100%}
-  textarea{min-height:120px;resize:vertical}
-  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(91,140,255,.25)}
-  form .btn{border:0;cursor:pointer;font-size:1rem;width:100%}
-  form .btn[disabled]{opacity:.6;cursor:wait;transform:none;box-shadow:none}
+  .links{display:flex;gap:1.6rem;margin-left:auto}
+  .links a{color:var(--ink);text-decoration:none;font-weight:500}
+  .links a:hover{text-decoration:underline}
+
+  /* Knapper */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.3rem;border-radius:10px;font:inherit;font-weight:650;text-decoration:none;cursor:pointer;border:2px solid var(--ink)}
+  .btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun)}
+  .btn-sun:hover{background:#FFA41F;border-color:#FFA41F}
+  .btn-line{background:transparent;color:var(--ink)}
+  .btn-line:hover{background:var(--ink);color:var(--paper)}
+  .top .btn{min-height:42px;padding:0 1rem}
+
+  /* Topp */
+  .hero{padding:4.5rem 0 5rem}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3rem;align-items:center}
+  .hero h1{font-size:clamp(2.5rem,5.6vw,4.6rem);font-weight:800;letter-spacing:-.035em;line-height:1.02;max-width:13ch}
+  .lead{font-size:1.25rem;line-height:1.5;color:var(--muted);max-width:34ch;margin:1.6rem 0 2.2rem}
+  .actions{display:flex;flex-wrap:wrap;gap:.8rem}
+
+  .demo{position:relative;justify-self:center;padding:2.5rem 0 0}
+  .demo .sun{position:absolute;top:0;right:-2.5rem;width:230px;height:230px;border-radius:50%;background:var(--sun)}
+  .phone{position:relative;width:300px;height:649px;border:10px solid var(--ink);border-radius:46px;overflow:hidden;background:#14100d;box-shadow:0 2px 0 rgba(20,27,51,.04),0 40px 80px -30px rgba(20,27,51,.45)}
+  .phone iframe{position:absolute;top:0;left:0;width:390px;height:844px;border:0;transform:scale(.7179);transform-origin:0 0}
+  .demo figcaption{margin-top:1rem;font-size:.95rem;color:var(--muted);max-width:300px}
+  .demo figcaption a{font-weight:600}
+
+  /* Seksjoner */
+  .block{padding:5.5rem 0;border-top:1px solid var(--line)}
+  .split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3rem}
+  .block h2{font-size:clamp(1.9rem,3.6vw,2.75rem);max-width:16ch}
+  .block .intro{color:var(--muted);margin-top:1rem;max-width:36ch}
+
+  .features{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2rem 2.5rem}
+  .features h3{font-size:1.15rem;letter-spacing:-.01em;margin-bottom:.35rem}
+  .features p{color:var(--muted)}
+
+  .steps{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;counter-reset:steg}
+  .steps li{counter-increment:steg;position:relative;padding-top:3.6rem}
+  .steps li::before{content:counter(steg);position:absolute;top:0;left:0;width:2.5rem;height:2.5rem;border-radius:50%;display:grid;place-items:center;background:var(--paper);border:2px solid var(--ink);font-weight:750;font-feature-settings:"tnum"}
+  .steps li:not(:last-child)::after{content:"";position:absolute;top:1.25rem;left:3.25rem;right:-1.25rem;height:2px;background:var(--line)}
+  .steps h3{font-size:1.15rem;margin-bottom:.35rem;letter-spacing:-.01em}
+  .steps p{color:var(--muted)}
+
+  .people{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+  .person h3{font-size:1.35rem}
+  .person .role{font-weight:600;margin:.2rem 0 .6rem}
+  .person p{color:var(--muted)}
+
+  /* Kontakt */
+  .contact{position:relative;background:var(--ink);color:var(--paper);padding:5.5rem 0 0;overflow:hidden}
+  .contact .split{align-items:start}
+  .contact h2{font-size:clamp(1.9rem,3.6vw,2.75rem);max-width:14ch}
+  .contact .intro{color:var(--night-muted);margin:1rem 0 2.4rem;max-width:36ch}
+  .phone-big{display:inline-block;color:var(--sun);font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:800;letter-spacing:-.02em;text-decoration:none;font-feature-settings:"tnum";line-height:1}
+  .phone-big:hover{text-decoration:underline;text-decoration-thickness:3px}
+  .contact .small{color:var(--night-muted);margin-top:.6rem}
+  .contact .facts{margin-top:2.2rem;color:var(--night-muted);display:grid;gap:.4rem}
+  .contact .facts b{color:var(--paper);font-weight:600}
+  .contact :focus-visible{outline-color:var(--sun)}
+
+  form{background:var(--paper);color:var(--ink);border-radius:16px;padding:2rem;display:grid;gap:1.1rem}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+  label{display:block;font-weight:600;font-size:.95rem}
+  .opt{font-weight:400;color:var(--muted)}
+  input,textarea,select{display:block;width:100%;margin-top:.4rem;font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:.75rem .85rem}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.5rem}
+  textarea{min-height:130px;resize:vertical}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,91,219,.2);background:var(--paper)}
+  form .btn{width:100%}
+  form .btn[disabled]{opacity:.6;cursor:wait}
   .hp{position:absolute;left:-9999px}
-  .note{color:var(--muted);font-size:.82rem;margin:0;text-align:center}
-  .status{margin:0;padding:.8rem 1rem;border-radius:12px;font-size:.92rem;display:none}
-  .status.ok{display:block;background:rgba(52,199,120,.12);color:#7ee2a8;border:1px solid rgba(52,199,120,.35)}
-  .status.err{display:block;background:rgba(255,90,90,.1);color:#ff9b9b;border:1px solid rgba(255,90,90,.35)}
-  @media(max-width:760px){.contact{grid-template-columns:1fr;padding:1.6rem;gap:1.6rem}.row{grid-template-columns:1fr}}
+  .note{color:var(--muted);font-size:.875rem}
+  .status{display:none;padding:.85rem 1rem;border-radius:8px;font-weight:500}
+  .status.ok{display:block;background:#E3F5EA;color:#14532D}
+  .status.err{display:block;background:#FDE8E8;color:#8A1C1C}
+
+  .skyline{display:block;width:100%;height:auto;margin-top:5rem}
+
+  footer{background:var(--ink);color:var(--night-muted);font-size:.95rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;padding-top:1.4rem;padding-bottom:1.6rem;border-top:1px solid #26304F}
+  footer a{color:var(--paper)}
+
+  @media (max-width:900px){
+    .hero .wrap,.split{grid-template-columns:1fr}
+    .hero{padding:2.5rem 0 4rem}
+    .demo{justify-self:start;margin-left:1rem}
+    .steps{grid-template-columns:1fr 1fr;row-gap:2.5rem}
+    .steps li:nth-child(2)::after{display:none}
+  }
+  @media (max-width:640px){
+    .wrap{padding:0 1.15rem}
+    .top .wrap{gap:1rem;height:60px}
+    .links{display:none}
+    .top .btn{margin-left:auto}
+    .lead{font-size:1.125rem}
+    .actions .btn{flex:1 1 100%}
+    .demo .sun{width:170px;height:170px;right:-1.5rem}
+    .demo{justify-self:center;margin-left:0}
+    .phone{width:260px;height:563px;border-width:9px;border-radius:40px}
+    .phone iframe{transform:scale(.6205)}
+    .block,.contact{padding-top:4rem}
+    .block{padding-bottom:4rem}
+    .features,.people,.row{grid-template-columns:1fr}
+    .features{gap:1.6rem}
+    .steps{grid-template-columns:1fr;gap:1.8rem}
+    .steps li{padding:0 0 0 3.6rem;min-height:2.5rem}
+    .steps li::after{display:none}
+    form{padding:1.4rem}
+    .skyline{margin-top:3.5rem;height:110px}
+  }
+  @media (prefers-reduced-motion:reduce){.top{transition:none}}
 </style>
 </head>
 <body>
+<a class="skip" href="#innhold">Hopp til innholdet</a>
 
-<nav aria-label="Hovedmeny">
+<header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="./"><img src="logo.svg" alt="">Skysite</a>
-    <div class="links">
-      <a href="#tjenester">Tjenester</a>
-      <a href="#arbeid">Arbeid</a>
-      <a href="#prosess">Slik jobber vi</a>
+    <a class="brand" href="./"><img src="logo.svg" alt="" width="34" height="34">Skysite</a>
+    <nav class="links" aria-label="Hovedmeny">
+      <a href="#dette-far-du">Dette får du</a>
+      <a href="#slik">Slik foregår det</a>
       <a href="#om-oss">Om oss</a>
-    </div>
-    <a class="btn nav-cta" href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-sun" href="#kontakt">Kontakt oss</a>
   </div>
-</nav>
-
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Nettsider for lokale bedrifter</div>
-    <h1>Vi får bedriften din til å <em>skille seg ut</em> på nett.</h1>
-    <p>Skysite lager moderne, raske og mobilvennlige nettsider for restauranter, butikker og andre lokale bedrifter – med meny, åpningstider og bestilling på plass fra dag én.</p>
-    <div class="cta">
-      <a class="btn" href="#kontakt">Få en nettside</a>
-      <a class="btn ghost" href="quick-bite/">Se et eksempel →</a>
-    </div>
-  </div>
-  <svg class="city" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
-    <circle cx="960" cy="70" r="34" fill="#FFB547"/>
-    <g fill="#1d2747">
-      <rect x="0" y="120" width="70" height="100"/><rect x="80" y="90" width="50" height="130"/><rect x="140" y="140" width="60" height="80"/>
-      <rect x="420" y="110" width="60" height="110"/><rect x="700" y="100" width="55" height="120"/><rect x="1010" y="120" width="70" height="100"/><rect x="1130" y="95" width="70" height="125"/>
-    </g>
-    <g fill="#5B8CFF">
-      <rect x="210" y="100" width="60" height="120" rx="3"/><rect x="280" y="60" width="70" height="160" rx="3"/><rect x="360" y="120" width="50" height="100" rx="3"/>
-      <rect x="490" y="80" width="80" height="140" rx="3"/><rect x="640" y="130" width="50" height="90" rx="3"/><rect x="765" y="70" width="60" height="150" rx="3"/>
-      <rect x="900" y="110" width="100" height="110" rx="3"/><rect x="1090" y="140" width="35" height="80" rx="3"/>
-    </g>
-    <rect x="580" y="30" width="50" height="190" rx="3" fill="#E8ECF8"/><rect x="603" y="8" width="4" height="24" fill="#E8ECF8"/>
-    <rect x="835" y="90" width="55" height="130" rx="3" fill="#E8ECF8" opacity=".85"/>
-    <rect x="0" y="216" width="1200" height="4" fill="#E8ECF8" opacity=".6"/>
-  </svg>
 </header>
 
-<main>
+<main id="innhold">
 
-<section id="tjenester">
+<section class="hero">
   <div class="wrap">
-    <div class="eyebrow">Tjenester</div>
-    <h2>Alt en lokal bedrift trenger på nett</h2>
-    <p class="sub">Vi tar oss av design, innhold og publisering, så du kan fokusere på kundene dine.</p>
-    <div class="grid">
-      <div class="card"><div class="ico">🎨</div><h3>Design som passer deg</h3><p>Et unikt uttrykk bygget rundt merkevaren din – ikke en ferdig mal.</p></div>
-      <div class="card"><div class="ico">📱</div><h3>Mobil først</h3><p>De fleste kundene finner deg på mobilen. Siden er laget for det.</p></div>
-      <div class="card"><div class="ico">🍽️</div><h3>Meny og priser</h3><p>Oversiktlig meny, åpningstider og kart – lett å oppdatere.</p></div>
-      <div class="card"><div class="ico">🛵</div><h3>Bestilling og levering</h3><p>Knapper rett til Wolt, foodora eller ditt eget bestillingssystem.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="arbeid" class="tight">
-  <div class="wrap">
-    <div class="eyebrow">Arbeid</div>
-    <h2>Utvalgt prosjekt</h2>
-    <div class="case">
-      <div>
-        <span class="tag">Restaurant · Sandnes</span>
-        <h3>Quick Bite</h3>
-        <p>Forslag til ny nettside for kebab- og burgerstedet i Gjesdalveien 30.</p>
-        <ul>
-          <li>Favoritter og full meny med priser</li>
-          <li>Bildegalleri av lokalet og maten</li>
-          <li>Åpningstider, kart og bestilling i ett klikk</li>
-        </ul>
-        <a class="btn" href="quick-bite/">Se nettsiden →</a>
+    <div>
+      <h1>Nettsider for frisøren, kebabsjappa og blomsterbutikken på hjørnet.</h1>
+      <p class="lead">Vi er to studenter som lager enkle, raske nettsider for lokale bedrifter. Du ser et ferdig forslag før du bestemmer deg.</p>
+      <div class="actions">
+        <a class="btn btn-sun" href="#kontakt">Send oss en melding</a>
+        <a class="btn btn-line" href="tel:+4748427504">Ring 484 27 504</a>
       </div>
-      <a class="mock" href="quick-bite/" aria-label="Åpne Quick Bite-nettsiden">
-        <div class="bar"><i></i><i></i><i></i></div>
-        <div class="body">
-          <div class="logo">QUICK<span>BITE</span></div>
-          <div class="big">Ferskt brød.<br>Ekte smak.<br><em>Raskt.</em></div>
-          <span class="pill">Bestill levering →</span>
-        </div>
-      </a>
     </div>
+    <figure class="demo">
+      <span class="sun" aria-hidden="true"></span>
+      <div class="phone">
+        <iframe src="quick-bite/" title="Forslaget vårt til Quick Bite, vist som på en mobil" loading="eager" tabindex="-1"></iframe>
+      </div>
+      <figcaption>Forslaget vi laget til Quick Bite i Sandnes. Scroll i telefonen, eller <a href="quick-bite/">åpne hele siden</a>.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section id="prosess">
-  <div class="wrap">
-    <div class="eyebrow">Slik jobber vi</div>
-    <h2>Fra første prat til ferdig side</h2>
-    <div class="steps">
-      <div class="step"><h3>Vi blir kjent</h3><p>En kort prat om bedriften, kundene og hva siden skal gjøre.</p></div>
-      <div class="step"><h3>Vi lager et forslag</h3><p>Du får se en ekte demo av siden din før du bestemmer deg.</p></div>
-      <div class="step"><h3>Vi finpusser</h3><p>Tekst, bilder og farger justeres til det sitter.</p></div>
-      <div class="step"><h3>Siden går live</h3><p>Vi publiserer og hjelper deg med oppdateringer videre.</p></div>
+<section class="block" id="dette-far-du">
+  <div class="wrap split">
+    <div>
+      <h2>Det kundene dine leter etter</h2>
+      <p class="intro">De fleste finner deg på mobilen og vil vite tre ting: hva du har, hva det koster og når du har åpent.</p>
     </div>
+    <ul class="features">
+      <li><h3>Meny og priser</h3><p>Hele menyen, lett å lese på en liten skjerm og enkel å oppdatere.</p></li>
+      <li><h3>Åpningstider og kart</h3><p>Adressen og en kartlenke, så folk finner fram uten å ringe og spørre.</p></li>
+      <li><h3>Bestilling</h3><p>Knapper rett til Wolt, foodora eller deres eget bestillingssystem.</p></li>
+      <li><h3>Bilder</h3><p>Av lokalet, maten eller varene, så folk vet hva de kommer til.</p></li>
+      <li><h3>Laget for mobil</h3><p>Siden er rask og bygget for telefonen først, og ser like bra ut på PC.</p></li>
+      <li><h3>Hjelp etterpå</h3><p>Nye priser eller endrede åpningstider? Gi beskjed, så fikser vi det.</p></li>
+    </ul>
   </div>
 </section>
 
-<section id="om-oss" class="tight">
+<section class="block" id="slik">
   <div class="wrap">
-    <div class="eyebrow">Om oss</div>
-    <h2>Hvem er Skysite?</h2>
-    <p class="sub">Skysite er drevet av to studenter med teknologi i blodet. Vi vil gi lokale bedrifter en nettside de er stolte av – uten byråpriser.</p>
-    <div class="team">
+    <h2>Slik foregår det</h2>
+    <ol class="steps">
+      <li><h3>Vi tar en prat</h3><p>Om bedriften, kundene og hva siden skal gjøre. På telefon eller video.</p></li>
+      <li><h3>Du får et forslag</h3><p>En ekte side du kan klikke deg rundt i, før du bestemmer deg.</p></li>
+      <li><h3>Vi justerer</h3><p>Tekst, bilder og farger endres til du er fornøyd.</p></li>
+      <li><h3>Siden legges ut</h3><p>Vi publiserer den og hjelper deg med endringer senere.</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="om-oss">
+  <div class="wrap split">
+    <div>
+      <h2>Skysite er Osman og Hasan</h2>
+      <p class="intro">Vi vil gi lokale bedrifter en nettside de er stolte av, uten byråpriser.</p>
+    </div>
+    <div class="people">
       <div class="person">
-        <div class="avatar" aria-hidden="true">OK</div>
-        <div>
-          <h3>Osman Khalid</h3>
-          <div class="role">Daglig leder (CEO)</div>
-          <p>Studerer dataingeniør ved NTNU. Har ansvar for design og utvikling av nettsidene.</p>
-        </div>
+        <h3>Osman Khalid</h3>
+        <p class="role">Daglig leder</p>
+        <p>Studerer dataingeniør ved NTNU. Designer og bygger nettsidene.</p>
       </div>
       <div class="person">
-        <div class="avatar sun" aria-hidden="true">HS</div>
-        <div>
-          <h3>Hasan Shabbir</h3>
-          <div class="role">Kundeansvarlig</div>
-          <p>Studerer IT og ledelse, første år. Hjelper til med kundekontakt og prosjekter.</p>
-        </div>
+        <h3>Hasan Shabbir</h3>
+        <p class="role">Kundeansvarlig</p>
+        <p>Studerer IT og ledelse. Tar seg av kundekontakt og prosjekter.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="kontakt" class="tight">
-  <div class="wrap">
-    <div class="contact">
-      <div>
-        <div class="eyebrow">Kontakt</div>
-        <h2>Klar for en ny nettside?</h2>
-        <p class="sub">Fortell oss litt om bedriften din, så tar vi kontakt for en uforpliktende prat. Det koster ingenting å spørre.</p>
-        <ul class="facts">
-          <li><span class="i" aria-hidden="true">⏱️</span><span><b>Svar innen én virkedag</b>Vi tar kontakt på e-post eller telefon.</span></li>
-          <li><span class="i" aria-hidden="true">📞</span><a href="tel:+4748427504"><b>484 27 504</b>Ring eller send SMS</a></li>
-          <li><span class="i" aria-hidden="true">📍</span><span><b>Hele Norge</b>Vi jobber digitalt og møtes gjerne på video.</span></li>
-        </ul>
-      </div>
-
-      <form id="kontaktskjema" action="https://formsubmit.co/osmankhalid04@hotmail.com" method="POST">
-        <input type="hidden" name="_subject" value="Ny henvendelse fra skysite.no">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://skysite.no/#takk">
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-        <div class="row">
-          <label>Navn<input type="text" name="Navn" required autocomplete="name"></label>
-          <label>Bedrift <span class="opt">(valgfritt)</span><input type="text" name="Bedrift" autocomplete="organization"></label>
-        </div>
-        <div class="row">
-          <label>E-post<input type="email" name="email" required autocomplete="email"></label>
-          <label>Telefon <span class="opt">(valgfritt)</span><input type="tel" name="Telefon" autocomplete="tel"></label>
-        </div>
-        <label>Hva trenger du?
-          <select name="Behov">
-            <option>Ny nettside</option>
-            <option>Fornye en eksisterende side</option>
-            <option>Meny, bestilling eller små endringer</option>
-            <option>Vet ikke ennå – vil bare prate</option>
-          </select>
-        </label>
-        <label>Melding<textarea name="Melding" required placeholder="F.eks. hva bedriften gjør og hva siden skal hjelpe med"></textarea></label>
-        <button class="btn" type="submit">Send forespørsel</button>
-        <p class="status" id="takk" role="status" aria-live="polite"></p>
-        <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Formsubmit, og vi sletter henvendelsen når saken er ferdig.</p>
-      </form>
     </div>
   </div>
 </section>
 
 </main>
 
+<section class="contact" id="kontakt" aria-labelledby="kontakt-tittel">
+  <div class="wrap split">
+    <div>
+      <h2 id="kontakt-tittel">Fortell oss om bedriften din</h2>
+      <p class="intro">Ring, send SMS eller fyll ut skjemaet. Det er uforpliktende, og vi svarer innen én virkedag.</p>
+      <a class="phone-big" href="tel:+4748427504">484 27 504</a>
+      <p class="small">Ring eller send SMS</p>
+      <div class="facts">
+        <p><b>Hele Norge.</b> Vi møtes gjerne på video.</p>
+      </div>
+    </div>
+
+    <form id="kontaktskjema" action="https://formsubmit.co/osmankhalid04@hotmail.com" method="POST">
+      <input type="hidden" name="_subject" value="Ny henvendelse fra skysite.no">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://skysite.no/#takk">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="row">
+        <label>Navn<input type="text" name="Navn" required autocomplete="name"></label>
+        <label>Bedrift <span class="opt">(valgfritt)</span><input type="text" name="Bedrift" autocomplete="organization"></label>
+      </div>
+      <div class="row">
+        <label>E-post<input type="email" name="email" required autocomplete="email"></label>
+        <label>Telefon <span class="opt">(valgfritt)</span><input type="tel" name="Telefon" autocomplete="tel"></label>
+      </div>
+      <label>Hva gjelder det?
+        <select name="Behov">
+          <option>Ny nettside</option>
+          <option>Fornye en nettside vi har</option>
+          <option>Meny, bestilling eller små endringer</option>
+          <option>Vet ikke ennå, vil bare prate</option>
+        </select>
+      </label>
+      <label>Melding<textarea name="Melding" required placeholder="Hva driver dere med, og hva skal siden hjelpe med?"></textarea></label>
+      <button class="btn btn-sun" type="submit">Send melding</button>
+      <p class="status" id="takk" role="status" aria-live="polite"></p>
+      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Formsubmit, og vi sletter henvendelsen når saken er ferdig.</p>
+    </form>
+  </div>
+
+  <svg class="skyline" viewBox="0 0 1200 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <circle cx="930" cy="58" r="26" fill="#FFB547"/>
+    <g fill="#1E2747">
+      <rect x="0" y="80" width="70" height="70"/><rect x="80" y="60" width="50" height="90"/><rect x="140" y="95" width="60" height="55"/>
+      <rect x="420" y="72" width="60" height="78"/><rect x="700" y="66" width="55" height="84"/><rect x="1010" y="80" width="70" height="70"/><rect x="1130" y="62" width="70" height="88"/>
+    </g>
+    <g fill="#2A3560">
+      <rect x="210" y="68" width="60" height="82" rx="2"/><rect x="280" y="40" width="70" height="110" rx="2"/><rect x="360" y="82" width="50" height="68" rx="2"/>
+      <rect x="490" y="54" width="80" height="96" rx="2"/><rect x="640" y="88" width="50" height="62" rx="2"/><rect x="765" y="46" width="60" height="104" rx="2"/>
+      <rect x="900" y="74" width="100" height="76" rx="2"/><rect x="1090" y="94" width="35" height="56" rx="2"/>
+    </g>
+    <rect x="580" y="20" width="50" height="130" rx="2" fill="#36426E"/><rect x="603" y="4" width="4" height="18" fill="#36426E"/>
+    <g fill="#FFB547" opacity=".85">
+      <rect x="296" y="56" width="6" height="8"/><rect x="326" y="80" width="6" height="8"/><rect x="510" y="70" width="6" height="8"/><rect x="596" y="40" width="6" height="8"/><rect x="608" y="74" width="6" height="8"/><rect x="782" y="62" width="6" height="8"/><rect x="930" y="92" width="6" height="8"/><rect x="100" y="78" width="6" height="8"/>
+    </g>
+  </svg>
+</section>
+
 <footer>
   <div class="wrap">
-    <span>© <span id="year"></span> Skysite</span>
-    <span>Nettsider for lokale bedrifter · <a href="tel:+4748427504">484 27 504</a></span>
+    <span>© <span id="year">2026</span> Skysite</span>
+    <span><a href="tel:+4748427504">484 27 504</a></span>
   </div>
 </footer>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// Tynn strek under menyen når man har scrollet.
+(function () {
+  var top = document.getElementById("top");
+  function check() { top.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", check, { passive: true }); check();
+})();
+
 // Send skjemaet uten å forlate siden. Fungerer også uten JavaScript (vanlig POST).
 (function () {
   var form = document.getElementById("kontaktskjema");
   var status = document.getElementById("takk");
   var btn = form.querySelector("button");
+  var sent = "Meldingen er sendt. Vi svarer innen én virkedag.";
   function show(type, msg) { status.className = "status " + type; status.textContent = msg; }
 
   // Etter vanlig POST (uten JavaScript) sender Formsubmit brukeren tilbake til #takk.
   if (location.hash === "#takk") {
-    show("ok", "Takk! Meldingen er sendt – vi svarer innen én virkedag.");
+    show("ok", sent);
     status.scrollIntoView({ block: "center" });
   }
 
@@ -331,9 +364,9 @@ document.getElementById("year").textContent = new Date().getFullYear();
       body: new FormData(form)
     })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.success === "false") throw d; }); })
-      .then(function () { form.reset(); show("ok", "Takk! Meldingen er sendt – vi svarer innen én virkedag."); status.scrollIntoView({ block: "nearest" }); })
-      .catch(function () { show("err", "Noe gikk galt. Prøv igjen, eller ring oss på 484 27 504."); })
-      .finally(function () { btn.disabled = false; btn.textContent = "Send forespørsel"; });
+      .then(function () { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); })
+      .catch(function () { show("err", "Meldingen ble ikke sendt. Prøv igjen, eller ring 484 27 504."); })
+      .finally(function () { btn.disabled = false; btn.textContent = "Send melding"; });
   });
 })();
 </script>
