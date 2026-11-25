@@ -217,78 +217,6 @@
   }
   @media (prefers-reduced-motion:reduce){.top,.card{transition:none}.card:hover{transform:none}}
 
-  /* ===== Farger og liv (lagt til nov. 2026) ===== */
-  :root{
-    --sky1:#141B33; --sky2:#24306B; --sky3:#4B3B8F;
-    --coral:#FF6B5A; --mint:#2EC4A0; --skyblue:#3D8BFF; --violet:#8B5CF6; --pink:#F2559A;
-  }
-
-  /* Toppen: nattehimmel med sol */
-  .hero{position:relative;overflow:hidden;color:var(--paper);
-    background:
-      radial-gradient(520px 520px at 88% 8%,rgba(255,181,71,.55),rgba(255,181,71,0) 70%),
-      radial-gradient(600px 420px at 8% 110%,rgba(242,85,154,.35),rgba(242,85,154,0) 70%),
-      linear-gradient(135deg,var(--sky1) 0%,var(--sky2) 55%,var(--sky3) 100%)}
-  .hero::after{content:"";position:absolute;right:6%;top:9%;width:120px;height:120px;border-radius:50%;
-    background:radial-gradient(circle at 35% 35%,#FFE3A6,var(--sun) 55%,var(--amber));
-    box-shadow:0 0 80px 20px rgba(255,181,71,.45);animation:sol 6s ease-in-out infinite}
-  @keyframes sol{50%{transform:translateY(10px)}}
-  .hero .wrap{position:relative;z-index:1}
-  .hero .eyebrow{display:inline-block;color:var(--ink);background:var(--sun);padding:.35rem .8rem;border-radius:999px}
-  .hero h1{color:#fff}
-  .hero .lead{color:#D5DBF2}
-  .hero .btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun)}
-  .hero .btn-sun:hover{background:#FFA41F;border-color:#FFA41F}
-  .hero .btn-line{color:var(--paper);border-color:rgba(255,255,255,.8)}
-  .hero .btn-line:hover{background:var(--paper);color:var(--ink)}
-  .hero .points{border-top:0;color:#C9D0EC}
-  .hero .points li{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:1.1rem 1.2rem;backdrop-filter:blur(4px)}
-  .hero .points b{color:var(--paper)}
-  .hero .points li::before{content:"";display:block;width:28px;height:4px;border-radius:4px;margin-bottom:.8rem;background:var(--sun)}
-  .hero .points li:nth-child(2)::before{background:var(--mint)}
-  .hero .points li:nth-child(3)::before{background:var(--coral)}
-  .hero :focus-visible{outline-color:var(--sun)}
-
-  /* Undersider: fargerik topp */
-  .page-head{background:
-      radial-gradient(420px 300px at 92% 0%,rgba(255,181,71,.35),transparent 70%),
-      radial-gradient(380px 280px at 0% 100%,rgba(61,139,255,.18),transparent 70%);
-    padding-bottom:2.5rem}
-  .page-head h1{background:linear-gradient(90deg,var(--ink),var(--sky3));-webkit-background-clip:text;background-clip:text;color:transparent}
-
-  /* Seksjoner */
-  .block h2::after{content:"";display:block;width:56px;height:5px;border-radius:5px;margin-top:.9rem;
-    background:linear-gradient(90deg,var(--sun),var(--coral),var(--pink))}
-  .block[aria-labelledby="eksempler-tittel"]{background:linear-gradient(180deg,#FFF6E8 0%,var(--bg) 100%);border-top:0}
-
-  /* Kort med hver sin farge */
-  .card{position:relative;overflow:hidden;border:0;box-shadow:0 1px 0 var(--line),0 10px 30px -18px rgba(20,27,51,.35);transition:transform .2s,box-shadow .2s}
-  .card::before{content:"";position:absolute;left:0;top:0;right:0;height:6px;background:var(--c,var(--sun))}
-  .card h3::before{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:.55rem;background:var(--c,var(--sun));vertical-align:.05em}
-  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(20,27,51,.45)}
-  .card .more{text-decoration-color:var(--c,var(--amber))}
-  .cards li:nth-child(1) .card{--c:var(--sun)}
-  .cards li:nth-child(2) .card{--c:var(--coral)}
-  .cards li:nth-child(3) .card{--c:var(--mint)}
-  .cards li:nth-child(4) .card{--c:var(--skyblue)}
-  .cards li:nth-child(5) .card{--c:var(--violet)}
-  .cards li:nth-child(6) .card{--c:var(--pink)}
-
-  /* Steg og telefoner */
-  .steps li{border-top:4px solid var(--sun)}
-  .steps li:nth-child(2){border-top-color:var(--coral)}
-  .steps li:nth-child(3){border-top-color:var(--mint)}
-  .steps li:nth-child(4){border-top-color:var(--skyblue)}
-  .phone{box-shadow:0 30px 60px -30px rgba(75,59,143,.6)}
-
-  /* Kontakt-stripen: samme himmel som toppen */
-  .contact{background:
-      radial-gradient(460px 360px at 95% 0%,rgba(255,181,71,.35),transparent 70%),
-      linear-gradient(135deg,var(--sky1),var(--sky2) 60%,var(--sky3))}
-
-  @media (max-width:640px){.hero::after{width:70px;height:70px;right:4%;top:4%}}
-  @media (prefers-reduced-motion:reduce){.hero::after{animation:none}.card:hover{transform:none}}
-
   /* ===== Store FAQ-spørsmål ===== */
   .faq{max-width:none}
   .faq details{border-top:1px solid var(--ink);padding:0}
@@ -300,3 +228,51 @@
   .faq details[open] summary::after{content:"+";transform:rotate(45deg)}
   .faq details p{font-size:1.1rem;max-width:62ch;margin:-.6rem 0 1.8rem}
   @media (prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
+
+  /* ===== Rolig og profesjonell (nov. 2026) ===== */
+  :root{--bg:#F6F6F3;--paper:#FFFFFF;--ink:#111318;--muted:#62666F;--line:#E3E3DE;--amber:#111318;--night:#0E0F12;--night-muted:#A3A7B0}
+  body{-webkit-font-smoothing:antialiased}
+  a{text-decoration-color:rgba(17,19,24,.25)}
+  a:hover{text-decoration-color:var(--ink)}
+  h1,h2{letter-spacing:-.035em}
+  .top{background:rgba(246,246,243,.88)}
+  .btn{border-radius:10px}
+  .btn-sun:hover{background:#2A2D35;border-color:#2A2D35}
+  .btn-line{border-color:var(--line);background:var(--paper)}
+  .btn-line:hover{border-color:var(--ink);background:var(--paper);color:var(--ink)}
+
+  /* Toppen */
+  .hero{padding:6rem 0 4.5rem}
+  .hero h1{font-size:clamp(2.5rem,5.4vw,4.4rem);line-height:1.02;max-width:16ch}
+  .points{border-top:1px solid var(--line)}
+
+  /* Mac-ramme med ekte eksempel */
+  .laptop{max-width:980px;margin:4rem auto 0;padding:0 4%}
+  .laptop-lid{position:relative;background:#0D0D0F;border-radius:18px 18px 0 0;padding:2.2% 2.2% 3.2%;box-shadow:0 40px 80px -40px rgba(17,19,24,.45)}
+  .laptop-lid::before{content:"";position:absolute;top:.9%;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:#2B2C30}
+  .laptop-view{position:relative;overflow:hidden;aspect-ratio:16/10;background:#fff;border-radius:4px}
+  .laptop-view iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:0 0;pointer-events:none}
+  .laptop-base{position:relative;height:18px;margin:0 -6%;background:linear-gradient(#E4E5E7,#B9BBBF);border-radius:0 0 16px 16px}
+  .laptop-base::before{content:"";position:absolute;top:0;left:50%;width:16%;height:7px;transform:translateX(-50%);background:#A9ABB0;border-radius:0 0 8px 8px}
+  .laptop-cap{margin-top:1.4rem;text-align:center;color:var(--muted);font-size:.95rem}
+
+  /* Seksjoner og kort */
+  .block{border-top:0}
+  .block h2{max-width:20ch}
+  .card{border-radius:16px;border:1px solid var(--line);box-shadow:none}
+  .card:hover{border-color:#CBCBC5;transform:none;box-shadow:0 12px 30px -20px rgba(17,19,24,.3)}
+  .card .more{text-decoration-color:rgba(17,19,24,.25)}
+  .phone{border-color:#111318;box-shadow:0 30px 60px -36px rgba(17,19,24,.45)}
+
+  /* Kontakt: svart boks med runde hjørner */
+  .contact{background:var(--night)}
+  .contact .btn-sun{background:#fff;color:var(--ink);border-color:#fff}
+  .contact .btn-sun:hover{background:#E9E9E6;border-color:#E9E9E6}
+  .contact .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
+  .contact .btn-line:hover{background:transparent;border-color:#fff;color:#fff}
+  .contact :focus-visible{outline-color:#fff}
+  .contact.cta{background:transparent;padding:1rem 0 5rem}
+  .contact.cta > .wrap{background:var(--night);border-radius:20px;padding:3.5rem 2.75rem;width:calc(100% - 2rem);max-width:1072px}
+  footer{background:var(--night)}
+  input:focus,textarea:focus,select:focus{box-shadow:0 0 0 3px rgba(17,19,24,.12)}
+  @media (max-width:640px){.contact.cta > .wrap{padding:2.5rem 1.5rem}.laptop{margin-top:2.5rem}}
