@@ -39,6 +39,5 @@ Sidene publiseres automatisk med GitHub Pages fra `main`-grenen på domenet **sk
 
 ## Team
 
-- [@Osmantheprince](https://github.com/Osmantheprince)
-- [@hazax123](https://github.com/hazax123)
-- [@Ossitheprince](https://github.com/Ossitheprince)
+- **Osman Khalid** – [@Osmantheprince](https://github.com/Osmantheprince) (også [@Ossitheprince](https://github.com/Ossitheprince))
+- **Hasan Shabbir** – [@hazax123](https://github.com/hazax123)
