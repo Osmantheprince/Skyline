@@ -31,6 +31,7 @@
   "email": "post@skysite.no"
 }</script>
 <link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link href="fonts/fonts.css" rel="stylesheet">
 <style>
@@ -146,6 +147,7 @@
   form .btn[disabled]{opacity:.6;cursor:wait}
   .hp{position:absolute;left:-9999px}
   .note{color:var(--muted);font-size:.875rem}
+  .note a{color:var(--muted)}
   .status{display:none;padding:.85rem 1rem;border-radius:8px;font-weight:500}
   .status.ok{display:block;background:#E3F5EA;color:#14532D}
   .status.err{display:block;background:#FDE8E8;color:#8A1C1C}
@@ -342,7 +344,7 @@
       <label>Melding<textarea name="Melding" required placeholder="Hva driver dere med, og hva skal siden hjelpe med?"></textarea></label>
       <button class="btn btn-sun" type="submit">Send melding</button>
       <p class="status" id="takk" role="status" aria-live="polite"></p>
-      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Formsubmit, og vi sletter henvendelsen når saken er ferdig.</p>
+      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Formsubmit, og vi sletter henvendelsen når saken er ferdig. <a href="personvern.html">Les mer om personvern</a>.</p>
     </form>
   </div>
 
@@ -383,6 +385,7 @@
         <li><a href="quick-bite/">Quick Bite-forslaget</a></li>
         <li><a href="#slik">Slik foregår det</a></li>
         <li><a href="#om-oss">Om oss</a></li>
+        <li><a href="personvern.html">Personvern</a></li>
       </ul>
     </div>
   </div>
