@@ -38,6 +38,13 @@ Sidene publiseres automatisk med GitHub Pages fra `main`-grenen på domenet **sk
 - [x] Ny forside med kontaktskjema tatt i bruk (`index (1).html` → `index.html`).
 - [ ] Sjekk at https://skysite.no og https://skysite.no/quick-bite/ ser riktige ut på mobil.
 
+## Slik oppdaterer dere forsiden
+
+- **Sitat fra en kunde:** Seksjonen `id="sitat"` i `index.html` er skjult. Når eieren har sagt ja, setter dere inn det han faktisk sa (ordrett), navn og sted, og fjerner `hidden`. Ikke skriv sitater selv.
+- **Bilder av Osman og Hasan:** Legg dem i `bilder/` (f.eks. `osman.jpg`, `hasan.jpg`), så kan de settes inn i «Om oss».
+- **Priser:** Siden sier at prisen avtales etter første prat. Bytt til faste priser når dere har bestemt dem.
+- **Kontaktskjemaet** sender til `post@skysite.no` via Formsubmit. Første melding utløser en bekreftelse til den adressen som må godkjennes (se issue #5).
+
 ## Team
 
 - **Osman Khalid** – [@Osmantheprince](https://github.com/Osmantheprince) (også [@Ossitheprince](https://github.com/Ossitheprince))
