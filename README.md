@@ -18,7 +18,7 @@ Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og and
 | `quick-bite-meny.md` | Menyen til Quick Bite med priser |
 | `Quick-bite-bilder.md` | Oversikt over bilder til Quick Bite |
 | `logo.svg` | Skysite-logo |
-| `skyline-logo-mork.svg` | Gammel logo med Skyline-navnet |
+| `og-image.png` | Delingsbilde (1200×630) for forsiden |
 
 ## Publisering
 
@@ -39,6 +39,5 @@ Sidene publiseres automatisk med GitHub Pages fra `main`-grenen på domenet **sk
 
 ## Team
 
-- [@Osmantheprince](https://github.com/Osmantheprince)
-- [@hazax123](https://github.com/hazax123)
-- [@Ossitheprince](https://github.com/Ossitheprince)
+- **Osman Khalid** – [@Osmantheprince](https://github.com/Osmantheprince) (også [@Ossitheprince](https://github.com/Ossitheprince))
+- **Hasan Shabbir** – [@hazax123](https://github.com/hazax123)
