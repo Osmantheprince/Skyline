@@ -229,9 +229,9 @@
     <figure class="demo">
       <span class="sun" aria-hidden="true"></span>
       <div class="phone">
-        <iframe src="quick-bite/" title="Forslaget vårt til Quick Bite, vist som på en mobil" loading="eager" tabindex="-1"></iframe>
+        <iframe src="eksempel/" title="Eksempel på en nettside fra oss, vist som på en mobil" loading="eager" tabindex="-1"></iframe>
       </div>
-      <figcaption>Forslaget vi laget til Quick Bite i Sandnes. Scroll i telefonen, eller <a href="quick-bite/">åpne hele siden</a>.</figcaption>
+      <figcaption>Et eksempel på en side fra oss (oppdiktet kafé). Scroll i telefonen, eller <a href="eksempel/">åpne hele siden</a>.</figcaption>
     </figure>
   </div>
 </section>
@@ -247,7 +247,7 @@
   <div class="wrap">
     <figure>
       <blockquote><p>Sitatet fra eieren kommer her.</p></blockquote>
-      <figcaption>Navn Navnesen, <span>Quick Bite, Sandnes</span></figcaption>
+      <figcaption>Navn Navnesen, <span>Bedrift, sted</span></figcaption>
     </figure>
   </div>
 </section>
@@ -370,7 +370,7 @@
   <div class="wrap foot">
     <div>
       <a class="brand" href="./"><img src="logo.svg" alt="" width="34" height="34">Skysite</a>
-      <p>Nettsider for lokale bedrifter, laget av Osman Khalid og Hasan Shabbir.</p>
+      <p>Nettsider for lokale bedrifter, laget av Skysite.</p>
     </div>
     <div>
       <h3>Kontakt</h3>
@@ -382,7 +382,7 @@
     <div>
       <h3>På siden</h3>
       <ul>
-        <li><a href="quick-bite/">Quick Bite-forslaget</a></li>
+        <li><a href="eksempel/">Se et eksempel</a></li>
         <li><a href="#slik">Slik foregår det</a></li>
         <li><a href="#om-oss">Om oss</a></li>
         <li><a href="personvern.html">Personvern</a></li>
@@ -427,7 +427,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
     })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.success === "false") throw d; }); })
       .then(function () { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); })
-      .catch(function () { show("err", "Meldingen ble ikke sendt. Prøv igjen, eller ring 484 27 504."); })
+      .catch(function (d) { if (window.console) console.error("Formsubmit:", d); show("err", "Meldingen ble ikke sendt. Prøv igjen, eller ring 484 27 504."); })
       .finally(function () { btn.disabled = false; btn.textContent = "Send melding"; });
   });
 })();
