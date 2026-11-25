@@ -7,189 +7,87 @@
 <meta name="description" content="Et oppdiktet eksempel som viser hvordan en nettside for en restaurant kan se ut.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="../../logo.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f1efe4">
+<meta name="theme-color" content="#1c1411">
 <link href="../../fonts/fonts.css" rel="stylesheet">
 <style>
-:root{--bg:#f1efe4;--paper:#fbfaf4;--ink:#2a2a1e;--muted:#69684f;--line:#dcd8c3;--terra:#c4532d;--olive:#5f6e32}
+:root{--bg:#1c1411;--cream:#efe4d2;--dim:#a8998a;--line:#3b2e28;--gold:#d9a441}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+body{background:var(--bg);color:var(--cream);font:16px/1.55 'Schibsted Grotesk',system-ui,sans-serif}
 a{color:inherit}
-.demo{background:var(--olive);color:var(--paper);text-align:center;font-size:.78rem;font-weight:600;padding:.35rem 1rem}
-.wrap{max-width:1000px;margin:0 auto;padding:0 1.3rem}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.logo{font-family:'Archivo Black',sans-serif;font-size:1.15rem;text-decoration:none;letter-spacing:.02em}
-.logo span{color:var(--terra)}
-.links{display:flex;gap:1.4rem;align-items:center}
-.links a{text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;background:var(--terra);color:#fff;text-decoration:none;font-weight:600;padding:.85rem 1.4rem;border-radius:999px}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.btn.small{padding:.55rem 1.1rem;font-size:.9rem}
-.links a.btn{color:#fff}
-.btn{white-space:nowrap}
-
-.hero{padding:2.5rem 0 3.5rem;text-align:center}
-.stamp{display:inline-block;border:1.5px solid var(--olive);color:var(--olive);font-weight:700;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;padding:.35rem .9rem;border-radius:999px;margin-bottom:1.2rem}
-h1{font-family:'Archivo Black',sans-serif;font-size:clamp(2.4rem,7vw,4.2rem);line-height:1.02;margin-bottom:1.1rem;letter-spacing:-.01em}
-h1 span{color:var(--terra)}
-.lead{color:var(--muted);font-size:1.1rem;max-width:32rem;margin:0 auto 1.8rem}
-.cta{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
-.table{margin:2.5rem auto 0;max-width:520px;aspect-ratio:16/10;border-radius:200px 200px 24px 24px;background:radial-gradient(circle at 50% 35%,#e9d2b0,#d79a6b 55%,var(--terra));display:grid;place-items:center;font-size:clamp(4.5rem,13vw,7rem)}
-
-section{padding:3.5rem 0}
-h2{font-family:'Archivo Black',sans-serif;font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:.4rem}
-.sub{color:var(--muted);margin-bottom:1.8rem}
-
-.course{margin-bottom:2rem}
-.course h3{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);border-bottom:2px solid var(--olive);padding-bottom:.4rem;margin-bottom:.4rem}
-.dish{display:flex;justify-content:space-between;gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
-.dish h4{font-size:1.05rem}
-.dish p{color:var(--muted);font-size:.9rem}
-.dish b{color:var(--terra);white-space:nowrap}
-.menu{display:grid;grid-template-columns:1fr 1fr;gap:0 2.5rem}
-
-.quote{background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:2rem;text-align:center}
-.quote p{font-size:1.25rem;font-weight:600;max-width:34rem;margin:0 auto}
-.quote small{display:block;color:var(--muted);margin-top:.6rem}
-
-.book{background:var(--ink);color:var(--paper);border-radius:24px;padding:2.2rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.book h3{font-family:'Archivo Black',sans-serif;font-size:1.5rem}
-.book p{opacity:.8;margin-top:.3rem}
-
-.info{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.box{background:var(--paper);border-radius:20px;padding:1.4rem;border:1px solid var(--line)}
-.box h3{font-size:1rem;margin-bottom:.6rem}
-.box p,.box li{color:var(--muted);font-size:.95rem}
-.box ul{list-style:none}
-.box li{display:flex;justify-content:space-between;padding:.2rem 0}
-.box li b{color:var(--ink);font-weight:500}
-
-footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.85rem}
-footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.made-by{display:inline-flex;align-items:center;gap:.45rem}
-.made-by img{width:22px;height:22px}
-.mbar{display:none}
-
-@media (max-width:820px){
-  .links a:not(.btn){display:none}
-  .logo{font-size:.95rem}
-  .hero{padding:1.8rem 0 2.5rem}
-  .menu,.info{grid-template-columns:1fr}
-  section{padding:2.6rem 0}
-  .mbar{display:flex;gap:.6rem;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:.7rem 1rem;background:rgba(241,239,228,.96);border-top:1px solid var(--line)}
-  .mbar .btn{flex:1}
-  body{padding-bottom:74px}
-}
+.note{font-size:11px;color:var(--dim);padding:.5rem 1.2rem;border-bottom:1px solid var(--line)}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.2rem}
+.mast{padding:1.6rem 0 1rem}
+.mast h1{font-family:'Archivo Black',sans-serif;font-weight:400;text-transform:uppercase;font-size:clamp(3rem,15vw,6rem);line-height:.86;letter-spacing:-.02em}
+.mast h1 span{color:var(--gold)}
+.row{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--cream);border-bottom:1px solid var(--cream);padding:.5rem 0;margin-top:1.1rem;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.intro{font-family:Georgia,serif;font-style:italic;font-size:1.45rem;line-height:1.35;margin:2rem 0 2.6rem}
+h2{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);margin-bottom:1rem}
+.course{display:grid;grid-template-columns:3.2rem 1fr;gap:.2rem 0;padding:1rem 0;border-top:1px solid var(--line)}
+.course .n{font-family:'Archivo Black',sans-serif;font-size:1.6rem;color:var(--dim);line-height:1}
+.course h3{font-size:1.15rem;font-weight:600}
+.course p{grid-column:2;color:var(--dim);font-size:.95rem}
+.price{display:flex;justify-content:space-between;border-top:1px solid var(--cream);padding:.9rem 0;margin-top:.4rem;font-weight:600}
+.price + .price{border-top:1px solid var(--line);margin-top:0}
+.price span:last-child{color:var(--gold)}
+.alc{font-size:.9rem;color:var(--dim);margin-top:.6rem}
+.book{margin:3rem 0 0;padding:1.6rem 0;border-top:6px solid var(--gold)}
+.book h2{color:var(--cream);font-size:1.6rem;text-transform:none;letter-spacing:-.01em;font-family:'Archivo Black',sans-serif;font-weight:400;margin-bottom:.4rem}
+.book > p{color:var(--dim);margin-bottom:1.2rem}
+form{display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+label{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);display:grid;gap:.3rem}
+input,select{font:inherit;font-size:16px;color:var(--cream);background:transparent;border:0;border-bottom:1px solid var(--cream);padding:.45rem 0;border-radius:0;color-scheme:dark;width:100%}
+form .full{grid-column:1/-1}
+form button{grid-column:1/-1;font:inherit;font-weight:700;background:var(--gold);color:var(--bg);border:0;padding:.9rem;margin-top:.4rem;cursor:pointer;text-transform:uppercase;letter-spacing:.08em}
+#svar{grid-column:1/-1;color:var(--gold);font-size:.95rem;min-height:1.2em}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;padding:2.4rem 0;margin-top:2rem;border-top:1px solid var(--line);font-size:.95rem}
+.facts h2{margin-bottom:.4rem}
+.facts p{color:var(--dim)}
+.foot{font-size:12px;color:var(--dim);padding:1rem 0 1.6rem;border-top:1px solid var(--line)}
 </style>
 </head>
 <body>
 
-<div class="demo">Eksempel – oppdiktet bedrift, laget av Skysite</div>
+<p class="note">Eksempel – oppdiktet bedrift, laget av Skysite</p>
 
-<nav>
-  <div class="wrap">
-    <a href="#" class="logo">RESTAURANT<span>·</span>EKSEMPEL</a>
-    <div class="links">
-      <a href="#meny">Meny</a>
-      <a href="#info">Finn oss</a>
-      <a class="btn small" href="#bord">Bestill bord</a>
-    </div>
-  </div>
-</nav>
+<div class="wrap">
+  <header class="mast">
+    <h1>Restau&shy;rant <span>Eksempel</span></h1>
+    <div class="row"><span>Ons–lør fra 17</span><span>Eksempelgata 3</span></div>
+  </header>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="stamp">Middag · Vin · Selskap</span>
-    <h1>Lokale råvarer,<br><span>god tid.</span></h1>
-    <p class="lead">En liten restaurant med en meny som følger sesongen. Kom for en rask middag eller bli hele kvelden.</p>
-    <div class="cta">
-      <a class="btn" href="#bord">Bestill bord</a>
-      <a class="btn ghost" href="#meny">Se menyen</a>
-    </div>
-    <div class="table" aria-hidden="true">🍝</div>
-  </div>
-</header>
+  <p class="intro">Ett kjøkken, én meny i uka, og råvarer fra folk vi kjenner.</p>
 
-<section id="meny">
-  <div class="wrap">
-    <h2>Menyen</h2>
-    <p class="sub">Endres med sesongen. Alle priser i NOK.</p>
-    <div class="menu">
-      <div class="course">
-        <h3>Forretter</h3>
-        <div class="dish"><div><h4>Tomatsuppe</h4><p>Basilikum, olivenolje, surdeigsbrød</p></div><b>129</b></div>
-        <div class="dish"><div><h4>Burrata</h4><p>Grillet fersken, honning, hasselnøtter</p></div><b>159</b></div>
-        <div class="dish"><div><h4>Rekesalat</h4><p>Avokado, lime, sprø salat</p></div><b>149</b></div>
-      </div>
-      <div class="course">
-        <h3>Hovedretter</h3>
-        <div class="dish"><div><h4>Pasta med sopp</h4><p>Fersk pasta, skogsopp, parmesan</p></div><b>229</b></div>
-        <div class="dish"><div><h4>Dagens fisk</h4><p>Sesongens grønnsaker, smørsaus</p></div><b>289</b></div>
-        <div class="dish"><div><h4>Kyllinglår</h4><p>Ovnsbakte poteter, urter, sitron</p></div><b>259</b></div>
-      </div>
-      <div class="course">
-        <h3>Dessert</h3>
-        <div class="dish"><div><h4>Sjokoladefondant</h4><p>Vaniljeis</p></div><b>119</b></div>
-        <div class="dish"><div><h4>Panna cotta</h4><p>Bær fra sesongen</p></div><b>109</b></div>
-      </div>
-      <div class="course">
-        <h3>Drikke</h3>
-        <div class="dish"><div><h4>Husets vin</h4><p>Rød eller hvit, glass</p></div><b>129</b></div>
-        <div class="dish"><div><h4>Alkoholfri meny</h4><p>Hjemmelaget sitronade og iste</p></div><b>69</b></div>
-      </div>
-    </div>
-  </div>
-</section>
+  <section>
+    <h2>Ukens meny</h2>
+    <div class="course"><span class="n">01</span><h3>Tomater og ferskost</h3><p>Ristet surdeig, basilikumolje</p></div>
+    <div class="course"><span class="n">02</span><h3>Blåskjell</h3><p>Hvitvin, fennikel, persille</p></div>
+    <div class="course"><span class="n">03</span><h3>Dagens fisk</h3><p>Sesongens grønnsaker, brunt smør</p></div>
+    <div class="course"><span class="n">04</span><h3>Plommer</h3><p>Mandelkake, rømmeis</p></div>
+    <div class="price"><span>Fire retter</span><span>595,-</span></div>
+    <div class="price"><span>Drikkepakke</span><span>450,-</span></div>
+    <p class="alc">Alkoholfri drikkepakke 295,-. Si fra om allergier når du bestiller.</p>
+  </section>
 
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="quote">
-      <p>«Her kan dere sette inn et sitat fra en fornøyd gjest.»</p>
-      <small>Plass til omtale</small>
-    </div>
-  </div>
-</section>
+  <section class="book" id="bord">
+    <h2>Bestill bord</h2>
+    <p>Vi har 28 plasser. Selskap over 8 personer, ring oss.</p>
+    <form onsubmit="event.preventDefault();document.getElementById('svar').textContent='Dette er bare et eksempel. Her ville gjesten fått en bekreftelse.';">
+      <label>Dato<input type="date" value="2026-11-27"></label>
+      <label>Klokka<select><option>17:00</option><option>17:30</option><option selected>18:30</option><option>19:00</option><option>20:30</option></select></label>
+      <label>Antall<select><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+      <label>Navn<input type="text" placeholder="Ditt navn"></label>
+      <label class="full">Telefon<input type="tel" placeholder="Telefonnummer"></label>
+      <button type="submit">Send forespørsel</button>
+      <p id="svar" role="status"></p>
+    </form>
+  </section>
 
-<section id="bord" style="padding-top:0">
-  <div class="wrap">
-    <div class="book">
-      <div>
-        <h3>Skal du spise ute?</h3>
-        <p>Bestill bord, eller spør om selskap for opptil 30 personer.</p>
-      </div>
-      <a class="btn" href="#bord">Bestill bord →</a>
-    </div>
-  </div>
-</section>
+  <section class="facts">
+    <div><h2>Åpent</h2><p>Onsdag–torsdag 17–23<br>Fredag–lørdag 17–01<br>Søndag–tirsdag stengt</p></div>
+    <div><h2>Adresse</h2><p>Eksempelgata 3<br>0000 Byen</p><p style="margin-top:.6rem">Telefon og e-post kommer her.</p></div>
+  </section>
 
-<section id="info" style="padding-top:0">
-  <div class="wrap">
-    <h2>Finn oss</h2>
-    <p class="sub">Midt i sentrum.</p>
-    <div class="info">
-      <div class="box"><h3>📍 Adresse</h3><p>Eksempelgata 3<br>0000 Byen</p></div>
-      <div class="box"><h3>🕒 Åpningstider</h3>
-        <ul>
-          <li>Tir–tor <b>16:00–22:00</b></li>
-          <li>Fre–lør <b>16:00–23:00</b></li>
-          <li>Søn–man <b>Stengt</b></li>
-        </ul>
-      </div>
-      <div class="box"><h3>📞 Kontakt</h3><p>Telefon og e-post kommer her.</p></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>© Restaurant Eksempel (oppdiktet)</span>
-    <span class="made-by"><img src="../../logo.svg" alt="">Eksempel laget av Skysite</span>
-  </div>
-</footer>
-
-<div class="mbar">
-  <a class="btn ghost" href="#meny">Meny</a>
-  <a class="btn" href="#bord">Bestill bord</a>
+  <p class="foot">Restaurant Eksempel (oppdiktet) · Eksempel laget av Skysite</p>
 </div>
 </body>
 </html>
