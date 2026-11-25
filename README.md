@@ -19,6 +19,9 @@ Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og and
 | `Quick-bite-bilder.md` | Oversikt over bilder til Quick Bite |
 | `logo.svg` | Skysite-logo |
 | `og-image.png` | Delingsbilde (1200×630) for forsiden |
+| `personvern.html` | Personvernerklæring (lenket fra skjemaet og bunnteksten) |
+| `apple-touch-icon.png` | Ikon når siden legges på hjemskjermen på iPhone |
+| `sitemap.xml`, `robots.txt` | Hjelper Google å finne sidene |
 | `fonts/` | Skrifter lagret lokalt: Schibsted Grotesk (forsiden), Inter og Archivo Black (Quick Bite) |
 
 ## Publisering
