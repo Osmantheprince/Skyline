@@ -7,186 +7,129 @@
 <meta name="description" content="Et oppdiktet eksempel som viser hvordan en nettside for en frisør kan se ut.">
 <meta name="robots" content="noindex">
 <link rel="icon" href="../../logo.svg" type="image/svg+xml">
-<meta name="theme-color" content="#f4efe8">
+<meta name="theme-color" content="#ffffff">
 <link href="../../fonts/fonts.css" rel="stylesheet">
 <style>
-:root{--bg:#f4efe8;--paper:#fffdf9;--ink:#1b1b1b;--muted:#6d665d;--line:#e2d9cc;--accent:#b0805a}
+:root{--ink:#111;--soft:#707070;--line:#e6e6e6;--bg:#fff;--fill:#f4f4f2;--green:#245c4a}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Schibsted Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 Inter,system-ui,sans-serif}
 a{color:inherit}
-.demo{background:var(--ink);color:var(--bg);text-align:center;font-size:.78rem;font-weight:600;padding:.35rem 1rem;letter-spacing:.02em}
-.wrap{max-width:1000px;margin:0 auto;padding:0 1.4rem}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
-.logo{font-weight:800;letter-spacing:.35em;text-transform:uppercase;font-size:1rem;text-decoration:none}
-.links{display:flex;gap:1.6rem;align-items:center}
-.links a{text-decoration:none;color:var(--muted);font-size:.95rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;padding:.85rem 1.5rem;border-radius:0;letter-spacing:.04em}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
-.btn.small{padding:.55rem 1rem;font-size:.85rem}
-.links a.btn{color:var(--paper)}
-
-.hero{padding:3.5rem 0 4rem}
-.hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.kicker{font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:1.2rem}
-h1{font-size:clamp(2.6rem,7vw,4.4rem);line-height:.98;font-weight:800;letter-spacing:-.03em;margin-bottom:1.3rem}
-h1 i{font-style:normal;color:var(--accent)}
-.lead{color:var(--muted);font-size:1.1rem;max-width:30rem;margin-bottom:2rem}
-.cta{display:flex;gap:.7rem;flex-wrap:wrap}
-.art{aspect-ratio:4/5;background:linear-gradient(160deg,#d9c4ad,#b0805a 60%,#6d4c33);position:relative;overflow:hidden}
-.art::before{content:"";position:absolute;inset:12% 18% auto;aspect-ratio:1;border-radius:50%;border:2px solid rgba(255,253,249,.7)}
-.art span{position:absolute;bottom:1.2rem;left:1.2rem;color:var(--paper);font-size:.8rem;letter-spacing:.25em;text-transform:uppercase}
-.art b{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:5rem;filter:grayscale(.2)}
-
-section{padding:4rem 0;border-top:1px solid var(--line)}
-h2{font-size:clamp(1.8rem,4vw,2.4rem);letter-spacing:-.02em;margin-bottom:.4rem}
-.sub{color:var(--muted);margin-bottom:2rem}
-
-.price{list-style:none;max-width:640px}
-.price li{display:flex;align-items:baseline;gap:.8rem;padding:1rem 0;border-bottom:1px solid var(--line)}
-.price li span:first-child{font-weight:600}
-.price li small{display:block;color:var(--muted);font-weight:400;font-size:.88rem}
-.price li i{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-4px)}
-.price li b{font-weight:700;white-space:nowrap}
-
-.team{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
-.person{background:var(--paper);padding:1.4rem;border:1px solid var(--line)}
-.person .av{width:64px;height:64px;border-radius:50%;background:var(--line);display:grid;place-items:center;font-weight:800;margin-bottom:1rem;color:var(--accent)}
-.person h3{font-size:1.1rem}
-.person p{color:var(--muted);font-size:.92rem}
-
-.book{background:var(--ink);color:var(--paper);padding:2.4rem;display:flex;justify-content:space-between;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.book h3{font-size:1.6rem;letter-spacing:-.02em}
-.book p{color:#cfc6ba;margin-top:.3rem}
-.book .btn{background:var(--accent);color:var(--paper)}
-
-.info{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.info h3{font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
-.info p,.info li{color:var(--muted)}
-.info ul{list-style:none}
-.info li{display:flex;justify-content:space-between;max-width:280px;padding:.2rem 0}
-.info li b{color:var(--ink);font-weight:500}
-
-footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.85rem}
-footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-.made-by{display:inline-flex;align-items:center;gap:.45rem}
-.made-by img{width:22px;height:22px}
-.mbar{display:none}
-
-@media (max-width:820px){
-  .links a:not(.btn){display:none}
-  .hero{padding:2.2rem 0 3rem}
-  .hero .wrap,.info{grid-template-columns:1fr;gap:2rem}
-  .team{grid-template-columns:1fr}
-  .art{max-width:320px}
-  section{padding:3rem 0}
-  .mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:.7rem 1rem;background:var(--bg);border-top:1px solid var(--line)}
-  .mbar .btn{flex:1}
-  body{padding-bottom:74px}
-}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.note{background:var(--ink);color:#fff;font-size:11px;text-align:center;padding:.3rem}
+.wrap{max-width:560px;margin:0 auto;padding:0 1.1rem}
+.top{display:flex;justify-content:space-between;align-items:center;height:56px;border-bottom:1px solid var(--line)}
+.top b{font-size:14px;letter-spacing:.08em}
+.top a{font-size:14px;text-decoration:none;border:1px solid var(--ink);border-radius:6px;padding:.3rem .7rem}
+h1{font-size:26px;letter-spacing:-.02em;margin:1.4rem 0 .2rem}
+.lede{color:var(--soft);font-size:14px}
+.step{display:flex;align-items:baseline;gap:.6rem;margin:1.8rem 0 .7rem;font-weight:600}
+.step span{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px}
+.svc{display:flex;width:100%;text-align:left;justify-content:space-between;align-items:center;padding:.85rem .9rem;border:1px solid var(--line);border-radius:10px;margin-bottom:.5rem}
+.svc small{display:block;color:var(--soft);font-size:13px}
+.svc.on{border-color:var(--green);box-shadow:inset 0 0 0 1px var(--green);background:#f3f8f6}
+.who{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.2rem}
+.who button{flex:0 0 auto;padding:.5rem .9rem;border:1px solid var(--line);border-radius:999px;font-size:14px}
+.who button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.days{display:grid;grid-template-columns:repeat(5,1fr);gap:.4rem;margin-bottom:.7rem}
+.days button{padding:.45rem 0;border-radius:8px;background:var(--fill);font-size:13px;line-height:1.25}
+.days button b{display:block;font-size:16px}
+.days button.on{background:var(--ink);color:#fff}
+.times{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem}
+.times button{padding:.55rem 0;border:1px solid var(--line);border-radius:8px;font-size:14px;font-variant-numeric:tabular-nums}
+.times button:disabled{color:#c4c4c4;text-decoration:line-through;cursor:default}
+.times button.on{border-color:var(--green);background:var(--green);color:#fff}
+.bar{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line);padding:.8rem 0;margin-top:1.6rem}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:.8rem}
+.bar p{font-size:13px;color:var(--soft);line-height:1.35}
+.bar p b{display:block;color:var(--ink);font-size:14px}
+.bar button{background:var(--green);color:#fff;font-weight:600;padding:.75rem 1.1rem;border-radius:8px;white-space:nowrap}
+.info{padding-top:2rem;padding-bottom:2.5rem;color:var(--soft);font-size:14px}
+.info h2{color:var(--ink);font-size:15px;margin:1.3rem 0 .3rem}
+.info p + p{margin-top:.3rem}
+.foot{border-top:1px solid var(--line);padding-top:1rem;padding-bottom:1.4rem;color:var(--soft);font-size:12px}
 </style>
 </head>
 <body>
 
-<div class="demo">Eksempel – oppdiktet bedrift, laget av Skysite</div>
+<div class="note">Eksempel – oppdiktet bedrift, laget av Skysite</div>
 
-<nav>
-  <div class="wrap">
-    <a href="#" class="logo">Salong Eksempel</a>
-    <div class="links">
-      <a href="#priser">Priser</a>
-      <a href="#info">Finn oss</a>
-      <a class="btn small" href="#bestill">Bestill time</a>
-    </div>
+<div class="wrap">
+  <div class="top">
+    <b>SALONG EKSEMPEL</b>
+    <a href="#info">Kontakt</a>
   </div>
-</nav>
 
-<header class="hero">
-  <div class="wrap">
-    <div>
-      <p class="kicker">Frisør · Barber · Farge</p>
-      <h1>Hår som<br>passer <i>deg.</i></h1>
-      <p class="lead">Klipp, farge og skjeggstell i rolige omgivelser. Bestill time på nett, når det passer deg.</p>
-      <div class="cta">
-        <a class="btn" href="#bestill">Bestill time</a>
-        <a class="btn ghost" href="#priser">Se priser</a>
-      </div>
-    </div>
-    <div class="art" aria-hidden="true"><b>✂️</b><span>Siden 2012</span></div>
+  <h1>Bestill time</h1>
+  <p class="lede">Eksempelgata 2 · Drop-in hvis vi har ledig</p>
+
+  <p class="step"><span>1</span>Hva skal du ha gjort?</p>
+  <div id="svc">
+    <button class="svc on" data-n="Herreklipp"><span>Herreklipp<small>30 min</small></span><span>490 kr</span></button>
+    <button class="svc" data-n="Dameklipp"><span>Dameklipp<small>45 min · vask og føn</small></span><span>690 kr</span></button>
+    <button class="svc" data-n="Skjeggtrim"><span>Skjeggtrim<small>20 min</small></span><span>290 kr</span></button>
+    <button class="svc" data-n="Farge"><span>Farge, hel<small>90 min · inkl. klipp</small></span><span>fra 1 290 kr</span></button>
   </div>
-</header>
 
-<section id="priser">
-  <div class="wrap">
-    <h2>Priser</h2>
-    <p class="sub">Alle priser i NOK. Vask er inkludert.</p>
-    <ul class="price">
-      <li><span>Dameklipp<small>Vask, klipp og føn</small></span><i></i><b>690</b></li>
-      <li><span>Herreklipp<small>Vask og klipp</small></span><i></i><b>490</b></li>
-      <li><span>Barneklipp<small>Under 12 år</small></span><i></i><b>350</b></li>
-      <li><span>Skjeggtrim<small>Med varmt håndkle</small></span><i></i><b>290</b></li>
-      <li><span>Farge, hel<small>Inkludert klipp</small></span><i></i><b>fra 1 290</b></li>
-      <li><span>Striper<small>Folie, inkludert klipp</small></span><i></i><b>fra 1 490</b></li>
-    </ul>
+  <p class="step"><span>2</span>Hos hvem?</p>
+  <div class="who" id="who">
+    <button class="on">Første ledige</button>
+    <button>Frisør A</button>
+    <button>Frisør B</button>
+    <button>Frisør C</button>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>Frisørene</h2>
-    <p class="sub">Tre frisører, hver med sin spesialitet.</p>
-    <div class="team">
-      <div class="person"><div class="av">A</div><h3>Frisør A</h3><p>Farge og striper</p></div>
-      <div class="person"><div class="av">B</div><h3>Frisør B</h3><p>Herreklipp og skjegg</p></div>
-      <div class="person"><div class="av">C</div><h3>Frisør C</h3><p>Lange frisyrer og oppsett</p></div>
-    </div>
+  <p class="step"><span>3</span>Når passer det?</p>
+  <div class="days" id="days">
+    <button class="on" data-d="ons 26.">ons<b>26</b></button>
+    <button data-d="tor 27.">tor<b>27</b></button>
+    <button data-d="fre 28.">fre<b>28</b></button>
+    <button data-d="lør 29.">lør<b>29</b></button>
+    <button data-d="man 1.">man<b>1</b></button>
   </div>
-</section>
-
-<section id="bestill" style="border-top:0;padding-top:0">
-  <div class="wrap">
-    <div class="book">
-      <div>
-        <h3>Klar for ny sveis?</h3>
-        <p>Velg frisør og tidspunkt på under ett minutt.</p>
-      </div>
-      <a class="btn" href="#bestill">Bestill time →</a>
-    </div>
+  <div class="times" id="times">
+    <button disabled>09:00</button><button>09:30</button><button disabled>10:00</button><button>11:30</button>
+    <button>12:00</button><button disabled>13:00</button><button class="on">14:30</button><button>15:00</button>
+    <button disabled>16:00</button><button>16:30</button><button>17:00</button><button disabled>17:30</button>
   </div>
-</section>
-
-<section id="info">
-  <div class="wrap">
-    <h2>Finn oss</h2>
-    <p class="sub">Drop-in når vi har ledig, ellers bestill time.</p>
-    <div class="info">
-      <div>
-        <h3>Adresse</h3>
-        <p>Eksempelgata 2<br>0000 Byen</p>
-        <p style="margin-top:1rem">Telefon og e-post kommer her.</p>
-      </div>
-      <div>
-        <h3>Åpningstider</h3>
-        <ul>
-          <li>Man–fre <b>09:00–18:00</b></li>
-          <li>Torsdag <b>09:00–20:00</b></li>
-          <li>Lørdag <b>10:00–15:00</b></li>
-          <li>Søndag <b>Stengt</b></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <span>© Salong Eksempel (oppdiktet)</span>
-    <span class="made-by"><img src="../../logo.svg" alt="">Eksempel laget av Skysite</span>
-  </div>
-</footer>
-
-<div class="mbar">
-  <a class="btn" href="#bestill">Bestill time</a>
 </div>
+
+<div class="bar">
+  <div class="wrap">
+    <p><b id="sum">Herreklipp</b><span id="when">ons 26. kl. 14:30 · første ledige</span></p>
+    <button type="button">Fortsett</button>
+  </div>
+</div>
+
+<div class="wrap info" id="info">
+  <h2>Adresse</h2>
+  <p>Eksempelgata 2, 0000 Byen</p>
+  <h2>Åpningstider</h2>
+  <p>Mandag–fredag 9–18, torsdag til 20</p>
+  <p>Lørdag 10–15</p>
+  <h2>Avbestilling</h2>
+  <p>Gi beskjed senest 24 timer før, ellers må vi ta halv pris.</p>
+  <h2>Kontakt</h2>
+  <p>Telefon og e-post kommer her.</p>
+</div>
+
+<div class="wrap foot">Salong Eksempel (oppdiktet) · Eksempel laget av Skysite</div>
+
+<script>
+(function(){
+  var sum=document.getElementById('sum'), when=document.getElementById('when');
+  var state={d:'ons 26.',t:'14:30',w:'første ledige'};
+  function pick(group, sel, cb){
+    group.addEventListener('click',function(e){
+      var b=e.target.closest(sel); if(!b||b.disabled) return;
+      group.querySelectorAll(sel).forEach(function(x){x.classList.toggle('on',x===b)});
+      cb(b); when.textContent=state.d+' kl. '+state.t+' · '+state.w.toLowerCase();
+    });
+  }
+  pick(document.getElementById('svc'),'.svc',function(b){sum.textContent=b.dataset.n});
+  pick(document.getElementById('who'),'button',function(b){state.w=b.textContent});
+  pick(document.getElementById('days'),'button',function(b){state.d=b.dataset.d});
+  pick(document.getElementById('times'),'button',function(b){state.t=b.textContent});
+})();
+</script>
 </body>
 </html>
