@@ -13,13 +13,18 @@
 <meta property="og:title" content="Skysite – Nettsider for lokale bedrifter">
 <meta property="og:description" content="Skysite lager moderne, raske nettsider for restauranter og lokale bedrifter.">
 <meta property="og:url" content="https://skysite.no/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://skysite.no/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Skysite – Nettsider for lokale bedrifter">
+<meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Skysite",
   "url": "https://skysite.no/",
   "logo": "https://skysite.no/logo.svg",
+  "image": "https://skysite.no/og-image.png",
   "description": "Skysite lager moderne, raske nettsider for restauranter og lokale bedrifter.",
   "telephone": "+47 484 27 504"
 }</script>
@@ -38,20 +43,25 @@
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
   .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.25rem}
   .brand img{width:34px;height:34px}
-  .links{display:flex;gap:1.4rem;align-items:center}
+  .links{display:flex;gap:1.4rem;align-items:center;margin-left:auto;margin-right:1.4rem}
   .links a{text-decoration:none;color:var(--muted);font-weight:500}
   .links a:hover{color:var(--text)}
   .btn{display:inline-block;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;padding:.8rem 1.3rem;border-radius:999px;transition:transform .15s,box-shadow .15s}
   .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(91,140,255,.35)}
   .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
-  .links .btn{color:#fff;padding:.5rem 1rem}
+  .nav-cta{padding:.5rem 1rem}
   .hero{position:relative;overflow:hidden;padding:6rem 0 0}
   .hero h1{font-size:clamp(2.4rem,6vw,4.2rem);max-width:14ch}
   .hero h1 em{font-style:normal;color:var(--sun)}
   .hero p{color:var(--muted);font-size:1.15rem;max-width:52ch;margin:1.2rem 0 2rem}
   .cta{display:flex;gap:.8rem;flex-wrap:wrap}
   .city{display:block;width:100%;height:auto;margin-top:3.5rem}
-  section{padding:5rem 0}
+  section{padding:5rem 0;scroll-margin-top:64px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+  .btn:active{transform:translateY(0)}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  .case .mock{text-decoration:none}
+  footer a{text-decoration:none}footer a:hover{color:var(--text)}
   .eyebrow{color:var(--blue);font-weight:600;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;margin-bottom:.6rem}
   h2{font-size:clamp(1.8rem,4vw,2.6rem)}
   .sub{color:var(--muted);max-width:56ch;margin:.8rem 0 0}
@@ -79,11 +89,9 @@
   .step::before{counter-increment:s;content:"0" counter(s);font-family:"Space Grotesk",sans-serif;color:var(--blue);font-weight:700}
   .step h3{font-size:1.15rem;margin:.4rem 0}
   .step p{color:var(--muted);margin:0}
-  .contact{text-align:center;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:3.5rem 1.5rem}
-  .contact .sub{margin:.8rem auto 2rem}
   footer{border-top:1px solid var(--line);padding:2rem 0;color:var(--muted);font-size:.9rem}
   footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
-  @media(max-width:760px){.links a:not(.btn){display:none}.case{grid-template-columns:1fr;padding:1.6rem}.hero{padding-top:3.5rem}section{padding:3.5rem 0}.cta .btn{flex:1 1 100%;text-align:center}}
+  @media(max-width:760px){nav .wrap{height:auto;flex-wrap:wrap;padding-top:.6rem;padding-bottom:.6rem;row-gap:.5rem}.nav-cta{order:2}.links{order:3;margin:0;width:100%;gap:1.3rem;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;white-space:nowrap}.links::-webkit-scrollbar{display:none}.links a{font-size:.92rem}section{scroll-margin-top:108px}.case{grid-template-columns:1fr;padding:1.6rem}.hero{padding-top:3.5rem}section{padding:3.5rem 0}.cta .btn{flex:1 1 100%;text-align:center}}
   .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-top:2.5rem}
   .person{display:flex;gap:1.1rem;align-items:flex-start;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:1.5rem}
   .avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.4rem;color:#0B1020;background:linear-gradient(135deg,var(--blue),#9db8ff)}
@@ -91,7 +99,7 @@
   .person h3{font-size:1.2rem}
   .role{color:var(--blue);font-weight:600;font-size:.9rem;margin:.15rem 0 .5rem}
   .person p{color:var(--muted);margin:0}
-  .contact{display:grid;grid-template-columns:1fr 1.15fr;gap:2.5rem;text-align:left;padding:3rem}
+  .contact{display:grid;grid-template-columns:1fr 1.15fr;gap:2.5rem;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:3rem}
   .contact .sub{margin:.8rem 0 1.8rem}
   .facts{list-style:none;padding:0;margin:0 0 1.8rem;display:grid;gap:.9rem}
   .facts li{display:flex;gap:.8rem;align-items:flex-start;color:var(--muted)}
@@ -103,7 +111,6 @@
   .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
   label{display:block;font-size:.9rem;font-weight:500}
   label input,label textarea,label select{margin-top:.35rem}
-  section{scroll-margin-top:64px}
   label span.opt{color:var(--muted);font-weight:400}
   input,textarea,select{font:inherit;color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem;width:100%}
   textarea{min-height:120px;resize:vertical}
@@ -120,16 +127,16 @@
 </head>
 <body>
 
-<nav>
+<nav aria-label="Hovedmeny">
   <div class="wrap">
-    <a class="brand" href="#"><img src="logo.svg" alt="">Skysite</a>
+    <a class="brand" href="./"><img src="logo.svg" alt="">Skysite</a>
     <div class="links">
       <a href="#tjenester">Tjenester</a>
       <a href="#arbeid">Arbeid</a>
       <a href="#prosess">Slik jobber vi</a>
       <a href="#om-oss">Om oss</a>
-      <a class="btn" href="#kontakt">Kontakt</a>
     </div>
+    <a class="btn nav-cta" href="#kontakt">Kontakt</a>
   </div>
 </nav>
 
@@ -159,6 +166,8 @@
     <rect x="0" y="216" width="1200" height="4" fill="#E8ECF8" opacity=".6"/>
   </svg>
 </header>
+
+<main>
 
 <section id="tjenester">
   <div class="wrap">
@@ -190,7 +199,7 @@
         </ul>
         <a class="btn" href="quick-bite/">Se nettsiden →</a>
       </div>
-      <a class="mock" href="quick-bite/" style="text-decoration:none" aria-label="Åpne Quick Bite-nettsiden">
+      <a class="mock" href="quick-bite/" aria-label="Åpne Quick Bite-nettsiden">
         <div class="bar"><i></i><i></i><i></i></div>
         <div class="body">
           <div class="logo">QUICK<span>BITE</span></div>
@@ -287,10 +296,12 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
     <span>© <span id="year"></span> Skysite</span>
-    <span>Nettsider for lokale bedrifter</span>
+    <span>Nettsider for lokale bedrifter · <a href="tel:+4748427504">484 27 504</a></span>
   </div>
 </footer>
 
