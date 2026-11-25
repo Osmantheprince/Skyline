@@ -288,3 +288,15 @@
 
   @media (max-width:640px){.hero::after{width:70px;height:70px;right:4%;top:4%}}
   @media (prefers-reduced-motion:reduce){.hero::after{animation:none}.card:hover{transform:none}}
+
+  /* ===== Store FAQ-spørsmål ===== */
+  .faq{max-width:none}
+  .faq details{border-top:1px solid var(--ink);padding:0}
+  .faq details:first-child{border-top:0}
+  .faq details:last-child{border-bottom:1px solid var(--ink)}
+  .faq summary{font-size:clamp(1.4rem,3vw,2.3rem);font-weight:650;letter-spacing:-.015em;line-height:1.2;padding:1.7rem .5rem 1.7rem 0;gap:2rem}
+  .faq summary:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.15em}
+  .faq summary::after{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;color:var(--ink);flex:0 0 auto;transition:transform .2s}
+  .faq details[open] summary::after{content:"+";transform:rotate(45deg)}
+  .faq details p{font-size:1.1rem;max-width:62ch;margin:-.6rem 0 1.8rem}
+  @media (prefers-reduced-motion:reduce){.faq summary::after{transition:none}}
