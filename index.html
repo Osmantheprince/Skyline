@@ -2,6 +2,7 @@
 <html lang="no">
 <head>
 <meta charset="UTF-8">
+<script>if(location.protocol==="http:"&&location.hostname==="skysite.no")location.replace("https://skysite.no"+location.pathname+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skysite – Nettsider for lokale bedrifter</title>
 <meta name="description" content="Skysite er Osman og Hasan. Vi lager enkle, raske nettsider for restauranter, butikker og andre lokale bedrifter.">
@@ -26,7 +27,8 @@
   "logo": "https://skysite.no/logo.svg",
   "image": "https://skysite.no/og-image.png",
   "description": "Skysite lager nettsider for restauranter, butikker og andre lokale bedrifter.",
-  "telephone": "+47 484 27 504"
+  "telephone": "+47 484 27 504",
+  "email": "post@skysite.no"
 }</script>
 <link rel="icon" href="logo.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
@@ -39,16 +41,16 @@
     --muted:#50587A;
     --line:#D6DBE8;
     --sun:#FFB547;     /* sola fra logoen */
-    --blue:#2E5BDB;
+    --amber:#E8941A;   /* mørkere sol, til understreking */
     --night-muted:#A9B2D0;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Schibsted Grotesk",system-ui,sans-serif;font-feature-settings:"kern"}
   img,svg{display:block}
-  a{color:var(--blue);text-underline-offset:.18em;text-decoration-thickness:1px}
-  a:hover{text-decoration-thickness:2px}
-  :focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+  a{color:var(--ink);text-decoration-color:var(--amber);text-underline-offset:.2em;text-decoration-thickness:2px}
+  a:hover{text-decoration-color:var(--ink)}
+  :focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
   h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.02em;font-weight:750}
   p{margin:0}
   .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
@@ -104,6 +106,16 @@
   .steps h3{font-size:1.15rem;margin-bottom:.35rem;letter-spacing:-.01em}
   .steps p{color:var(--muted)}
 
+  .price{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line);max-width:60ch;color:var(--muted)}
+  .price b{color:var(--ink)}
+
+  /* Sitat fra kunde (skjult til vi har et ekte sitat) */
+  .quote{background:var(--sun);padding:5rem 0}
+  .quote figure{margin:0}
+  .quote blockquote{margin:0;max-width:34ch;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:650;line-height:1.25;letter-spacing:-.015em}
+  .quote figcaption{margin-top:1.4rem;font-weight:600}
+  .quote figcaption span{font-weight:400}
+
   .people{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
   .person h3{font-size:1.35rem}
   .person .role{font-weight:600;margin:.2rem 0 .6rem}
@@ -119,6 +131,7 @@
   .contact .small{color:var(--night-muted);margin-top:.6rem}
   .contact .facts{margin-top:2.2rem;color:var(--night-muted);display:grid;gap:.4rem}
   .contact .facts b{color:var(--paper);font-weight:600}
+  .contact .facts a{color:var(--paper)}
   .contact :focus-visible{outline-color:var(--sun)}
 
   form{background:var(--paper);color:var(--ink);border-radius:16px;padding:2rem;display:grid;gap:1.1rem}
@@ -128,7 +141,7 @@
   input,textarea,select{display:block;width:100%;margin-top:.4rem;font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:.75rem .85rem}
   select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.5rem}
   textarea{min-height:130px;resize:vertical}
-  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(46,91,219,.2);background:var(--paper)}
+  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(255,181,71,.55);background:var(--paper)}
   form .btn{width:100%}
   form .btn[disabled]{opacity:.6;cursor:wait}
   .hp{position:absolute;left:-9999px}
@@ -140,8 +153,14 @@
   .skyline{display:block;width:100%;height:auto;margin-top:5rem}
 
   footer{background:var(--ink);color:var(--night-muted);font-size:.95rem}
-  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.5rem 2rem;padding-top:1.4rem;padding-bottom:1.6rem;border-top:1px solid #26304F}
-  footer a{color:var(--paper)}
+  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-top:2.6rem;padding-bottom:2.2rem;border-top:1px solid #26304F}
+  .foot .brand{color:var(--paper)}
+  .foot p{margin-top:.7rem;max-width:30ch}
+  .foot h3{color:var(--paper);font-size:.95rem;font-weight:650;letter-spacing:0;margin-bottom:.6rem}
+  .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
+  footer a{color:var(--paper);text-decoration:none}
+  footer a:hover{text-decoration:underline;text-decoration-color:var(--sun)}
+  .copy{padding-bottom:1.8rem;font-size:.875rem}
 
   @media (max-width:900px){
     .hero .wrap,.split{grid-template-columns:1fr}
@@ -170,6 +189,10 @@
     .steps li::after{display:none}
     form{padding:1.4rem}
     .skyline{margin-top:3.5rem;height:110px}
+    .foot{grid-template-columns:1fr 1fr;padding-top:2.4rem;padding-bottom:2rem}
+    .copy{padding-bottom:1.8rem}
+    .foot > div:first-child{grid-column:1 / -1}
+    .quote{padding:3.5rem 0}
   }
   @media (prefers-reduced-motion:reduce){.top{transition:none}}
 </style>
@@ -211,6 +234,22 @@
   </div>
 </section>
 
+<!--
+  SITAT FRA KUNDE
+  Vises ikke før vi har et ekte sitat. Når eieren har sagt ja:
+  1. Bytt ut teksten i <blockquote> med det eieren faktisk sa (ordrett).
+  2. Fyll inn navn og sted i <figcaption>.
+  3. Fjern ordet hidden fra <section>-taggen.
+-->
+<section class="quote" id="sitat" hidden>
+  <div class="wrap">
+    <figure>
+      <blockquote><p>Sitatet fra eieren kommer her.</p></blockquote>
+      <figcaption>Navn Navnesen, <span>Quick Bite, Sandnes</span></figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="block" id="dette-far-du">
   <div class="wrap split">
     <div>
@@ -237,6 +276,7 @@
       <li><h3>Vi justerer</h3><p>Tekst, bilder og farger endres til du er fornøyd.</p></li>
       <li><h3>Siden legges ut</h3><p>Vi publiserer den og hjelper deg med endringer senere.</p></li>
     </ol>
+    <p class="price"><b>Hva koster det?</b> Det kommer an på hva siden skal inneholde. Du får en fast pris etter første prat, og praten er uforpliktende.</p>
   </div>
 </section>
 
@@ -271,11 +311,12 @@
       <a class="phone-big" href="tel:+4748427504">484 27 504</a>
       <p class="small">Ring eller send SMS</p>
       <div class="facts">
+        <p><b>E-post:</b> <a href="mailto:post@skysite.no">post@skysite.no</a></p>
         <p><b>Hele Norge.</b> Vi møtes gjerne på video.</p>
       </div>
     </div>
 
-    <form id="kontaktskjema" action="https://formsubmit.co/osmankhalid04@hotmail.com" method="POST">
+    <form id="kontaktskjema" action="https://formsubmit.co/post@skysite.no" method="POST">
       <input type="hidden" name="_subject" value="Ny henvendelse fra skysite.no">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_captcha" value="false">
@@ -324,10 +365,28 @@
 </section>
 
 <footer>
-  <div class="wrap">
-    <span>© <span id="year">2026</span> Skysite</span>
-    <span><a href="tel:+4748427504">484 27 504</a></span>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="./"><img src="logo.svg" alt="" width="34" height="34">Skysite</a>
+      <p>Nettsider for lokale bedrifter, laget av Osman Khalid og Hasan Shabbir.</p>
+    </div>
+    <div>
+      <h3>Kontakt</h3>
+      <ul>
+        <li><a href="tel:+4748427504">484 27 504</a></li>
+        <li><a href="mailto:post@skysite.no">post@skysite.no</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>På siden</h3>
+      <ul>
+        <li><a href="quick-bite/">Quick Bite-forslaget</a></li>
+        <li><a href="#slik">Slik foregår det</a></li>
+        <li><a href="#om-oss">Om oss</a></li>
+      </ul>
+    </div>
   </div>
+  <div class="wrap copy">© <span id="year">2026</span> Skysite</div>
 </footer>
 
 <script>
