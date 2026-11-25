@@ -19,6 +19,7 @@ Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og and
 | `Quick-bite-bilder.md` | Oversikt over bilder til Quick Bite |
 | `logo.svg` | Skysite-logo |
 | `og-image.png` | Delingsbilde (1200×630) for forsiden |
+| `fonts/` | Skrifter (Inter, Space Grotesk, Archivo Black) lagret lokalt i stedet for Google Fonts |
 
 ## Publisering
 
