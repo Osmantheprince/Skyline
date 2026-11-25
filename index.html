@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <script>if(location.protocol==="http:"&&location.hostname==="skysite.no")location.replace("https://skysite.no"+location.pathname+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Skysite – Nettsider for lokale bedrifter</title>
-<meta name="description" content="Vi lager enkle, raske nettsider for restauranter, butikker og andre lokale bedrifter.">
+<title>Skysite – Skreddersydde nettsider for lokale bedrifter</title>
+<meta name="description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Se et ferdig forslag før du bestemmer deg, og få fast pris.">
 <link rel="canonical" href="https://skysite.no/">
 <meta name="theme-color" content="#F3F5F9">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nb_NO">
 <meta property="og:site_name" content="Skysite">
-<meta property="og:title" content="Skysite – Nettsider for lokale bedrifter">
-<meta property="og:description" content="Vi lager enkle, raske nettsider for restauranter, butikker og andre lokale bedrifter.">
+<meta property="og:title" content="Skysite – Skreddersydde nettsider for lokale bedrifter">
+<meta property="og:description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Se et ferdig forslag før du bestemmer deg, og få fast pris.">
 <meta property="og:url" content="https://skysite.no/">
 <meta property="og:image" content="https://skysite.no/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Skysite – Nettsider for lokale bedrifter">
+<meta property="og:image:alt" content="Skysite – Skreddersydde nettsider for lokale bedrifter">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -26,226 +26,51 @@
   "url": "https://skysite.no/",
   "logo": "https://skysite.no/logo.svg",
   "image": "https://skysite.no/og-image.png",
-  "description": "Skysite lager nettsider for restauranter, butikker og andre lokale bedrifter.",
+  "description": "Skysite lager skreddersydde nettsider for restauranter, butikker og andre lokale bedrifter.",
   "telephone": "+47 484 27 504",
   "email": "post@skysite.no"
 }</script>
-<link rel="icon" href="logo.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preload" href="fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
-<link href="fonts/fonts.css" rel="stylesheet">
-<style>
-  :root{
-    --bg:#F3F5F9;      /* dagslys */
-    --paper:#FFFFFF;
-    --ink:#141B33;     /* marineblå fra logoen */
-    --muted:#50587A;
-    --line:#D6DBE8;
-    --sun:#FFB547;     /* sola fra logoen */
-    --amber:#E8941A;   /* mørkere sol, til understreking */
-    --night-muted:#A9B2D0;
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.6 "Schibsted Grotesk",system-ui,sans-serif;font-feature-settings:"kern"}
-  img,svg{display:block}
-  a{color:var(--ink);text-decoration-color:var(--amber);text-underline-offset:.2em;text-decoration-thickness:2px}
-  a:hover{text-decoration-color:var(--ink)}
-  :focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
-  h1,h2,h3{margin:0;line-height:1.08;letter-spacing:-.02em;font-weight:750}
-  p{margin:0}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 1.5rem}
-  .skip{position:absolute;left:-9999px}
-  .skip:focus{left:1rem;top:1rem;z-index:20;background:var(--paper);padding:.5rem .8rem}
-
-  /* Meny */
-  .top{position:sticky;top:0;z-index:10;background:rgba(243,245,249,.92);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid transparent;transition:border-color .2s}
-  .top.scrolled{border-bottom-color:var(--line)}
-  .top .wrap{display:flex;align-items:center;gap:2rem;height:68px}
-  .brand{display:flex;align-items:center;gap:.6rem;color:var(--ink);text-decoration:none;font-weight:750;font-size:1.2rem;letter-spacing:-.01em}
-  .brand img{width:34px;height:34px}
-  .links{display:flex;gap:1.6rem;margin-left:auto}
-  .links a{color:var(--ink);text-decoration:none;font-weight:500}
-  .links a:hover{text-decoration:underline}
-  .links a{white-space:nowrap}
-  @media (max-width:1000px){.links{gap:1rem}.top .wrap{gap:1.2rem}}
-
-  /* Knapper */
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.3rem;border-radius:6px;font:inherit;font-weight:650;text-decoration:none;cursor:pointer;border:2px solid var(--ink)}
-  .btn-sun{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-  .btn-sun:hover{background:#000;border-color:#000}
-  .contact .btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun)}
-  .contact .btn-sun:hover{background:#FFA41F;border-color:#FFA41F}
-  .btn-line{background:transparent;color:var(--ink)}
-  .btn-line:hover{background:var(--ink);color:var(--paper)}
-  .top .btn{min-height:42px;padding:0 1rem}
-
-  /* Topp */
-  .hero{padding:5.5rem 0 4.5rem}
-  .eyebrow{font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem}
-  .hero h1{font-size:clamp(2.3rem,4.6vw,3.7rem);font-weight:700;letter-spacing:-.025em;line-height:1.08;max-width:19ch}
-  .hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem 3rem;flex-wrap:wrap;margin-top:2rem}
-  .hero-row .lead{margin:0}
-  .points{list-style:none;margin:4rem 0 0;padding:1.6rem 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;color:var(--muted);font-size:.95rem}
-  .points b{display:block;color:var(--ink);font-weight:650;margin-bottom:.2rem}
-  .lead{font-size:1.15rem;line-height:1.55;color:var(--muted);max-width:40ch;margin:1.6rem 0 2.2rem}
-  .actions{display:flex;flex-wrap:wrap;gap:.8rem}
-
-  .phone{position:relative;width:300px;height:649px;border:8px solid #1d2233;border-radius:38px;overflow:hidden;background:#14100d;box-shadow:0 24px 48px -28px rgba(20,27,51,.35)}
-  .phone iframe{position:absolute;top:0;left:0;width:390px;height:844px;border:0;transform:scale(.7179);transform-origin:0 0}
-
-  /* Tre eksempler */
-  .trio{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:2rem;margin-top:3rem}
-  .trio figure{margin:0}
-  .trio figcaption{margin-top:1rem;font-size:.95rem;color:var(--muted);max-width:300px}
-  .trio figcaption b{color:var(--ink)}
-  .trio figcaption a{font-weight:600}
-  @media (max-width:1040px){
-    .trio{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1.5rem;padding-bottom:1rem;margin-right:-1.5rem;padding-right:1.5rem}
-    .trio figure{flex:0 0 auto;scroll-snap-align:start}
-  }
-
-  /* Seksjoner */
-  .block{padding:5rem 0;border-top:1px solid var(--line)}
-  .split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3rem}
-  .block h2{font-size:clamp(1.7rem,2.8vw,2.25rem);font-weight:700;letter-spacing:-.02em;max-width:18ch}
-  .block .intro{color:var(--muted);margin-top:1rem;max-width:36ch}
-
-  .features{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2rem 2.5rem}
-  .features h3{font-size:1.05rem;font-weight:650;letter-spacing:0;margin-bottom:.3rem}
-  .features p{color:var(--muted)}
-
-  .steps{list-style:none;margin:3rem 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;counter-reset:steg}
-  .steps li{counter-increment:steg;padding-top:1rem;border-top:2px solid var(--ink)}
-  .steps li::before{content:"0" counter(steg);display:block;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:.8rem;font-feature-settings:"tnum"}
-  .steps h3{font-size:1.05rem;font-weight:650;margin-bottom:.3rem;letter-spacing:0}
-  .steps p{color:var(--muted)}
-
-  .price{margin-top:3rem;padding-top:1.6rem;border-top:1px solid var(--line);max-width:60ch;color:var(--muted)}
-  .price b{color:var(--ink)}
-
-  /* Sitat fra kunde (skjult til vi har et ekte sitat) */
-  .quote{background:var(--sun);padding:5rem 0}
-  .quote figure{margin:0}
-  .quote blockquote{margin:0;max-width:34ch;font-size:clamp(1.6rem,3.4vw,2.4rem);font-weight:650;line-height:1.25;letter-spacing:-.015em}
-  .quote figcaption{margin-top:1.4rem;font-weight:600}
-  .quote figcaption span{font-weight:400}
-
-  .faq details{border-top:1px solid var(--line);padding:1.05rem 0}
-  .faq details:last-child{border-bottom:1px solid var(--line)}
-  .faq summary{cursor:pointer;list-style:none;font-weight:650;display:flex;justify-content:space-between;align-items:center;gap:1rem}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";font-weight:400;font-size:1.4rem;line-height:1;color:var(--muted)}
-  .faq details[open] summary::after{content:"\2013"}
-  .faq details p{color:var(--muted);margin-top:.6rem;max-width:58ch}
-
-  .people{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-  .person h3{font-size:1.15rem;font-weight:650}
-  .person .role{font-weight:600;margin:.2rem 0 .6rem}
-  .person p{color:var(--muted)}
-
-  /* Kontakt */
-  .contact{position:relative;background:var(--ink);color:var(--paper);padding:5rem 0 5rem;overflow:hidden}
-  .contact .split{align-items:start}
-  .contact h2{font-size:clamp(1.7rem,2.8vw,2.25rem);font-weight:700;letter-spacing:-.02em;max-width:16ch}
-  .contact .intro{color:var(--night-muted);margin:1rem 0 2.4rem;max-width:36ch}
-  .phone-big{display:inline-block;color:var(--paper);font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:700;letter-spacing:-.02em;text-decoration:none;font-feature-settings:"tnum";line-height:1}
-  .phone-big:hover{text-decoration:underline;text-decoration-thickness:3px}
-  .contact .small{color:var(--night-muted);margin-top:.6rem}
-  .contact .facts{margin-top:2.2rem;color:var(--night-muted);display:grid;gap:.4rem}
-  .contact .facts b{color:var(--paper);font-weight:600}
-  .contact .facts a{color:var(--paper)}
-  .contact :focus-visible{outline-color:var(--sun)}
-
-  form{background:var(--paper);color:var(--ink);border-radius:10px;padding:2rem;display:grid;gap:1.1rem}
-  .row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
-  label{display:block;font-weight:600;font-size:.95rem}
-  .opt{font-weight:400;color:var(--muted)}
-  input,textarea,select{display:block;width:100%;margin-top:.4rem;font:inherit;font-size:1rem;color:var(--ink);background:var(--bg);border:1.5px solid var(--line);border-radius:8px;padding:.75rem .85rem}
-  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 20px) 55%,calc(100% - 14px) 55%;background-size:6px 6px;background-repeat:no-repeat;padding-right:2.5rem}
-  textarea{min-height:130px;resize:vertical}
-  input:focus,textarea:focus,select:focus{outline:none;border-color:var(--ink);box-shadow:0 0 0 3px rgba(255,181,71,.55);background:var(--paper)}
-  form .btn{width:100%}
-  form .btn[disabled]{opacity:.6;cursor:wait}
-  .hp{position:absolute;left:-9999px}
-  .note{color:var(--muted);font-size:.875rem}
-  .note a{color:var(--muted)}
-  .status{display:none;padding:.85rem 1rem;border-radius:8px;font-weight:500}
-  .status.ok{display:block;background:#E3F5EA;color:#14532D}
-  .status.err{display:block;background:#FDE8E8;color:#8A1C1C}
-
-
-  footer{background:var(--ink);color:var(--night-muted);font-size:.95rem}
-  .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:2rem;padding-top:2.6rem;padding-bottom:2.2rem;border-top:1px solid #26304F}
-  .foot .brand{color:var(--paper)}
-  .foot p{margin-top:.7rem;max-width:30ch}
-  .foot h3{color:var(--paper);font-size:.95rem;font-weight:650;letter-spacing:0;margin-bottom:.6rem}
-  .foot ul{list-style:none;margin:0;padding:0;display:grid;gap:.35rem}
-  footer a{color:var(--paper);text-decoration:none}
-  footer a:hover{text-decoration:underline;text-decoration-color:var(--sun)}
-  .copy{padding-bottom:1.8rem;font-size:.875rem}
-
-  @media (max-width:900px){
-    .split{grid-template-columns:1fr}
-    .points{grid-template-columns:1fr;gap:1rem;margin-top:2.6rem}
-    .hero{padding:2.5rem 0 4rem}
-    .demo{justify-self:start;margin-left:1rem}
-    .steps{grid-template-columns:1fr 1fr;row-gap:2.5rem}
-    .steps li:nth-child(2)::after{display:none}
-  }
-  @media (max-width:640px){
-    .wrap{padding:0 1.15rem}
-    .top .wrap{gap:1rem;height:60px}
-    .links{display:none}
-    .top .btn{margin-left:auto}
-    .lead{font-size:1.125rem}
-    .actions .btn{flex:1 1 100%}
-    .demo .sun{width:170px;height:170px;right:-1.5rem}
-    .demo{justify-self:center;margin-left:0}
-    .phone{width:260px;height:563px;border-width:9px;border-radius:40px}
-    .phone iframe{transform:scale(.6205)}
-    .block,.contact{padding-top:4rem}
-    .block{padding-bottom:4rem}
-    .features,.people,.row{grid-template-columns:1fr}
-    .features{gap:1.6rem}
-    .steps{grid-template-columns:1fr;gap:1.8rem}
-    .steps li{padding:0 0 0 3.6rem;min-height:2.5rem}
-    .steps li::after{display:none}
-    form{padding:1.4rem}
-    .foot{grid-template-columns:1fr 1fr;padding-top:2.4rem;padding-bottom:2rem}
-    .copy{padding-bottom:1.8rem}
-    .foot > div:first-child{grid-column:1 / -1}
-    .quote{padding:3.5rem 0}
-  }
-  @media (prefers-reduced-motion:reduce){.top{transition:none}}
-</style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Skysite",
+  "url": "https://skysite.no/"
+}</script>
+<link rel="icon" href="/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link href="/fonts/fonts.css" rel="stylesheet">
+<link href="/style.css" rel="stylesheet">
 </head>
 <body>
 <a class="skip" href="#innhold">Hopp til innholdet</a>
 
 <header class="top" id="top">
   <div class="wrap">
-    <a class="brand" href="./"><img src="logo.svg" alt="" width="34" height="34">Skysite</a>
-    <nav class="links" aria-label="Hovedmeny">
-      <a href="#eksempler">Eksempler</a>
-      <a href="#dette-far-du">Dette får du</a>
-      <a href="#slik">Slik foregår det</a>
-      <a href="#om-oss">Om oss</a>
+    <a class="brand" href="/"><img src="/logo.svg" alt="" width="34" height="34">Skysite</a>
+    <nav class="links" id="meny" aria-label="Hovedmeny">
+      <a href="/tjenester/">Tjenester</a>
+      <a href="/eksempler/">Eksempler</a>
+      <a href="/slik-foregar-det/">Slik foregår det</a>
+      <a href="/om-oss/">Om oss</a>
     </nav>
-    <a class="btn btn-sun" href="#kontakt">Kontakt oss</a>
+    <a class="btn btn-sun" href="/kontakt/">Kontakt oss</a>
+    <button class="menu-btn" type="button" aria-controls="meny" aria-expanded="false" aria-label="Åpne meny">
+      <svg class="bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
 </header>
 
 <main id="innhold">
-
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">Webutvikling og IT-hjelp</p>
+    <p class="eyebrow">Skreddersydde nettsider og IT-støtte</p>
     <h1>Profesjonelle nettsider for lokale bedrifter.</h1>
     <div class="hero-row">
       <p class="lead">Vi designer og bygger raske, mobilvennlige nettsider for restauranter, frisører og butikker. Du ser et ferdig forslag før du bestemmer deg.</p>
       <div class="actions">
-        <a class="btn btn-sun" href="#kontakt">Send oss en melding</a>
+        <a class="btn btn-sun" href="/kontakt/">Send oss en melding</a>
         <a class="btn btn-line" href="tel:+4748427504">Ring 484 27 504</a>
       </div>
     </div>
@@ -254,27 +79,6 @@
       <li><b>Fast pris</b>Avtales etter første prat, ingen overraskelser.</li>
       <li><b>Rask respons</b>Vi svarer innen én virkedag.</li>
     </ul>
-  </div>
-</section>
-
-<section class="block" id="eksempler">
-  <div class="wrap">
-    <h2>Eksempler</h2>
-    <p class="intro">Ingen maler. Hver side bygges rundt det kundene til bedriften faktisk trenger. Tre oppdiktede eksempler – scroll i telefonene.</p>
-    <div class="trio">
-      <figure>
-        <div class="phone"><iframe src="eksempel/" title="Eksempel: kafé, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
-        <figcaption><b>Kafé</b> – rolig og tekstbasert, som en meny på veggen. <a href="eksempel/">Åpne siden</a></figcaption>
-      </figure>
-      <figure>
-        <div class="phone"><iframe src="eksempel/frisor/" title="Eksempel: frisør, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
-        <figcaption><b>Frisør</b> – timebestilling rett på forsiden. <a href="eksempel/frisor/">Åpne siden</a></figcaption>
-      </figure>
-      <figure>
-        <div class="phone"><iframe src="eksempel/fastfood/" title="Eksempel: gatekjøkken, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
-        <figcaption><b>Gatekjøkken</b> – meny som en lystavle, ring og hent. <a href="eksempel/fastfood/">Åpne siden</a></figcaption>
-      </figure>
-    </div>
   </div>
 </section>
 
@@ -294,209 +98,72 @@
   </div>
 </section>
 
-<section class="block" id="dette-far-du">
-  <div class="wrap split">
-    <div>
-      <h2>Det kundene dine leter etter</h2>
-      <p class="intro">De fleste finner deg på mobilen og vil vite tre ting: hva du har, hva det koster og når du har åpent.</p>
-    </div>
-    <ul class="features">
-      <li><h3>Meny og priser</h3><p>Hele menyen, lett å lese på en liten skjerm og enkel å oppdatere.</p></li>
-      <li><h3>Åpningstider og kart</h3><p>Adressen og en kartlenke, så folk finner fram uten å ringe og spørre.</p></li>
-      <li><h3>Bestilling</h3><p>Knapper rett til Wolt, foodora eller deres eget bestillingssystem.</p></li>
-      <li><h3>Bilder</h3><p>Av lokalet, maten eller varene, så folk vet hva de kommer til.</p></li>
-      <li><h3>Laget for mobil</h3><p>Siden er rask og bygget for telefonen først, og ser like bra ut på PC.</p></li>
-      <li><h3>Hjelp etterpå</h3><p>Nye priser eller endrede åpningstider? Gi beskjed, så fikser vi det.</p></li>
+<section class="block">
+  <div class="wrap">
+    <h2>Alt om Skysite</h2>
+    <p class="intro">Les mer om hva vi lager, hvordan vi jobber og hvem vi er.</p>
+    <ul class="cards">
+      <li><a class="card" href="/tjenester/"><h3>Tjenester</h3><p>Meny, priser, åpningstider, bestilling og bilder – det kundene dine leter etter.</p><span class="more">Les mer</span></a></li>
+      <li><a class="card" href="/eksempler/"><h3>Eksempler</h3><p>Se nettsider vi har laget for kafé, frisør og gatekjøkken, rett i mobilen.</p><span class="more">Les mer</span></a></li>
+      <li><a class="card" href="/slik-foregar-det/"><h3>Slik foregår det</h3><p>Fra første prat til ferdig side, med fast pris før vi starter.</p><span class="more">Les mer</span></a></li>
+      <li><a class="card" href="/sporsmal/"><h3>Spørsmål og svar</h3><p>Pris, tid, mobil, Google og endringer senere – kort forklart.</p><span class="more">Les mer</span></a></li>
+      <li><a class="card" href="/om-oss/"><h3>Om oss</h3><p>To IT-studenter som lager raske og skreddersydde nettsider.</p><span class="more">Les mer</span></a></li>
+      <li><a class="card" href="/kontakt/"><h3>Kontakt</h3><p>Ring, send SMS eller fyll ut skjemaet. Vi svarer innen én virkedag.</p><span class="more">Les mer</span></a></li>
     </ul>
   </div>
 </section>
 
-<section class="block" id="slik">
-  <div class="wrap">
-    <h2>Slik foregår det</h2>
-    <ol class="steps">
-      <li><h3>Vi tar en prat</h3><p>Om bedriften, kundene og hva siden skal gjøre. På telefon eller video.</p></li>
-      <li><h3>Du får et forslag</h3><p>En ekte side du kan klikke deg rundt i, før du bestemmer deg.</p></li>
-      <li><h3>Vi justerer</h3><p>Tekst, bilder og farger endres til du er fornøyd.</p></li>
-      <li><h3>Siden legges ut</h3><p>Vi publiserer den og hjelper deg med endringer senere.</p></li>
-    </ol>
-    <p class="price"><b>Hva koster det?</b> Det kommer an på hva siden skal inneholde. Du får en fast pris etter første prat, og praten er uforpliktende.</p>
-  </div>
-</section>
-
-<section class="block" id="faq">
+<section class="contact cta" aria-labelledby="cta-tittel">
   <div class="wrap split">
     <div>
-      <h2>Ofte stilte spørsmål</h2>
-      <p class="intro">Pris, prosess og levering, kort forklart. Finner du ikke svaret, er det bare å ringe.</p>
+      <h2 id="cta-tittel">Fortell oss om bedriften din</h2>
+      <p class="intro">Det er uforpliktende, og vi svarer innen én virkedag.</p>
     </div>
-    <div class="faq">
-      <details>
-        <summary>Hva koster en nettside?</summary>
-        <p>Det kommer an på hva siden skal inneholde. Etter første prat får du en fast pris, så du vet hva det koster før vi starter. Praten er gratis og uforpliktende.</p>
-      </details>
-      <details>
-        <summary>Må jeg bestemme meg før jeg har sett noe?</summary>
-        <p>Nei. Du får se et ferdig forslag du kan klikke deg rundt i, før du bestemmer deg.</p>
-      </details>
-      <details>
-        <summary>Hvor lang tid tar det?</summary>
-        <p>Det avhenger av hvor stor siden er. Vi avtaler en tidsplan i første prat, og holder deg oppdatert underveis.</p>
-      </details>
-      <details>
-        <summary>Hva om jeg vil endre noe senere?</summary>
-        <p>Nye priser, ny meny eller endrede åpningstider: si fra, så fikser vi det.</p>
-      </details>
-      <details>
-        <summary>Blir siden synlig på Google?</summary>
-        <p>Ja. Vi setter opp siden slik at Google finner den, med riktig tittel, beskrivelse og informasjon om bedriften.</p>
-      </details>
-      <details>
-        <summary>Fungerer siden på mobil?</summary>
-        <p>Ja. Vi bygger for mobilen først, siden det er der de fleste kundene dine finner deg.</p>
-      </details>
-      <details>
-        <summary>Jobber dere bare lokalt?</summary>
-        <p>Nei, vi tar oppdrag i hele Norge. Vi møtes gjerne på video.</p>
-      </details>
+    <div class="actions">
+      <a class="btn btn-sun" href="/kontakt/">Send oss en melding</a>
+      <a class="btn btn-line" href="tel:+4748427504">Ring 484 27 504</a>
     </div>
   </div>
 </section>
 
-<section class="block" id="om-oss">
-  <div class="wrap split">
-    <div>
-      <h2>Om oss</h2>
-      <p class="intro">Vi er to studenter som studerer IT til vanlig, og vi er veldig interessert i å lage nettsider. Ved siden av studiene lager vi enkle, raske sider for lokale bedrifter.</p>
-    </div>
-    <div class="people">
-      <div class="person">
-        <h3>Osman Khalid</h3>
-        <p class="role">Daglig leder</p>
-        <p>Studerer dataingeniør ved NTNU. Designer og bygger nettsidene.</p>
-      </div>
-      <div class="person">
-        <h3>Hasan Shabbir</h3>
-        <p class="role">Kundeansvarlig</p>
-        <p>Studerer IT og ledelse. Tar seg av kundekontakt og prosjekter.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<script>
+// Gamle lenker til seksjoner på forsiden (f.eks. skysite.no/#om-oss) sendes til den nye undersiden.
+(function () {
+  var map = {"#eksempler":"/eksempler/","#dette-far-du":"/tjenester/","#slik":"/slik-foregar-det/","#faq":"/sporsmal/","#om-oss":"/om-oss/","#kontakt":"/kontakt/","#takk":"/kontakt/#takk"};
+  if (map[location.hash]) location.replace(map[location.hash]);
+})();
+</script>
 </main>
-
-<section class="contact" id="kontakt" aria-labelledby="kontakt-tittel">
-  <div class="wrap split">
-    <div>
-      <h2 id="kontakt-tittel">Fortell oss om bedriften din</h2>
-      <p class="intro">Ring, send SMS eller fyll ut skjemaet. Det er uforpliktende, og vi svarer innen én virkedag.</p>
-      <a class="phone-big" href="tel:+4748427504">484 27 504</a>
-      <p class="small">Ring eller send SMS</p>
-      <div class="facts">
-        <p><b>E-post:</b> <a href="mailto:post@skysite.no">post@skysite.no</a></p>
-        <p><b>Hele Norge.</b> Vi møtes gjerne på video.</p>
-      </div>
-    </div>
-
-    <form id="kontaktskjema" action="https://formsubmit.co/post@skysite.no" method="POST">
-      <input type="hidden" name="_subject" value="Ny henvendelse fra skysite.no">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://skysite.no/#takk">
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-
-      <div class="row">
-        <label>Navn<input type="text" name="Navn" required autocomplete="name"></label>
-        <label>Bedrift <span class="opt">(valgfritt)</span><input type="text" name="Bedrift" autocomplete="organization"></label>
-      </div>
-      <div class="row">
-        <label>E-post<input type="email" name="email" required autocomplete="email"></label>
-        <label>Telefon <span class="opt">(valgfritt)</span><input type="tel" name="Telefon" autocomplete="tel"></label>
-      </div>
-      <label>Hva gjelder det?
-        <select name="Behov">
-          <option>Ny nettside</option>
-          <option>Fornye en nettside vi har</option>
-          <option>Meny, bestilling eller små endringer</option>
-          <option>Vet ikke ennå, vil bare prate</option>
-        </select>
-      </label>
-      <label>Melding<textarea name="Melding" required placeholder="Hva driver dere med, og hva skal siden hjelpe med?"></textarea></label>
-      <button class="btn btn-sun" type="submit">Send melding</button>
-      <p class="status" id="takk" role="status" aria-live="polite"></p>
-      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Formsubmit, og vi sletter henvendelsen når saken er ferdig. <a href="personvern.html">Les mer om personvern</a>.</p>
-    </form>
-  </div>
-
-</section>
 
 <footer>
   <div class="wrap foot">
     <div>
-      <a class="brand" href="./"><img src="logo.svg" alt="" width="34" height="34">Skysite</a>
-      <p>Nettsider for lokale bedrifter, laget av Skysite.</p>
+      <a class="brand" href="/"><img src="/logo.svg" alt="" width="34" height="34">Skysite</a>
+      <p>Skreddersydde nettsider og IT-støtte for lokale bedrifter.</p>
     </div>
     <div>
-      <h3>Kontakt</h3>
+      <h2>Kontakt</h2>
       <ul>
         <li><a href="tel:+4748427504">484 27 504</a></li>
         <li><a href="mailto:post@skysite.no">post@skysite.no</a></li>
       </ul>
     </div>
     <div>
-      <h3>På siden</h3>
+      <h2>Sider</h2>
       <ul>
-        <li><a href="#eksempler">Se eksempler</a></li>
-        <li><a href="#slik">Slik foregår det</a></li>
-        <li><a href="#faq">Spørsmål og svar</a></li>
-        <li><a href="#om-oss">Om oss</a></li>
-        <li><a href="personvern.html">Personvern</a></li>
+        <li><a href="/tjenester/">Tjenester</a></li>
+        <li><a href="/eksempler/">Eksempler</a></li>
+        <li><a href="/slik-foregar-det/">Slik foregår det</a></li>
+        <li><a href="/sporsmal/">Spørsmål og svar</a></li>
+        <li><a href="/om-oss/">Om oss</a></li>
+        <li><a href="/kontakt/">Kontakt</a></li>
+        <li><a href="/personvern.html">Personvern</a></li>
       </ul>
     </div>
   </div>
   <div class="wrap copy">© <span id="year">2026</span> Skysite</div>
 </footer>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-
-// Tynn strek under menyen når man har scrollet.
-(function () {
-  var top = document.getElementById("top");
-  function check() { top.classList.toggle("scrolled", window.scrollY > 8); }
-  window.addEventListener("scroll", check, { passive: true }); check();
-})();
-
-// Send skjemaet uten å forlate siden. Fungerer også uten JavaScript (vanlig POST).
-(function () {
-  var form = document.getElementById("kontaktskjema");
-  var status = document.getElementById("takk");
-  var btn = form.querySelector("button");
-  var sent = "Meldingen er sendt. Vi svarer innen én virkedag.";
-  function show(type, msg) { status.className = "status " + type; status.textContent = msg; }
-
-  // Etter vanlig POST (uten JavaScript) sender Formsubmit brukeren tilbake til #takk.
-  if (location.hash === "#takk") {
-    show("ok", sent);
-    status.scrollIntoView({ block: "center" });
-  }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (form._honey.value) return;
-    btn.disabled = true; btn.textContent = "Sender …";
-    fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
-      method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form)
-    })
-      .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.success === "false") throw d; }); })
-      .then(function () { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); })
-      .catch(function (d) { if (window.console) console.error("Formsubmit:", d); show("err", "Meldingen ble ikke sendt. Prøv igjen, eller ring 484 27 504."); })
-      .finally(function () { btn.disabled = false; btn.textContent = "Send melding"; });
-  });
-})();
-</script>
+<script src="/main.js" defer></script>
 </body>
 </html>

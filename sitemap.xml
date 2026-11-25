@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://skysite.no/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://skysite.no/tjenester/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://skysite.no/eksempler/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://skysite.no/slik-foregar-det/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://skysite.no/sporsmal/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://skysite.no/om-oss/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://skysite.no/kontakt/</loc><lastmod>2026-11-25</lastmod></url>
   <url><loc>https://skysite.no/personvern.html</loc><lastmod>2026-11-25</lastmod></url>
 </urlset>
