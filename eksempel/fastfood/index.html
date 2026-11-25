@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eksempel Grill – eksempel på nettside fra Skysite</title>
+<meta name="description" content="Et oppdiktet eksempel som viser hvordan en nettside for et gatekjøkken kan se ut.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../logo.svg" type="image/svg+xml">
+<meta name="theme-color" content="#ffcf33">
+<link href="../../fonts/fonts.css" rel="stylesheet">
+<style>
+:root{--y:#ffcf33;--ink:#141414;--red:#e03a2c;--cream:#fff8e6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--y);color:var(--ink);font:15px/1.45 Inter,system-ui,sans-serif}
+a{color:inherit}
+.note{background:var(--ink);color:var(--y);font-size:11px;text-align:center;padding:.3rem}
+.wrap{max-width:720px;margin:0 auto;padding:0 1rem}
+.head{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0}
+.logo{font-family:'Archivo Black',sans-serif;font-size:1.35rem;line-height:.9;text-transform:uppercase;text-decoration:none}
+.logo small{display:block;font:700 10px Inter,sans-serif;letter-spacing:.18em}
+.status{background:var(--ink);color:var(--y);font-weight:700;font-size:12px;padding:.35rem .6rem;border-radius:4px;white-space:nowrap}
+.hero{padding:.6rem 0 1.2rem}
+.hero h1{font-family:'Archivo Black',sans-serif;text-transform:uppercase;font-size:clamp(2.6rem,13vw,4.6rem);line-height:.88;letter-spacing:-.01em}
+.hero h1 span{color:var(--red)}
+.hero p{font-weight:600;margin-top:.8rem;max-width:28ch}
+.call{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-top:1rem}
+.call a{display:block;text-align:center;text-decoration:none;font-weight:800;padding:.85rem .5rem;border:2px solid var(--ink);text-transform:uppercase;font-size:14px}
+.call a:first-child{background:var(--ink);color:var(--y)}
+.tabs{position:sticky;top:0;z-index:5;background:var(--ink);display:flex;overflow-x:auto}
+.tabs a{flex:0 0 auto;color:var(--y);text-decoration:none;font-weight:800;text-transform:uppercase;font-size:13px;padding:.8rem 1rem;border-right:1px solid #333}
+.board{background:var(--ink);color:var(--cream);padding:.2rem 0 1.4rem}
+.board h2{font-family:'Archivo Black',sans-serif;text-transform:uppercase;color:var(--y);font-size:1.5rem;padding:1.3rem 0 .4rem;border-bottom:3px solid var(--y);margin-bottom:.2rem}
+.item{display:grid;grid-template-columns:2.4rem 1fr auto;gap:.6rem;align-items:baseline;padding:.75rem 0;border-bottom:1px dashed #444}
+.item .no{font-family:'Archivo Black',sans-serif;color:var(--red);font-size:1.05rem}
+.item h3{font-size:1rem;text-transform:uppercase;letter-spacing:.02em}
+.item p{grid-column:2;color:#bdb6a6;font-size:13px;margin-top:-.4rem}
+.item b{font-family:'Archivo Black',sans-serif;font-weight:400;font-size:1.1rem;color:var(--y)}
+.combo{background:var(--red);color:#fff;margin:1.4rem 0 0;padding:1rem 1.1rem;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.combo strong{display:block;margin-bottom:.35rem;font-family:'Archivo Black',sans-serif;font-weight:400;font-size:1.25rem;text-transform:uppercase;line-height:1}
+.combo span{font-size:13px}
+.combo b{font-family:'Archivo Black',sans-serif;font-weight:400;font-size:1.8rem;white-space:nowrap}
+.info{padding:1.6rem 0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.info h2{font-size:12px;text-transform:uppercase;letter-spacing:.14em;margin-bottom:.3rem}
+.info p{font-weight:600}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:.1rem .8rem;font-weight:600}
+.foot{border-top:2px solid var(--ink);padding:.8rem 0 1.4rem;font-size:12px;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="note">Eksempel – oppdiktet bedrift, laget av Skysite</div>
+
+<div class="wrap">
+  <div class="head">
+    <a class="logo" href="#">Eksempel<br>Grill<small>Burger · Kebab · Pommes</small></a>
+    <span class="status">ÅPENT TIL 03</span>
+  </div>
+  <div class="hero">
+    <h1>Sulten?<br><span>Klar på</span><br>10 min.</h1>
+    <p>Ring inn bestillingen, så står den klar når du kommer.</p>
+    <div class="call">
+      <a href="#info">Ring og bestill</a>
+      <a href="#meny">Se menyen</a>
+    </div>
+  </div>
+</div>
+
+<nav class="tabs" id="meny">
+  <a href="#burger">Burgere</a><a href="#kebab">Kebab</a><a href="#pommes">Pommes</a><a href="#drikke">Drikke</a>
+</nav>
+
+<div class="board">
+  <div class="wrap">
+    <h2 id="burger">Burgere</h2>
+    <div class="item"><span class="no">01</span><h3>Klassiker</h3><b>129</b><p>Storfe, cheddar, løk, sylteagurk, husets dressing</p></div>
+    <div class="item"><span class="no">02</span><h3>Dobbel</h3><b>169</b><p>To burgere, dobbel ost, bacon</p></div>
+    <div class="item"><span class="no">03</span><h3>Sprø kylling</h3><b>139</b><p>Panert kyllingfilet, coleslaw, chilimajones</p></div>
+    <div class="item"><span class="no">04</span><h3>Halloumi</h3><b>135</b><p>Grillet halloumi, salat, tomat, aioli</p></div>
+
+    <h2 id="kebab">Kebab</h2>
+    <div class="item"><span class="no">10</span><h3>Kebab i pita</h3><b>119</b><p>Storfekjøtt, salat, løk, hvit eller sterk saus</p></div>
+    <div class="item"><span class="no">11</span><h3>Kebabrull</h3><b>139</b><p>Lefse, kjøtt, salat, mais, dressing</p></div>
+    <div class="item"><span class="no">12</span><h3>Kebabtallerken</h3><b>179</b><p>Med pommes, salat og to sauser</p></div>
+
+    <h2 id="pommes">Pommes og smått</h2>
+    <div class="item"><span class="no">20</span><h3>Pommes frites</h3><b>49</b><p>Liten 49 / stor 69</p></div>
+    <div class="item"><span class="no">21</span><h3>Løkringer</h3><b>59</b><p>8 stk</p></div>
+    <div class="item"><span class="no">22</span><h3>Ekstra saus</h3><b>15</b><p>Aioli, chili, hvitløk, BBQ</p></div>
+
+    <h2 id="drikke">Drikke</h2>
+    <div class="item"><span class="no">30</span><h3>Brus 0,5 l</h3><b>39</b><p>Flere smaker</p></div>
+    <div class="item"><span class="no">31</span><h3>Milkshake</h3><b>69</b><p>Vanilje, sjokolade eller jordbær</p></div>
+
+    <div class="combo">
+      <div><strong>Gjør det til meny</strong><span>Pommes + brus til alle burgere og kebab</span></div>
+      <b>+49</b>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="info" id="info">
+    <div>
+      <h2>Her ligger vi</h2>
+      <p>Eksempelgata 4<br>0000 Byen</p>
+      <p style="margin-top:.6rem;font-weight:400">Telefon kommer her.</p>
+    </div>
+    <div>
+      <h2>Åpent</h2>
+      <div class="hours"><span>Man–tor</span><span>12–23</span><span>Fre–lør</span><span>12–03</span><span>Søndag</span><span>14–23</span></div>
+    </div>
+  </div>
+  <p class="foot">Eksempel Grill (oppdiktet) · Eksempel laget av Skysite</p>
+</div>
+</body>
+</html>
