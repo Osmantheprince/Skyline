@@ -1,0 +1,4 @@
+# Filer som ikke skal publiseres på skysite.no
+exclude:
+  - README.md
+  - notater/

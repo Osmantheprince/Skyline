@@ -1,52 +1,41 @@
 # Skysite
 
-Nettsider for lokale bedrifter.
+Nettsider for lokale bedrifter. Live på **https://skysite.no**.
 
-Skysite lager moderne, mobilvennlige nettsider for restauranter, butikker og andre lokale bedrifter.
+## Sider
 
-## Se nettsidene
-
-- **Skysite (forside):** https://skysite.no/
-- **Quick Bite, Sandnes (demo):** https://skysite.no/quick-bite/
-
-## Innhold
-
-| Fil / mappe | Hva |
+| Side | Fil |
 |---|---|
-| `index.html` | Forsiden til Skysite |
-| `quick-bite/index.html` | Nettsideforslag for Quick Bite |
-| `quick-bite-meny.md` | Menyen til Quick Bite med priser |
-| `Quick-bite-bilder.md` | Oversikt over bilder til Quick Bite |
-| `logo.svg` | Skysite-logo |
-| `og-image.png` | Delingsbilde (1200×630) for forsiden |
-| `personvern.html` | Personvernerklæring (lenket fra skjemaet og bunnteksten) |
-| `apple-touch-icon.png` | Ikon når siden legges på hjemskjermen på iPhone |
-| `sitemap.xml`, `robots.txt` | Hjelper Google å finne sidene |
-| `fonts/` | Skrifter lagret lokalt: Schibsted Grotesk (forsiden), Inter og Archivo Black (Quick Bite) |
+| Forside | `index.html` |
+| Quick Bite-forslaget | `quick-bite/index.html` |
+| Personvern | `personvern.html` |
+| Feilside | `404.html` |
+
+## Mapper og filer
+
+```
+index.html, personvern.html, 404.html   sidene
+quick-bite/                             forslaget til Quick Bite
+fonts/                                  skrifter (lagret lokalt)
+notater/                                interne notater, publiseres ikke
+logo.svg, og-image.png,
+apple-touch-icon.png                    logo, delingsbilde og iPhone-ikon
+sitemap.xml, robots.txt                 for Google
+CNAME, _config.yml                      domene og publisering
+```
 
 ## Publisering
 
-Sidene publiseres automatisk med GitHub Pages fra `main`-grenen på domenet **skysite.no** (registrert hos Domeneshop). Endringer er ute etter et par minutter.
+Alt som ligger på `main` publiseres automatisk til skysite.no etter et par minutter. Filene i `notater/` og denne README-en publiseres ikke (se `_config.yml`).
 
-## Status (25.11.2026)
+## Slik endrer dere forsiden
 
-- **Domene:** skysite.no er registrert hos Domeneshop og publisert hos Norid 25.11. DNS peker til GitHub Pages.
-- **GitHub Pages:** `CNAME`-fila med `skysite.no` er lagt inn. Noen DNS-tjenere kan bruke opptil to timer før de ser domenet.
-- **HTTPS:** GitHub lager sertifikatet automatisk når domenet er synlig. Når det er klart: Settings → Pages → huk av for **Enforce HTTPS**.
-- **E-post:** postkassen `post@skysite.no` finnes hos Domeneshop (IMAP/SMTP: `mail1.no1.essentialhosting.net`, port 993 / 465, brukernavn = hele e-postadressen). Passord deles ikke her.
+- **Kundesitat:** Seksjonen `id="sitat"` i `index.html` er skjult. Når en kunde har sagt ja, setter dere inn det kunden faktisk sa, navn og sted, og fjerner `hidden`.
+- **Bilder av dere:** Legg dem i `bilder/` (f.eks. `osman.jpg`, `hasan.jpg`) og sett dem inn under «Om oss».
+- **Priser:** Siden sier at prisen avtales etter første prat. Bytt det ut når dere har faste priser.
+- **Kontaktskjemaet** sender til `post@skysite.no` via Formsubmit.
 
-## Neste steg
-
-- [ ] Slå på **Enforce HTTPS** når sertifikatet er klart.
-- [x] Ny forside med kontaktskjema tatt i bruk (`index (1).html` → `index.html`).
-- [ ] Sjekk at https://skysite.no og https://skysite.no/quick-bite/ ser riktige ut på mobil.
-
-## Slik oppdaterer dere forsiden
-
-- **Sitat fra en kunde:** Seksjonen `id="sitat"` i `index.html` er skjult. Når eieren har sagt ja, setter dere inn det han faktisk sa (ordrett), navn og sted, og fjerner `hidden`. Ikke skriv sitater selv.
-- **Bilder av Osman og Hasan:** Legg dem i `bilder/` (f.eks. `osman.jpg`, `hasan.jpg`), så kan de settes inn i «Om oss».
-- **Priser:** Siden sier at prisen avtales etter første prat. Bytt til faste priser når dere har bestemt dem.
-- **Kontaktskjemaet** sender til `post@skysite.no` via Formsubmit. Første melding utløser en bekreftelse til den adressen som må godkjennes (se issue #5).
+Det som gjenstår, ligger under [Issues](../../issues).
 
 ## Team
 
