@@ -90,6 +90,17 @@
   .demo figcaption{margin-top:1rem;font-size:.95rem;color:var(--muted);max-width:300px}
   .demo figcaption a{font-weight:600}
 
+  /* Tre eksempler */
+  .trio{display:grid;grid-template-columns:repeat(3,auto);justify-content:space-between;gap:2rem;margin-top:3rem}
+  .trio figure{margin:0}
+  .trio figcaption{margin-top:1rem;font-size:.95rem;color:var(--muted);max-width:300px}
+  .trio figcaption b{color:var(--ink)}
+  .trio figcaption a{font-weight:600}
+  @media (max-width:1040px){
+    .trio{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:1.5rem;padding-bottom:1rem;margin-right:-1.5rem;padding-right:1.5rem}
+    .trio figure{flex:0 0 auto;scroll-snap-align:start}
+  }
+
   /* Seksjoner */
   .block{padding:5.5rem 0;border-top:1px solid var(--line)}
   .split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:3rem}
@@ -206,6 +217,7 @@
   <div class="wrap">
     <a class="brand" href="./"><img src="logo.svg" alt="" width="34" height="34">Skysite</a>
     <nav class="links" aria-label="Hovedmeny">
+      <a href="#eksempler">Eksempler</a>
       <a href="#dette-far-du">Dette får du</a>
       <a href="#slik">Slik foregår det</a>
       <a href="#om-oss">Om oss</a>
@@ -231,8 +243,29 @@
       <div class="phone">
         <iframe src="eksempel/" title="Eksempel på en nettside fra oss, vist som på en mobil" loading="eager" tabindex="-1"></iframe>
       </div>
-      <figcaption>Et eksempel på en side fra oss (oppdiktet kafé). Scroll i telefonen, eller <a href="eksempel/">åpne hele siden</a>.</figcaption>
+      <figcaption>Ett av tre eksempler (oppdiktet kafé). Scroll i telefonen, eller <a href="#eksempler">se alle tre</a>.</figcaption>
     </figure>
+  </div>
+</section>
+
+<section class="block" id="eksempler">
+  <div class="wrap">
+    <h2>Tre eksempler, tre stiler</h2>
+    <p class="intro">Hver side lages for den enkelte bedriften. Her er tre oppdiktede eksempler med ulikt design. Scroll i telefonene.</p>
+    <div class="trio">
+      <figure>
+        <div class="phone"><iframe src="eksempel/" title="Eksempel: kafé, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <figcaption><b>Kafé</b> – varm og mørk. <a href="eksempel/">Åpne siden</a></figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><iframe src="eksempel/frisor/" title="Eksempel: frisør, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <figcaption><b>Frisør</b> – lys og stram. <a href="eksempel/frisor/">Åpne siden</a></figcaption>
+      </figure>
+      <figure>
+        <div class="phone"><iframe src="eksempel/blomster/" title="Eksempel: blomsterbutikk, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <figcaption><b>Blomsterbutikk</b> – myk og frisk. <a href="eksempel/blomster/">Åpne siden</a></figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -382,7 +415,7 @@
     <div>
       <h3>På siden</h3>
       <ul>
-        <li><a href="eksempel/">Se et eksempel</a></li>
+        <li><a href="#eksempler">Se eksempler</a></li>
         <li><a href="#slik">Slik foregår det</a></li>
         <li><a href="#om-oss">Om oss</a></li>
         <li><a href="personvern.html">Personvern</a></li>
