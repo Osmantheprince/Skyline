@@ -131,6 +131,14 @@
   .quote figcaption{margin-top:1.4rem;font-weight:600}
   .quote figcaption span{font-weight:400}
 
+  .faq details{border-top:1px solid var(--line);padding:1.05rem 0}
+  .faq details:last-child{border-bottom:1px solid var(--line)}
+  .faq summary{cursor:pointer;list-style:none;font-weight:650;display:flex;justify-content:space-between;align-items:center;gap:1rem}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-weight:400;font-size:1.4rem;line-height:1;color:var(--muted)}
+  .faq details[open] summary::after{content:"\2013"}
+  .faq details p{color:var(--muted);margin-top:.6rem;max-width:58ch}
+
   .people{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
   .person h3{font-size:1.15rem;font-weight:650}
   .person .role{font-weight:600;margin:.2rem 0 .6rem}
@@ -316,6 +324,45 @@
   </div>
 </section>
 
+<section class="block" id="faq">
+  <div class="wrap split">
+    <div>
+      <h2>Ofte stilte spørsmål</h2>
+      <p class="intro">Pris, prosess og levering, kort forklart. Finner du ikke svaret, er det bare å ringe.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Hva koster en nettside?</summary>
+        <p>Det kommer an på hva siden skal inneholde. Etter første prat får du en fast pris, så du vet hva det koster før vi starter. Praten er gratis og uforpliktende.</p>
+      </details>
+      <details>
+        <summary>Må jeg bestemme meg før jeg har sett noe?</summary>
+        <p>Nei. Du får se et ferdig forslag du kan klikke deg rundt i, før du bestemmer deg.</p>
+      </details>
+      <details>
+        <summary>Hvor lang tid tar det?</summary>
+        <p>Det avhenger av hvor stor siden er. Vi avtaler en tidsplan i første prat, og holder deg oppdatert underveis.</p>
+      </details>
+      <details>
+        <summary>Hva om jeg vil endre noe senere?</summary>
+        <p>Nye priser, ny meny eller endrede åpningstider: si fra, så fikser vi det.</p>
+      </details>
+      <details>
+        <summary>Blir siden synlig på Google?</summary>
+        <p>Ja. Vi setter opp siden slik at Google finner den, med riktig tittel, beskrivelse og informasjon om bedriften.</p>
+      </details>
+      <details>
+        <summary>Fungerer siden på mobil?</summary>
+        <p>Ja. Vi bygger for mobilen først, siden det er der de fleste kundene dine finner deg.</p>
+      </details>
+      <details>
+        <summary>Jobber dere bare lokalt?</summary>
+        <p>Nei, vi tar oppdrag i hele Norge. Vi møtes gjerne på video.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="om-oss">
   <div class="wrap split">
     <div>
@@ -402,6 +449,7 @@
       <ul>
         <li><a href="#eksempler">Se eksempler</a></li>
         <li><a href="#slik">Slik foregår det</a></li>
+        <li><a href="#faq">Spørsmål og svar</a></li>
         <li><a href="#om-oss">Om oss</a></li>
         <li><a href="personvern.html">Personvern</a></li>
       </ul>
