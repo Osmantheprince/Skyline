@@ -25,7 +25,6 @@ index.html + én mappe per underside      sidene
 style.css, main.js                       felles stil og skript (meny, skjema, årstall)
 analytics.js                             besøksstatistikk (GoatCounter, uten cookies)
 eksempel/                                eksempelsidene som vises på /eksempler/
-quick-bite/                              forslaget til Quick Bite, publiseres ikke
 fonts/                                   skrifter (lagret lokalt)
 notater/                                 interne notater, publiseres ikke
 logo.svg, og-image.png,
@@ -37,7 +36,7 @@ CNAME, _config.yml                       domene og publisering
 
 ## Publisering
 
-Alt som ligger på `main` publiseres automatisk til skysite.no etter et par minutter. `notater/`, `quick-bite/` og denne README-en publiseres ikke (se `_config.yml`).
+Alt som ligger på `main` publiseres automatisk til skysite.no etter et par minutter. `notater/` og denne README-en publiseres ikke (se `_config.yml`).
 
 Når dere endrer en side, oppdater `lastmod` for den i `sitemap.xml`. Lager dere en ny underside, legg den inn i `sitemap.xml` og i menyen på alle sidene.
 

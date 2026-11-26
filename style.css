@@ -341,8 +341,6 @@
   .desk figcaption{margin-top:1rem;font-size:.95rem;color:var(--muted)}
   .desk figcaption b{color:var(--ink)}
   .desk figcaption a{font-weight:600}
-  .badge{display:inline-block;margin:0 0 .8rem;background:var(--sun);color:var(--ink);font-size:.8rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.3rem .7rem;border-radius:999px}
-  .showcase-sub{font-size:1.4rem;padding-top:2.5rem;border-top:1px solid var(--line);margin-bottom:-1.5rem}
   @media (max-width:600px){.browser-bar{height:26px;padding:0 10px}.browser-bar span{width:7px;height:7px}.browser-url{height:16px;line-height:16px;font-size:.65rem}}
 
   /* Eksempler: PC og mobil side om side */
