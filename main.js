@@ -38,6 +38,17 @@ if (year) year.textContent = new Date().getFullYear();
     status.scrollIntoView({ block: "center" });
   }
 
+  // Formsubmit bruker lang tid på første tilkobling. Varm den opp så snart
+  // noen begynner å fylle ut skjemaet, så selve sendingen går raskere.
+  var warmed = false;
+  function warm() {
+    if (warmed) return;
+    warmed = true;
+    fetch("https://formsubmit.co/", { mode: "no-cors", cache: "no-store" }).catch(function () {});
+  }
+  form.addEventListener("focusin", warm);
+  form.addEventListener("pointerdown", warm);
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (form._honey.value) return;
