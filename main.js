@@ -53,3 +53,17 @@ if (year) year.textContent = new Date().getFullYear();
       .finally(function () { btn.disabled = false; btn.textContent = "Send melding"; });
   });
 })();
+
+// Skaler PC-eksemplene slik at hele 1280px-bredden passer i vinduet
+(function () {
+  var screens = document.querySelectorAll(".screen");
+  if (!screens.length) return;
+  function fit(s) { var f = s.querySelector("iframe"); if (f) f.style.transform = "scale(" + s.clientWidth / 1280 + ")"; }
+  if ("ResizeObserver" in window) {
+    var ro = new ResizeObserver(function (es) { es.forEach(function (e) { fit(e.target); }); });
+    screens.forEach(function (s) { ro.observe(s); });
+  } else {
+    var all = function () { screens.forEach(fit); };
+    all(); window.addEventListener("resize", all);
+  }
+})();
