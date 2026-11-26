@@ -1,6 +1,8 @@
 /* Besøksstatistikk med GoatCounter: ingen cookies, ingen personopplysninger lagres.
    Dashbord: https://skysite.goatcounter.com */
 (function () {
+  // Eksempelsidene vises i rammer på forsiden. De skal ikke telles som egne besøk.
+  if (window.self !== window.top) return;
   var gc = document.createElement("script");
   gc.async = true;
   gc.src = "https://gc.zgo.at/count.js";

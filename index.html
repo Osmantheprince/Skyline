@@ -5,14 +5,14 @@
 <script>if(location.protocol==="http:"&&location.hostname==="skysite.no")location.replace("https://skysite.no"+location.pathname+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skysite – Skreddersydde nettsider for lokale bedrifter</title>
-<meta name="description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Se et ferdig forslag før du bestemmer deg, og få fast pris.">
+<meta name="description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Fra 2 990 kr, med fast pris og ferdig forslag før du bestemmer deg.">
 <link rel="canonical" href="https://skysite.no/">
 <meta name="theme-color" content="#F5F6FA">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nb_NO">
 <meta property="og:site_name" content="Skysite">
 <meta property="og:title" content="Skysite – Skreddersydde nettsider for lokale bedrifter">
-<meta property="og:description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Se et ferdig forslag før du bestemmer deg, og få fast pris.">
+<meta property="og:description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Fra 2 990 kr, med fast pris og ferdig forslag før du bestemmer deg.">
 <meta property="og:url" content="https://skysite.no/">
 <meta property="og:image" content="https://skysite.no/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -40,6 +40,7 @@
 }</script>
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link href="/fonts/fonts.css" rel="stylesheet">
 <link href="/style.css" rel="stylesheet">
@@ -84,7 +85,7 @@
     </div>
     <ul class="points">
       <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="m9 15 2 2 4-4"/></svg></span><div><b>Ferdig forslag</b>Du ser siden før du bestemmer deg.</div></li>
-      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><b>Fast pris</b>Avtales etter første prat, ingen overraskelser.</div></li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><b>Fra 2 990 kr</b>Fast pris avtales etter første prat, ingen overraskelser.</div></li>
       <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Rask respons</b>Vi svarer innen én virkedag.</div></li>
     </ul>
   </div>
@@ -96,15 +97,15 @@
     <p class="intro">Ingen maler. Her er tre oppdiktede eksempler – scroll i telefonene.</p>
     <div class="trio" style="margin-top:2.5rem">
       <figure>
-        <div class="phone"><iframe src="/eksempel/rorlegger/" title="Eksempel: rørlegger, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe data-src="/eksempel/rorlegger/" title="Eksempel: rørlegger, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
         <figcaption><b>Rørlegger</b> – akuttvakt, faste priser og «ring meg tilbake» øverst. <a href="/eksempel/rorlegger/">Åpne siden</a></figcaption>
       </figure>
       <figure>
-        <div class="phone"><iframe src="/eksempel/frisor/" title="Eksempel: frisør, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe data-src="/eksempel/frisor/" title="Eksempel: frisør, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
         <figcaption><b>Frisør</b> – timebestilling rett på forsiden. <a href="/eksempel/frisor/">Åpne siden</a></figcaption>
       </figure>
       <figure>
-        <div class="phone"><iframe src="/eksempel/fastfood/" title="Eksempel: gatekjøkken, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe data-src="/eksempel/fastfood/" title="Eksempel: gatekjøkken, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
         <figcaption><b>Gatekjøkken</b> – meny som en lystavle, ring og hent. <a href="/eksempel/fastfood/">Åpne siden</a></figcaption>
       </figure>
     </div>
@@ -137,7 +138,7 @@
     <div class="faq-cards">
       <details>
         <summary><span>Hva koster en nettside?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
-        <div class="faq-a"><p>Det kommer an på hva siden skal inneholde. Etter første prat får du en fast pris, så du vet hva det koster før vi starter. Praten er gratis og uforpliktende.</p></div>
+        <div class="faq-a"><p>En nettside koster fra 2 990 kr. Hva den ender på, kommer an på hva siden skal inneholde. Etter første prat får du en fast pris, så du vet hva det koster før vi starter. Praten er gratis og uforpliktende.</p></div>
       </details>
       <details>
         <summary><span>Må jeg bestemme meg før jeg har sett noe?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
