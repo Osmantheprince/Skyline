@@ -74,6 +74,16 @@
       p.appendChild(a); out.appendChild(p);
     }
 
+    // Fra forsiden: /verktoy/?url=dinbedrift.no fyller inn adressen og starter sjekken.
+    setTimeout(function () {
+      var q = new URLSearchParams(location.search).get("url");
+      if (!q) return;
+      form.url.value = q;
+      var sec = $("#sjekk"); if (sec) sec.scrollIntoView();
+      track("nettside-sjekk fra forsiden");
+      if (form.requestSubmit) form.requestSubmit(); else btn.click();
+    }, 0);
+
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var url = normalize(form.url.value);

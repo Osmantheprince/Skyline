@@ -75,7 +75,7 @@ if (year) year.textContent = new Date().getFullYear();
   var sel = [
     "main h2", ".block .intro", ".cards > li", ".features > li", ".person",
     ".faq-cards > details", ".trio > figure", ".steps > li", ".duo", ".faq > details",
-    ".contact.cta > .wrap", ".price", ".faq-more", ".tool-index > li", ".tool", ".plans > li", ".plans-more"
+    ".contact.cta > .wrap", ".price", ".faq-more", ".tool-index > li", ".tool", ".plans > li", ".plans-more", ".proof-rings > li", ".proof-form", ".promises > li"
   ].join(",");
   var els = [].slice.call(document.querySelectorAll(sel)).filter(function (el) {
     return !el.closest(".hero");
