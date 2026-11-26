@@ -45,7 +45,7 @@ Når dere endrer en side, oppdater `lastmod` for den i `sitemap.xml`. Lager dere
 - **Kundesitat:** Seksjonen `id="sitat"` i `index.html` er skjult. Når en kunde har sagt ja, setter dere inn det kunden faktisk sa, navn og sted, og fjerner `hidden`.
 - **Bilder av dere:** Legg dem i `bilder/` (f.eks. `osman.jpg`, `hasan.jpg`) og bytt ut initialene (`<div class="avatar">`) i `om-oss/index.html` med bildene.
 - **Priser:** Siden sier at prisen avtales etter første prat. En egen prisside (Start, Standard, Pluss) ble laget og tatt bort igjen i commit `e9af144`. Den kan hentes tilbake derfra.
-- **Kontaktskjemaet** på `/kontakt/` sender til `post@skysite.no` via Formsubmit.
+- **Kontaktskjemaet** på `/kontakt/` sender til `post@skysite.no` via Web3Forms. Tilgangsnøkkelen står i skjemaet og er offentlig med vilje. Skjemaet styres fra app.web3forms.com (logg inn som post@skysite.no).
 
 ## Google Search Console
 

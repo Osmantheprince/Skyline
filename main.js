@@ -30,47 +30,35 @@ if (year) year.textContent = new Date().getFullYear();
   var status = document.getElementById("takk");
   var btn = form.querySelector("button");
   var sent = "Meldingen er sendt. Vi svarer innen én virkedag.";
+  var failed = "Meldingen ble ikke sendt. Send e-post til post@skysite.no eller ring 484 27 504.";
   function show(type, msg) { status.className = "status " + type; status.textContent = msg; }
+  function reset() { btn.disabled = false; btn.textContent = "Send melding"; }
 
-  // Etter vanlig POST (uten JavaScript) sender Formsubmit brukeren tilbake til #takk.
+  // Etter vanlig POST (uten JavaScript) sender Web3Forms brukeren tilbake til #takk.
   if (location.hash === "#takk") {
     show("ok", sent);
     status.scrollIntoView({ block: "center" });
   }
 
-  // Formsubmit bruker lang tid på første tilkobling. Varm den opp så snart
-  // noen begynner å fylle ut skjemaet, så selve sendingen går raskere.
-  var warmed = false;
-  function warm() {
-    if (warmed) return;
-    warmed = true;
-    fetch("https://formsubmit.co/", { mode: "no-cors", cache: "no-store" }).catch(function () {});
-  }
-  form.addEventListener("focusin", warm);
-  form.addEventListener("pointerdown", warm);
-
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    if (form._honey.value) return;
+    if (form.botcheck.checked) return;
     btn.disabled = true; btn.textContent = "Sender …";
-    var url = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
-    var data = new FormData(form);
-    function done() { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); btn.disabled = false; btn.textContent = "Send melding"; }
 
-    // Formsubmit kan bruke over ett minutt på å svare, selv om meldingen kommer frem.
-    // sendBeacon gir meldingen til nettleseren, som sender den ferdig i bakgrunnen
-    // (også om besøkende lukker siden), så vi slipper å la folk vente.
-    if (navigator.sendBeacon && navigator.sendBeacon(url, data)) { done(); return; }
+    // Gi opp etter 20 sekunder, så knappen aldri blir hengende på «Sender …».
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = ctrl && setTimeout(function () { ctrl.abort(); }, 20000);
 
-    // Reserve for eldre nettlesere: vent på svar som før.
-    fetch(url, { method: "POST", headers: { "Accept": "application/json" }, body: data })
-      .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.success === "false") throw d; }); })
-      .then(done)
-      .catch(function (d) {
-        if (window.console) console.error("Formsubmit:", d);
-        show("err", "Meldingen ble ikke sendt. Send e-post til post@skysite.no eller ring 484 27 504.");
-        btn.disabled = false; btn.textContent = "Send melding";
-      });
+    fetch(form.action, {
+      method: "POST",
+      headers: { "Accept": "application/json" },
+      body: new FormData(form),
+      signal: ctrl ? ctrl.signal : undefined
+    })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.success) throw d; }); })
+      .then(function () { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); })
+      .catch(function (d) { if (window.console) console.error("Web3Forms:", d); show("err", failed); })
+      .finally(function () { clearTimeout(timer); reset(); });
   });
 })();
 
