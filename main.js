@@ -67,3 +67,44 @@ if (year) year.textContent = new Date().getFullYear();
     all(); window.addEventListener("resize", all);
   }
 })();
+
+// Animasjon når man scroller: kort, bilder og overskrifter glir rolig inn.
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var sel = [
+    "main h2", ".block .intro", ".cards > li", ".features > li", ".person",
+    ".faq-cards > details", ".trio > figure", ".steps > li", ".duo", ".faq > details",
+    ".contact.cta > .wrap", ".price", ".faq-more"
+  ].join(",");
+  var els = [].slice.call(document.querySelectorAll(sel)).filter(function (el) {
+    return !el.closest(".hero");
+  });
+  if (!els.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      io.unobserve(e.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
+  els.forEach(function (el) {
+    // Søsken kommer litt etter hverandre (maks 0,4 s forsinkelse).
+    var i = [].indexOf.call(el.parentNode.children, el);
+    el.style.setProperty("--d", Math.min(i, 5) * 80 + "ms");
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+})();
+
+// Eksempelsidene i telefonene lastes først når man nærmer seg dem, så forsiden åpner raskere.
+(function () {
+  var frames = document.querySelectorAll("iframe[data-src]");
+  if (!frames.length) return;
+  function load(f) { f.src = f.getAttribute("data-src"); f.removeAttribute("data-src"); }
+  if (!("IntersectionObserver" in window)) { [].forEach.call(frames, load); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { load(e.target); io.unobserve(e.target); } });
+  }, { rootMargin: "400px 0px" });
+  [].forEach.call(frames, function (f) { io.observe(f); });
+})();

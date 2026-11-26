@@ -5,14 +5,14 @@
 <script>if(location.protocol==="http:"&&location.hostname==="skysite.no")location.replace("https://skysite.no"+location.pathname+location.search+location.hash)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Skysite – Skreddersydde nettsider for lokale bedrifter</title>
-<meta name="description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Se et ferdig forslag før du bestemmer deg, og få fast pris.">
+<meta name="description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Fra 2 990 kr, med fast pris og ferdig forslag før du bestemmer deg.">
 <link rel="canonical" href="https://skysite.no/">
 <meta name="theme-color" content="#F5F6FA">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="nb_NO">
 <meta property="og:site_name" content="Skysite">
 <meta property="og:title" content="Skysite – Skreddersydde nettsider for lokale bedrifter">
-<meta property="og:description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Se et ferdig forslag før du bestemmer deg, og få fast pris.">
+<meta property="og:description" content="Skysite lager raske, mobilvennlige nettsider for restauranter, frisører og butikker. Fra 2 990 kr, med fast pris og ferdig forslag før du bestemmer deg.">
 <meta property="og:url" content="https://skysite.no/">
 <meta property="og:image" content="https://skysite.no/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -40,6 +40,7 @@
 }</script>
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link href="/fonts/fonts.css" rel="stylesheet">
 <link href="/style.css" rel="stylesheet">
@@ -84,7 +85,7 @@
     </div>
     <ul class="points">
       <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="m9 15 2 2 4-4"/></svg></span><div><b>Ferdig forslag</b>Du ser siden før du bestemmer deg.</div></li>
-      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><b>Fast pris</b>Avtales etter første prat, ingen overraskelser.</div></li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span><div><b>Fra 2 990 kr</b>Fast pris avtales etter første prat, ingen overraskelser.</div></li>
       <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Rask respons</b>Vi svarer innen én virkedag.</div></li>
     </ul>
   </div>
@@ -112,33 +113,59 @@
     <p class="intro">Ingen maler. Her er tre oppdiktede eksempler – scroll i telefonene.</p>
     <div class="trio" style="margin-top:2.5rem">
       <figure>
-        <div class="phone"><iframe src="/eksempel/rorlegger/" title="Eksempel: rørlegger, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe data-src="/eksempel/rorlegger/" title="Eksempel: rørlegger, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
         <figcaption><b>Rørlegger</b> – akuttvakt, faste priser og «ring meg tilbake» øverst. <a href="/eksempel/rorlegger/">Åpne siden</a></figcaption>
       </figure>
       <figure>
-        <div class="phone"><iframe src="/eksempel/frisor/" title="Eksempel: frisør, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe data-src="/eksempel/frisor/" title="Eksempel: frisør, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
         <figcaption><b>Frisør</b> – timebestilling rett på forsiden. <a href="/eksempel/frisor/">Åpne siden</a></figcaption>
       </figure>
       <figure>
-        <div class="phone"><iframe src="/eksempel/fastfood/" title="Eksempel: gatekjøkken, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
+        <div class="phone"><iframe data-src="/eksempel/fastfood/" title="Eksempel: gatekjøkken, vist som på en mobil" loading="lazy" tabindex="-1"></iframe></div>
         <figcaption><b>Gatekjøkken</b> – meny som en lystavle, ring og hent. <a href="/eksempel/fastfood/">Åpne siden</a></figcaption>
       </figure>
     </div>
   </div>
 </section>
 
-<section class="block">
+<section class="block faq-home" aria-labelledby="faq-tittel">
   <div class="wrap">
-    <h2>Alt om Skysite</h2>
-    <p class="intro">Les mer om hva vi lager, hvordan vi jobber og hvem vi er.</p>
-    <ul class="cards">
-      <li><a class="card" href="/tjenester/"><h3>Tjenester</h3><p>Meny, priser, åpningstider, bestilling og bilder – det kundene dine leter etter.</p><span class="more">Les mer</span></a></li>
-      <li><a class="card" href="/eksempler/"><h3>Eksempler</h3><p>Se nettsider vi har laget for rørlegger, frisør og gatekjøkken, på PC og mobil.</p><span class="more">Les mer</span></a></li>
-      <li><a class="card" href="/slik-foregar-det/"><h3>Slik foregår det</h3><p>Fra første prat til ferdig side, med fast pris før vi starter.</p><span class="more">Les mer</span></a></li>
-      <li><a class="card" href="/sporsmal/"><h3>Spørsmål og svar</h3><p>Pris, tid, mobil, Google og endringer senere – kort forklart.</p><span class="more">Les mer</span></a></li>
-      <li><a class="card" href="/om-oss/"><h3>Om oss</h3><p>To IT-studenter som lager raske og skreddersydde nettsider.</p><span class="more">Les mer</span></a></li>
-      <li><a class="card" href="/kontakt/"><h3>Kontakt</h3><p>Ring, send SMS eller fyll ut skjemaet. Vi svarer innen én virkedag.</p><span class="more">Les mer</span></a></li>
-    </ul>
+    <div class="faq-head">
+      <span class="pill">FAQ</span>
+      <h2 id="faq-tittel">Ofte stilte spørsmål</h2>
+      <p class="intro">Alt om pris, prosess og levering – kort og tydelig.</p>
+    </div>
+    <div class="faq-cards">
+      <details>
+        <summary><span>Hva koster en nettside?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a"><p>En nettside koster fra 2 990 kr. Hva den ender på, kommer an på hva siden skal inneholde. Etter første prat får du en fast pris, så du vet hva det koster før vi starter. Praten er gratis og uforpliktende.</p></div>
+      </details>
+      <details>
+        <summary><span>Må jeg bestemme meg før jeg har sett noe?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a"><p>Nei. Du får se et ferdig forslag du kan klikke deg rundt i, før du bestemmer deg.</p></div>
+      </details>
+      <details>
+        <summary><span>Hvor lang tid tar det?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a"><p>Det avhenger av hvor stor siden er. Vi avtaler en tidsplan i første prat, og holder deg oppdatert underveis.</p></div>
+      </details>
+      <details>
+        <summary><span>Hva om jeg vil endre noe senere?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a"><p>Nye priser, ny meny eller endrede åpningstider: si fra, så fikser vi det.</p></div>
+      </details>
+      <details>
+        <summary><span>Blir siden synlig på Google?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a"><p>Ja. Vi setter opp siden slik at Google finner den, med riktig tittel, beskrivelse og informasjon om bedriften.</p></div>
+      </details>
+      <details>
+        <summary><span>Fungerer siden på mobil?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a"><p>Ja. Vi bygger for mobilen først, siden det er der de fleste kundene dine finner deg.</p></div>
+      </details>
+      <details>
+        <summary><span>Jobber dere bare lokalt?</span><span class="faq-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></summary>
+        <div class="faq-a"><p>Nei, vi tar oppdrag i hele Norge. Vi møtes gjerne på video.</p></div>
+      </details>
+    </div>
+    <p class="faq-more">Fant du ikke svaret? <a href="/kontakt/">Ta kontakt</a>, så svarer vi innen én virkedag.</p>
   </div>
 </section>
 
