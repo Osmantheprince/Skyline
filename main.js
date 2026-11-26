@@ -96,3 +96,15 @@ if (year) year.textContent = new Date().getFullYear();
     io.observe(el);
   });
 })();
+
+// Eksempelsidene i telefonene lastes først når man nærmer seg dem, så forsiden åpner raskere.
+(function () {
+  var frames = document.querySelectorAll("iframe[data-src]");
+  if (!frames.length) return;
+  function load(f) { f.src = f.getAttribute("data-src"); f.removeAttribute("data-src"); }
+  if (!("IntersectionObserver" in window)) { [].forEach.call(frames, load); return; }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { load(e.target); io.unobserve(e.target); } });
+  }, { rootMargin: "400px 0px" });
+  [].forEach.call(frames, function (f) { io.observe(f); });
+})();
