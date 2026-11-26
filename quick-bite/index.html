@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Quick Bite – Kebab, rull og burger i Sandnes</title>
 <link rel="icon" href="../logo.svg" type="image/svg+xml">
-<meta name="description" content="Quick Bite i Sandnes: kebab, kyllingrull, falafel og burgere laget av ferske råvarer. Bestill levering på foodora.">
+<meta name="description" content="Quick Bite i Sandnes: kebab, kyllingrull, falafel og burgere laget av ferske råvarer. Bestill levering på Wolt eller foodora.">
 <link rel="canonical" href="https://skysite.no/quick-bite/">
 <meta name="theme-color" content="#FBF6EE">
 <meta property="og:type" content="restaurant">
 <meta property="og:locale" content="nb_NO">
 <meta property="og:site_name" content="Quick Bite">
 <meta property="og:title" content="Quick Bite – Kebab, rull og burger i Sandnes">
-<meta property="og:description" content="Quick Bite i Sandnes: kebab, kyllingrull, falafel og burgere laget av ferske råvarer. Bestill levering på foodora.">
+<meta property="og:description" content="Quick Bite i Sandnes: kebab, kyllingrull, falafel og burgere laget av ferske råvarer. Bestill levering på Wolt eller foodora.">
 <meta property="og:url" content="https://skysite.no/quick-bite/">
 <!-- Delingsbilde: legg til og:image når vi har egne bilder i quick-bite/bilder/ (issue #4) -->
 <meta name="twitter:card" content="summary">
@@ -82,6 +82,8 @@ a{color:inherit;text-underline-offset:.2em}
 .btn-red:hover{background:var(--red-dark)}
 .btn-line{border-color:var(--ink);color:var(--ink)}
 .btn-line:hover{background:var(--ink);color:#fff}
+.btn-light{border-color:#fff;color:#fff}
+.btn-light:hover{background:#fff;color:var(--ink)}
 .top .btn{min-height:40px;padding:0 1rem;font-size:.92rem}
 .btn svg{width:16px;height:16px}
 
@@ -194,7 +196,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
       <a href="#meny">Meny</a>
       <a href="#bilder">Bilder</a>
       <a href="#finn-oss">Finn oss</a>
-      <a class="btn btn-red" href="https://www.foodora.no/restaurant/xkr0/quick-bite-xkr0" target="_blank" rel="noopener">Bestill</a>
+      <a class="btn btn-red" href="#bestill">Bestill</a>
     </nav>
   </div>
 </header>
@@ -207,9 +209,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
       <h1 class="display">Ferskt brød.<br>Ekte smak.<br><em>Raskt.</em></h1>
       <p class="lead">Kebab av storfekjøtt, kyllingruller, ferske falafler og hjemmelagde sauser. Laget på bestilling i Gjesdalveien 30.</p>
       <div class="cta">
-        <a class="btn btn-red" href="https://www.foodora.no/restaurant/xkr0/quick-bite-xkr0" target="_blank" rel="noopener">Bestill levering
+        <a class="btn btn-red" href="https://wolt.com/nb/nor/sandnes/restaurant/quick-bite-sandnes" target="_blank" rel="noopener">Bestill på Wolt
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a class="btn btn-line" href="#meny">Se menyen</a>
+        <a class="btn btn-line" href="https://www.foodora.no/restaurant/xkr0/quick-bite-xkr0" target="_blank" rel="noopener">Bestill på foodora</a>
       </div>
       <ul class="facts">
         <li id="status"><span class="dot"></span><span>Man–fre 11:00–23:30</span></li>
@@ -297,18 +299,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
         <li class="item"><div><h3>Fanta</h3><p>0,5 l</p></div><span class="p">49</span></li>
       </ul>
     </div>
-    <p class="note">Priser fra foodora. Spør i disken om allergener.</p>
+    <p class="note">Prisene kan variere litt mellom Wolt, foodora og disken. Spør i disken om allergener.</p>
   </div>
 </section>
 
-<section style="padding-top:0">
+<section id="bestill" style="padding-top:0">
   <div class="wrap">
     <div class="band">
       <div>
         <h2 class="display">Sulten? Vi leverer.</h2>
-        <p>Bestill på foodora, så kommer maten rett hjem på døra i Sandnes.</p>
+        <p>Bestill på Wolt eller foodora, så kommer maten rett hjem på døra i Sandnes.</p>
       </div>
-      <a class="btn btn-red" href="https://www.foodora.no/restaurant/xkr0/quick-bite-xkr0" target="_blank" rel="noopener">Bestill nå</a>
+      <div class="cta">
+        <a class="btn btn-red" href="https://wolt.com/nb/nor/sandnes/restaurant/quick-bite-sandnes" target="_blank" rel="noopener">Bestill på Wolt</a>
+        <a class="btn btn-light" href="https://www.foodora.no/restaurant/xkr0/quick-bite-xkr0" target="_blank" rel="noopener">Bestill på foodora</a>
+      </div>
     </div>
   </div>
 </section>
@@ -380,7 +385,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
 
 <div class="mbar">
   <a class="btn btn-line" href="tel:+4793949402">Ring</a>
-  <a class="btn btn-red" href="https://www.foodora.no/restaurant/xkr0/quick-bite-xkr0" target="_blank" rel="noopener">Bestill nå</a>
+  <a class="btn btn-red" href="https://wolt.com/nb/nor/sandnes/restaurant/quick-bite-sandnes" target="_blank" rel="noopener">Bestill på Wolt</a>
 </div>
 
 <script>
