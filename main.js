@@ -53,20 +53,24 @@ if (year) year.textContent = new Date().getFullYear();
     e.preventDefault();
     if (form._honey.value) return;
     btn.disabled = true; btn.textContent = "Sender …";
-    // Formsubmit kan henge uten å svare. Gi opp etter 20 sekunder i stedet for
-    // å la knappen stå på «Sender …» for alltid.
-    var ctrl = "AbortController" in window ? new AbortController() : null;
-    var timer = ctrl && setTimeout(function () { ctrl.abort(); }, 20000);
-    fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
-      method: "POST",
-      headers: { "Accept": "application/json" },
-      body: new FormData(form),
-      signal: ctrl ? ctrl.signal : undefined
-    })
+    var url = form.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+    var data = new FormData(form);
+    function done() { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); btn.disabled = false; btn.textContent = "Send melding"; }
+
+    // Formsubmit kan bruke over ett minutt på å svare, selv om meldingen kommer frem.
+    // sendBeacon gir meldingen til nettleseren, som sender den ferdig i bakgrunnen
+    // (også om besøkende lukker siden), så vi slipper å la folk vente.
+    if (navigator.sendBeacon && navigator.sendBeacon(url, data)) { done(); return; }
+
+    // Reserve for eldre nettlesere: vent på svar som før.
+    fetch(url, { method: "POST", headers: { "Accept": "application/json" }, body: data })
       .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.success === "false") throw d; }); })
-      .then(function () { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); })
-      .catch(function (d) { if (window.console) console.error("Formsubmit:", d); show("err", "Meldingen ble ikke sendt. Send e-post til post@skysite.no eller ring 484 27 504."); })
-      .finally(function () { clearTimeout(timer); btn.disabled = false; btn.textContent = "Send melding"; });
+      .then(done)
+      .catch(function (d) {
+        if (window.console) console.error("Formsubmit:", d);
+        show("err", "Meldingen ble ikke sendt. Send e-post til post@skysite.no eller ring 484 27 504.");
+        btn.disabled = false; btn.textContent = "Send melding";
+      });
   });
 })();
 
