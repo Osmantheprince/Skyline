@@ -20,8 +20,7 @@
     var a = e.target.closest && e.target.closest('a.btn, a[href^="tel:"], a[href^="mailto:"], a[href^="http"]');
     if (!a) return;
     var text = (a.textContent || "").replace(/\s+/g, " ").trim().slice(0, 60) || a.getAttribute("href");
-    var page = location.pathname.indexOf("/quick-bite") === 0 ? "quick-bite" : "skysite";
-    event("klikk " + page + ": " + text, a.getAttribute("href"));
+    event("klikk skysite: " + text, a.getAttribute("href"));
   });
 
   // Kontaktskjemaet sendt
