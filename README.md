@@ -10,6 +10,7 @@ Nettsider for lokale bedrifter. Live på **https://skysite.no**.
 | Quick Bite-forslaget | `quick-bite/index.html` |
 | Personvern | `personvern.html` |
 | Feilside | `404.html` |
+| Besøksstatistikk (GoatCounter, uten cookies) | `analytics.js` |
 
 ## Mapper og filer
 
