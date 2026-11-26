@@ -45,7 +45,7 @@
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link href="/fonts/fonts.css" rel="stylesheet">
-<link href="/style.css?v=20261126" rel="stylesheet">
+<link href="/style.css?v=20261126b" rel="stylesheet">
 </head>
 <body>
 <a class="skip" href="#innhold">Hopp til innholdet</a>
@@ -130,6 +130,29 @@
   </div>
 </section>
 
+<section class="block proof" id="fart" aria-labelledby="fart-tittel">
+  <div class="wrap proof-grid">
+    <div>
+      <h2 id="fart-tittel">Målt, ikke lovet</h2>
+      <p class="intro">Denne siden får 100 av 100 på alle fire målingene i Google PageSpeed Insights, målt på mobil. Sidene vi lager for kundene bygges på samme måte.</p>
+      <form class="proof-form" action="/verktoy/" method="get">
+        <label for="proof-url">Hvordan scorer din nettside?</label>
+        <div class="proof-row">
+          <input id="proof-url" type="text" name="url" placeholder="dinbedrift.no" inputmode="url" autocomplete="url" required>
+          <button class="btn btn-sun" type="submit">Test siden din</button>
+        </div>
+        <p class="fine">Gratis. Adressen sendes til Google for å bli målt, og det tar 15–40 sekunder.</p>
+      </form>
+    </div>
+    <ul class="proof-rings">
+        <li class="proof-ring" role="img" aria-label="Fart: 100 av 100"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26"/></svg><b>100</b><span>Fart</span></li>
+        <li class="proof-ring" role="img" aria-label="SEO: 100 av 100"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26"/></svg><b>100</b><span>SEO</span></li>
+        <li class="proof-ring" role="img" aria-label="Tilgjengelighet: 100 av 100"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26"/></svg><b>100</b><span>Tilgjengelighet</span></li>
+        <li class="proof-ring" role="img" aria-label="Sikkerhet: 100 av 100"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="26"/></svg><b>100</b><span>Sikkerhet</span></li>
+    </ul>
+  </div>
+</section>
+
 <section class="block" id="priser" aria-labelledby="priser-tittel">
   <div class="wrap">
     <h2 id="priser-tittel">Priser</h2>
@@ -161,6 +184,20 @@
       </li>
     </ul>
     <p class="plans-more">Usikker på hvilken pakke som passer? <a href="/verktoy/#pris">Svar på noen spørsmål</a>, eller <a href="/kontakt/">spør oss</a>, så får du en fast pris etter første prat. Praten er gratis.</p>
+  </div>
+</section>
+
+<section class="block" id="lofter" aria-labelledby="lofter-tittel">
+  <div class="wrap">
+    <h2 id="lofter-tittel">Dette lover vi deg</h2>
+    <p class="intro">Fem ting du kan holde oss til, uansett pakke.</p>
+    <ul class="promises">
+      <li><span class="promise-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Du ser siden før du bestemmer deg</b><p>Du får et ferdig forslag du kan klikke deg rundt i, før du bestemmer deg. Det er uforpliktende.</p></div></li>
+      <li><span class="promise-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Fast pris, avtalt før vi starter</b><p>Prisen står fast etter første prat. Ingen timepriser og ingen overraskelser på fakturaen.</p></div></li>
+      <li><span class="promise-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Svar innen én virkedag</b><p>Ring eller send e-post. Du får svar fra en av oss, ikke en kundeservice.</p></div></li>
+      <li><span class="promise-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Første prat er gratis</b><p>Vi hører hva bedriften trenger og sier ærlig hva vi tror lønner seg. Uforpliktende.</p></div></li>
+      <li><span class="promise-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5 9-10"/></svg></span><div><b>Ingen maler</b><p>Hver side bygges rundt det kundene dine leter etter, ikke rundt et ferdig tema.</p></div></li>
+    </ul>
   </div>
 </section>
 
@@ -258,7 +295,7 @@
   <div class="wrap copy">© <span id="year">2026</span> Skysite v/ Osman Khalid og Hasan Shabbir · Sandnes</div>
 </footer>
 
-<script src="/main.js?v=20261126" defer></script>
+<script src="/main.js?v=20261126b" defer></script>
 <script src="/analytics.js" defer></script>
 </body>
 </html>
