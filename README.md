@@ -25,6 +25,7 @@ index.html + én mappe per underside      sidene
 style.css, main.js                       felles stil og skript (meny, skjema, årstall)
 analytics.js                             besøksstatistikk (GoatCounter, uten cookies)
 eksempel/                                eksempelsidene som vises på /eksempler/
+quick-bite/                              nettsiden til Quick Bite (ekte kunde), egen stil og egne sider
 fonts/                                   skrifter (lagret lokalt)
 notater/                                 interne notater, publiseres ikke
 logo.svg, og-image.png,
