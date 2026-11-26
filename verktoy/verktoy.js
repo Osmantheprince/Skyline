@@ -23,7 +23,7 @@
   // ---------- 1. Nettside-sjekk (Google PageSpeed Insights) ----------
   // Google-nøkkel for PageSpeed Insights. Uten nøkkel deler alle en felles kvote som ofte er brukt opp.
   // Lag nøkkelen i Google Cloud og begrens den til nettstedet skysite.no og «PageSpeed Insights API».
-  var PSI_KEY = "";
+  var PSI_KEY = "AIzaSyCJjBdReKqRxUvaL4gpWlmWA78LoogAi6E"; // begrenset til skysite.no og PageSpeed Insights API
   (function () {
     var form = $("#sjekk-form"); if (!form) return;
     var out = $("#sjekk-out");
