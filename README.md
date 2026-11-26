@@ -64,3 +64,7 @@ Det som gjenstår, ligger under [Issues](../../issues).
 
 - **Osman Khalid** – [@Osmantheprince](https://github.com/Osmantheprince) (også [@Ossitheprince](https://github.com/Ossitheprince))
 - **Hasan Shabbir** – [@hazax123](https://github.com/hazax123)
+
+## IndexNow
+
+`913f503f52dbdc1ad3e48673271a0747.txt` er nøkkelen som lar oss varsle Bing, DuckDuckGo og Yandex om nye eller endrede sider (IndexNow). Ikke slett eller gi nytt navn til filen. Ny varsling: send URL-ene til `https://api.indexnow.org/indexnow` med samme nøkkel.
