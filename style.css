@@ -43,8 +43,8 @@
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:48px;padding:0 1.3rem;border-radius:6px;font:inherit;font-weight:650;text-decoration:none;cursor:pointer;border:2px solid var(--ink)}
   .btn-sun{background:var(--ink);color:var(--paper);border-color:var(--ink)}
   .btn-sun:hover{background:#000;border-color:#000}
-  .contact .btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun)}
-  .contact .btn-sun:hover{background:#FFA41F;border-color:#FFA41F}
+  .contact .btn-sun{background:#fff;color:var(--ink);border-color:#fff}
+  .contact .btn-sun:hover{background:#E6E9F2;border-color:#E6E9F2}
   .btn-line{background:transparent;color:var(--ink)}
   .btn-line:hover{background:var(--ink);color:var(--paper)}
   .contact .btn-line{color:var(--paper);border-color:var(--paper)}
@@ -150,7 +150,7 @@
   .contact .facts{margin-top:2.2rem;color:var(--night-muted);display:grid;gap:.4rem}
   .contact .facts b{color:var(--paper);font-weight:600}
   .contact .facts a{color:var(--paper)}
-  .contact :focus-visible{outline-color:var(--sun)}
+  .contact :focus-visible{outline-color:#fff}
 
   form{background:var(--paper);color:var(--ink);border-radius:10px;padding:2rem;display:grid;gap:1.1rem}
   .row{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
@@ -295,14 +295,13 @@
 
   /* Kontakt: marineblå boks */
   .contact{background:var(--night)}
-  .contact .btn-sun{background:var(--sun);color:var(--ink);border-color:var(--sun)}
-  .contact .btn-sun:hover{background:#FFA41F;border-color:#FFA41F}
+  .contact .btn-sun{background:#fff;color:var(--ink);border-color:#fff}
+  .contact .btn-sun:hover{background:#E6E9F2;border-color:#E6E9F2}
   .contact .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.35)}
   .contact .btn-line:hover{background:transparent;border-color:#fff;color:#fff}
-  .contact :focus-visible{outline-color:var(--sun)}
+  .contact :focus-visible{outline-color:#fff}
   .contact.cta{background:transparent;padding:1rem 0 5rem}
   .contact.cta > .wrap{position:relative;overflow:hidden;background:var(--night);border-radius:20px;padding:3.25rem 2.75rem;width:calc(100% - 2rem);max-width:1072px;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-  .contact.cta > .wrap::after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:var(--blue);opacity:.22;right:-70px;top:-110px;pointer-events:none}
   .contact.cta .actions{position:relative;z-index:1}
   footer{background:var(--night)}
   .foot{border-top-color:#26304F}
