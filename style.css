@@ -341,3 +341,13 @@
   .desk figcaption b{color:var(--ink)}
   .desk figcaption a{font-weight:600}
   @media (max-width:600px){.browser-bar{height:26px;padding:0 10px}.browser-bar span{width:7px;height:7px}.browser-url{height:16px;line-height:16px;font-size:.65rem}}
+
+  /* Eksempler: PC og mobil side om side */
+  .duo{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:end}
+  .duo .phone{width:220px;height:476px;border-width:7px;border-radius:30px}
+  .duo .phone iframe{transform:scale(.5282)}
+  @media (max-width:740px){
+    .duo{display:block;position:relative;padding-bottom:3rem;padding-right:1.5rem}
+    .duo .phone{position:absolute;right:0;bottom:0;width:120px;height:260px;border-width:5px;border-radius:20px}
+    .duo .phone iframe{transform:scale(.2821)}
+  }
