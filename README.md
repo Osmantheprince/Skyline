@@ -10,6 +10,8 @@ Nettsider for lokale bedrifter. Live på **https://skysite.no**.
 | Tjenester | `tjenester/index.html` |
 | Eksempler | `eksempler/index.html` |
 | Slik foregår det | `slik-foregar-det/index.html` |
+| Priser | `priser/index.html` |
+| IT-støtte | `it-stotte/index.html` |
 | Spørsmål og svar | `sporsmal/index.html` |
 | Om oss | `om-oss/index.html` |
 | Kontakt (skjema) | `kontakt/index.html` |
@@ -45,7 +47,7 @@ Når dere endrer en side, oppdater `lastmod` for den i `sitemap.xml`. Lager dere
 
 - **Kundesitat:** Seksjonen `id="sitat"` i `index.html` er skjult. Når en kunde har sagt ja, setter dere inn det kunden faktisk sa, navn og sted, og fjerner `hidden`.
 - **Bilder av dere:** Legg dem i `bilder/` (f.eks. `osman.jpg`, `hasan.jpg`) og bytt ut initialene (`<div class="avatar">`) i `om-oss/index.html` med bildene.
-- **Priser:** Siden sier at prisen avtales etter første prat. En egen prisside (Start, Standard, Pluss) ble laget og tatt bort igjen i commit `e9af144`. Den kan hentes tilbake derfra.
+- **Priser:** Fra-prisene står i `priser/index.html` (nettsider) og `it-stotte/index.html` (IT-støtte). Endrer dere en pris, sjekk også forsiden (`Fast pris` og kortet «Priser»), `sporsmal/` og `slik-foregar-det/`, som nevner «fra 2 990 kr».
 - **Kontaktskjemaet** på `/kontakt/` sender til `post@skysite.no` via Formsubmit.
 
 ## Google Search Console
