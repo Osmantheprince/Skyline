@@ -352,3 +352,36 @@
     .duo .phone{position:absolute;right:0;bottom:0;width:120px;height:260px;border-width:5px;border-radius:20px}
     .duo .phone iframe{transform:scale(.2821)}
   }
+
+  /* ===== Glass-design =====
+     Matt glass over en myk fargebakgrunn. Tekst ligger alltid på minst 70 % hvit (eller mørk) flate,
+     så kontrasten holder 4,5:1. Uten støtte for blur, eller med «reduser gjennomsiktighet», blir flatene helt dekkende. */
+  :root{--glass:rgba(255,255,255,.55);--glass-strong:rgba(255,255,255,.78);--glass-border:rgba(255,255,255,.75);--glass-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 12px 32px -18px rgba(20,27,51,.28);--glass-blur:saturate(1.6) blur(18px)}
+  body{position:relative;isolation:isolate}
+  body::before{content:"";position:fixed;inset:-10vmax;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(38vmax 38vmax at 12% 8%,rgba(91,140,255,.48),transparent 70%),
+      radial-gradient(34vmax 34vmax at 92% 18%,rgba(255,181,71,.50),transparent 70%),
+      radial-gradient(40vmax 40vmax at 70% 92%,rgba(91,140,255,.40),transparent 70%),
+      radial-gradient(30vmax 30vmax at 8% 78%,rgba(255,181,71,.38),transparent 70%)}
+  .top,.top.scrolled{background:rgba(245,246,250,.6);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-bottom:1px solid rgba(255,255,255,.7);box-shadow:0 8px 24px -20px rgba(20,27,51,.35)}
+  .card,.features.tiles li,.person,.hero-visual figcaption{background:var(--glass);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow)}
+  .card{transition:transform .2s ease,box-shadow .2s ease,background-color .2s ease}
+  .card:hover{background:var(--glass-strong);transform:translateY(-3px);box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 18px 40px -18px rgba(20,27,51,.35)}
+  .features.tiles .ic{background:rgba(255,243,223,.85)}
+  .features.tiles li:nth-child(even) .ic{background:rgba(232,239,255,.85)}
+  .contact.cta > .wrap{background:radial-gradient(60% 120% at 100% 0%,rgba(91,140,255,.35),transparent 60%),radial-gradient(50% 120% at 0% 100%,rgba(255,181,71,.18),transparent 60%),rgba(20,27,51,.95);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border:1px solid rgba(255,255,255,.12);box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 24px 60px -28px rgba(20,27,51,.6)}
+  @media (max-width:640px){
+    .top.open .links{background:rgba(245,246,250,.92);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
+  }
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .top,.top.scrolled{background:rgba(245,246,250,.97)}
+    .card,.features.tiles li,.person,.hero-visual figcaption{background:var(--paper)}
+  }
+  @media (prefers-reduced-transparency:reduce){
+    body::before{display:none}
+    .top,.top.scrolled{background:var(--bg)}
+    .card,.features.tiles li,.person,.hero-visual figcaption{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+    .contact.cta > .wrap{background:var(--night)}
+  }
+  @media (prefers-reduced-motion:reduce){.card:hover{transform:none}}
