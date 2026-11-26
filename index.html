@@ -45,7 +45,7 @@
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link href="/fonts/fonts.css" rel="stylesheet">
-<link href="/style.css?v=20261126b" rel="stylesheet">
+<link href="/style.css?v=20261126c" rel="stylesheet">
 </head>
 <body>
 <a class="skip" href="#innhold">Hopp til innholdet</a>
@@ -242,18 +242,6 @@
   </div>
 </section>
 
-<section class="contact cta" aria-labelledby="cta-tittel">
-  <div class="wrap split">
-    <div>
-      <h2 id="cta-tittel">Fortell oss om bedriften din</h2>
-      <p class="intro">Det er uforpliktende, og vi svarer innen én virkedag.</p>
-    </div>
-    <div class="actions">
-      <a class="btn btn-sun" href="/kontakt/">Send oss en melding</a>
-      <a class="btn btn-line" href="tel:+4748427504">Ring 484 27 504</a>
-    </div>
-  </div>
-</section>
 
 <script>
 // Gamle lenker til seksjoner på forsiden (f.eks. skysite.no/#om-oss) sendes til den nye undersiden.
@@ -264,35 +252,47 @@
 </script>
 </main>
 
-<footer>
-  <div class="wrap foot">
-    <div>
-      <a class="brand" href="/"><img src="/logo.svg" alt="" width="34" height="34">Skysite</a>
-      <p>Skreddersydde nettsider og IT-støtte for lokale bedrifter.</p>
+<footer class="glass-footer">
+  <div class="glass-card">
+    <div class="glass-cta" role="region" aria-labelledby="cta-tittel">
+      <div>
+        <h2 id="cta-tittel">Fortell oss om bedriften din</h2>
+        <p class="intro">Det er uforpliktende, og vi svarer innen én virkedag.</p>
+      </div>
+      <div class="actions">
+        <a class="btn btn-sun" href="/kontakt/">Send oss en melding</a>
+        <a class="btn btn-line" href="tel:+4748427504">Ring 484 27 504</a>
+      </div>
     </div>
-    <div>
-      <h2>Kontakt</h2>
-      <ul>
-        <li><a href="tel:+4748427504">484 27 504</a></li>
-        <li><a href="mailto:post@skysite.no">post@skysite.no</a></li>
-        <li>Sandnes, Rogaland</li>
-      </ul>
+    <div class="wrap foot">
+      <div>
+        <a class="brand" href="/"><img src="/logo.svg" alt="" width="34" height="34">Skysite</a>
+        <p>Skreddersydde nettsider og IT-støtte for lokale bedrifter.</p>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="tel:+4748427504">484 27 504</a></li>
+          <li><a href="mailto:post@skysite.no">post@skysite.no</a></li>
+          <li>Sandnes, Rogaland</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Sider</h2>
+        <ul>
+          <li><a href="/tjenester/">Tjenester</a></li>
+          <li><a href="/eksempler/">Eksempler</a></li>
+          <li><a href="/slik-foregar-det/">Slik foregår det</a></li>
+          <li><a href="/sporsmal/">Spørsmål og svar</a></li>
+          <li><a href="/verktoy/">Gratis verktøy</a></li>
+          <li><a href="/om-oss/">Om oss</a></li>
+          <li><a href="/kontakt/">Kontakt</a></li>
+          <li><a href="/personvern.html">Personvern</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h2>Sider</h2>
-      <ul>
-        <li><a href="/tjenester/">Tjenester</a></li>
-        <li><a href="/eksempler/">Eksempler</a></li>
-        <li><a href="/slik-foregar-det/">Slik foregår det</a></li>
-        <li><a href="/sporsmal/">Spørsmål og svar</a></li>
-        <li><a href="/verktoy/">Gratis verktøy</a></li>
-        <li><a href="/om-oss/">Om oss</a></li>
-        <li><a href="/kontakt/">Kontakt</a></li>
-        <li><a href="/personvern.html">Personvern</a></li>
-      </ul>
-    </div>
+    <div class="wrap copy">© <span id="year">2026</span> Skysite v/ Osman Khalid og Hasan Shabbir · Sandnes</div>
   </div>
-  <div class="wrap copy">© <span id="year">2026</span> Skysite v/ Osman Khalid og Hasan Shabbir · Sandnes</div>
 </footer>
 
 <script src="/main.js?v=20261126b" defer></script>
