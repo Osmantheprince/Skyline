@@ -352,3 +352,47 @@
     .duo .phone{position:absolute;right:0;bottom:0;width:120px;height:260px;border-width:5px;border-radius:20px}
     .duo .phone iframe{transform:scale(.2821)}
   }
+
+  /* ===== Liquid Glass =====
+     Apple-inspirert glass på vår vanlige lyse bakgrunn: svevende meny, blanke kort og runde knapper.
+     Flatene er minst 55 % hvite, så tekstkontrasten holder 4,5:1. Uten blur-støtte, eller med
+     «reduser gjennomsiktighet», blir flatene helt dekkende. */
+  :root{
+    --lg-fill:linear-gradient(160deg,rgba(255,255,255,.88) 0%,rgba(255,255,255,.62) 55%,rgba(255,255,255,.74) 100%);
+    --lg-fill-hover:linear-gradient(160deg,rgba(255,255,255,.96) 0%,rgba(255,255,255,.78) 60%,rgba(255,255,255,.88) 100%);
+    --lg-edge:rgba(255,255,255,.95);
+    --lg-blur:saturate(1.8) blur(24px);
+    --lg-shadow:inset 0 1px 0 rgba(255,255,255,1),inset 0 -1px 0 rgba(255,255,255,.5),inset 0 0 0 1px rgba(255,255,255,.35),0 0 0 1px rgba(20,27,51,.06),0 1px 2px rgba(20,27,51,.06),0 18px 40px -24px rgba(20,27,51,.32);
+    --lg-shadow-hover:inset 0 1px 0 rgba(255,255,255,1),inset 0 -1px 0 rgba(255,255,255,.6),inset 0 0 0 1px rgba(255,255,255,.45),0 0 0 1px rgba(20,27,51,.07),0 2px 4px rgba(20,27,51,.06),0 28px 50px -24px rgba(20,27,51,.38)}
+
+  /* Svevende glass-meny */
+  .top,.top.scrolled{background:transparent;border-bottom:0;box-shadow:none;padding-top:10px;-webkit-backdrop-filter:none;backdrop-filter:none}
+  .top .wrap{max-width:1092px;width:calc(100% - 1.5rem);height:60px;padding:0 .6rem 0 1.2rem;border-radius:999px;background:var(--lg-fill);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);border:1px solid var(--lg-edge);box-shadow:var(--lg-shadow)}
+  .top .btn{border-radius:999px}
+
+  /* Blanke glass-kort */
+  .card,.features.tiles li,.person,.price,.hero-visual figcaption{background:var(--lg-fill);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);border:1px solid var(--lg-edge);box-shadow:var(--lg-shadow)}
+  .card,.features.tiles li,.person,.price{border-radius:24px}
+  .card{transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s ease}
+  .card:hover{background:var(--lg-fill-hover);transform:translateY(-4px);box-shadow:var(--lg-shadow-hover)}
+  .features.tiles .ic{border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 0 0 1px rgba(20,27,51,.05)}
+
+  /* Runde knapper, sekundærknapp i glass */
+  .btn{border-radius:999px}
+  .btn-line:not(.contact .btn-line){background:var(--lg-fill);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);border-color:rgba(20,27,51,.14);box-shadow:inset 0 1px 0 #fff,0 8px 20px -14px rgba(20,27,51,.35)}
+  .btn-line:not(.contact .btn-line):hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+  /* Mørk kontaktboks med glass-kant */
+  .contact.cta > .wrap{border-radius:28px;border:1px solid rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 30px 60px -30px rgba(20,27,51,.55)}
+
+  @media (max-width:640px){
+    .top .wrap{width:calc(100% - 1rem);height:56px;padding:0 .4rem 0 1rem}
+    .top.open .links{top:72px;left:.5rem;right:.5rem;border-radius:22px;background:rgba(255,255,255,.9);-webkit-backdrop-filter:var(--lg-blur);backdrop-filter:var(--lg-blur);border:1px solid var(--lg-edge);box-shadow:var(--lg-shadow)}
+  }
+  @supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+    .top .wrap,.card,.features.tiles li,.person,.price,.hero-visual figcaption,.btn-line:not(.contact .btn-line){background:var(--paper)}
+  }
+  @media (prefers-reduced-transparency:reduce){
+    .top .wrap,.card,.features.tiles li,.person,.price,.hero-visual figcaption,.btn-line:not(.contact .btn-line),.top.open .links{background:var(--paper);-webkit-backdrop-filter:none;backdrop-filter:none}
+  }
+  @media (prefers-reduced-motion:reduce){.card,.card:hover{transition:none;transform:none}}
