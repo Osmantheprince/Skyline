@@ -39,6 +39,8 @@
 }</script>
 <link rel="icon" href="/logo.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://api.web3forms.com" crossorigin>
+<link rel="dns-prefetch" href="https://api.web3forms.com">
 <link rel="preload" href="/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link href="/fonts/fonts.css" rel="stylesheet">
 <link href="/style.css?v=20261126c" rel="stylesheet">
@@ -78,12 +80,12 @@
       </div>
     </div>
 
-    <form id="kontaktskjema" action="https://formsubmit.co/post@skysite.no" method="POST">
-      <input type="hidden" name="_subject" value="Ny henvendelse fra skysite.no">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://skysite.no/kontakt/#takk">
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <form id="kontaktskjema" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="77493674-9b27-4b63-ae31-84d9e9dac72b">
+      <input type="hidden" name="subject" value="Ny henvendelse fra skysite.no">
+      <input type="hidden" name="from_name" value="skysite.no">
+      <input type="hidden" name="redirect" value="https://skysite.no/kontakt/#takk">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
       <div class="row">
         <label>Navn<input type="text" name="Navn" required autocomplete="name"></label>
@@ -104,7 +106,7 @@
       <label>Melding<textarea name="Melding" required placeholder="Hva driver dere med, og hva skal siden hjelpe med?"></textarea></label>
       <button class="btn btn-sun" type="submit">Send melding</button>
       <p class="status" id="takk" role="status" aria-live="polite"></p>
-      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Formsubmit, og vi sletter henvendelsen når saken er ferdig. <a href="/personvern.html">Les mer om personvern</a>.</p>
+      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Web3Forms, og vi sletter henvendelsen når saken er ferdig. <a href="/personvern.html">Les mer om personvern</a>.</p>
     </form>
   </div>
 </section>
@@ -143,7 +145,7 @@
   </div>
 </footer>
 
-<script src="/main.js?v=20261126b" defer></script>
+<script src="/main.js?v=20261126d" defer></script>
 <script src="/analytics.js" defer></script>
 </body>
 </html>

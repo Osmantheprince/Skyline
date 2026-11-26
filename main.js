@@ -30,9 +30,11 @@ if (year) year.textContent = new Date().getFullYear();
   var status = document.getElementById("takk");
   var btn = form.querySelector("button");
   var sent = "Meldingen er sendt. Vi svarer innen én virkedag.";
+  var failed = "Meldingen ble ikke sendt. Send e-post til post@skysite.no eller ring 484 27 504.";
   function show(type, msg) { status.className = "status " + type; status.textContent = msg; }
+  function reset() { btn.disabled = false; btn.textContent = "Send melding"; }
 
-  // Etter vanlig POST (uten JavaScript) sender Formsubmit brukeren tilbake til #takk.
+  // Etter vanlig POST (uten JavaScript) sender Web3Forms brukeren tilbake til #takk.
   if (location.hash === "#takk") {
     show("ok", sent);
     status.scrollIntoView({ block: "center" });
@@ -40,17 +42,23 @@ if (year) year.textContent = new Date().getFullYear();
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    if (form._honey.value) return;
+    if (form.botcheck.checked) return;
     btn.disabled = true; btn.textContent = "Sender …";
-    fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+
+    // Gi opp etter 20 sekunder, så knappen aldri blir hengende på «Sender …».
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = ctrl && setTimeout(function () { ctrl.abort(); }, 20000);
+
+    fetch(form.action, {
       method: "POST",
       headers: { "Accept": "application/json" },
-      body: new FormData(form)
+      body: new FormData(form),
+      signal: ctrl ? ctrl.signal : undefined
     })
-      .then(function (r) { return r.json().then(function (d) { if (!r.ok || d.success === "false") throw d; }); })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.success) throw d; }); })
       .then(function () { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); })
-      .catch(function (d) { if (window.console) console.error("Formsubmit:", d); show("err", "Meldingen ble ikke sendt. Prøv igjen, eller ring 484 27 504."); })
-      .finally(function () { btn.disabled = false; btn.textContent = "Send melding"; });
+      .catch(function (d) { if (window.console) console.error("Web3Forms:", d); show("err", failed); })
+      .finally(function () { clearTimeout(timer); reset(); });
   });
 })();
 
