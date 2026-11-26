@@ -43,6 +43,8 @@ if (year) year.textContent = new Date().getFullYear();
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     if (form.botcheck.checked) return;
+    var captcha = form.querySelector("[name=h-captcha-response]");
+    if (captcha && !captcha.value) { show("err", "Kryss av i boksen «Jeg er et menneske» først."); return; }
     btn.disabled = true; btn.textContent = "Sender …";
 
     // Gi opp etter 20 sekunder, så knappen aldri blir hengende på «Sender …».
@@ -58,7 +60,7 @@ if (year) year.textContent = new Date().getFullYear();
       .then(function (r) { return r.json().then(function (d) { if (!r.ok || !d.success) throw d; }); })
       .then(function () { form.reset(); show("ok", sent); status.scrollIntoView({ block: "nearest" }); })
       .catch(function (d) { if (window.console) console.error("Web3Forms:", d); show("err", failed); })
-      .finally(function () { clearTimeout(timer); reset(); });
+      .finally(function () { clearTimeout(timer); reset(); if (window.hcaptcha) try { hcaptcha.reset(); } catch (x) {} });
   });
 })();
 

@@ -104,9 +104,10 @@
         </select>
       </label>
       <label>Melding<textarea name="Melding" required placeholder="Hva driver dere med, og hva skal siden hjelpe med?"></textarea></label>
+      <div class="h-captcha" data-captcha="true"></div>
       <button class="btn btn-sun" type="submit">Send melding</button>
       <p class="status" id="takk" role="status" aria-live="polite"></p>
-      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Web3Forms, og vi sletter henvendelsen når saken er ferdig. <a href="/personvern.html">Les mer om personvern</a>.</p>
+      <p class="note">Vi bruker opplysningene kun til å svare deg. Skjemaet sendes via Web3Forms og sjekkes mot spam med hCaptcha, og vi sletter henvendelsen når saken er ferdig. <a href="/personvern.html">Les mer om personvern</a>.</p>
     </form>
   </div>
 </section>
@@ -145,7 +146,8 @@
   </div>
 </footer>
 
-<script src="/main.js?v=20261126d" defer></script>
+<script src="/main.js?v=20261126e" defer></script>
+<script src="https://web3forms.com/client/script.js" async defer></script>
 <script src="/analytics.js" defer></script>
 </body>
 </html>
